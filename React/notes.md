@@ -16,24 +16,27 @@ JSX → Under the Hood
 ```js 
 React.createElement(type, props, children);
 ```
-type → HTML tag or component
-props → JS object containing data
-children → nested UI
+- type → HTML tag or component
+- props → JS object containing data
+- children → nested UI
 - React uses this to build the Virtual DOM tree.
 
 ## Terminal Commands
 ### Json server
 
+- Install json server
 ```bash
 npm install -g json-server
 ```
-- This command install json server.
+This command install json server.
 
+- Check json server version
 ```bash
 json-server --version
 ```
-- This command check json server version.
+This command check json server version.
 
+- Run json server
 ```bash
 json-server --watch data.json --port 8000
 ```
