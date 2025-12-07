@@ -22,22 +22,22 @@ children → nested UI
 - React uses this to build the Virtual DOM tree.
 
 ## Terminal Commands
-- Json server
+### Json server
 
 ```bash
 npm install -g json-server
 ```
-This command install json server.
+- This command install json server.
 
 ```bash
 json-server --version
 ```
-This command check json server version.
+- This command check json server version.
 
 ```bash
 json-server --watch data.json --port 8000
 ```
-This command watches data.json and runs JSON Server on port 8000.
+- This command watches data.json and runs JSON Server on port 8000.
 
 ## Tools
 -unDraw is svg picture tool
