@@ -28,19 +28,16 @@ children → nested UI
 npm install -g json-server
 ```
 This command install json server.
-<br />
 
 ```bash
 json-server --version
 ```
 This command check json server version.
-<br />
 
 ```bash
 json-server --watch data.json --port 8000
 ```
 This command watches data.json and runs JSON Server on port 8000.
-<br />
 
 ## Tools
 -unDraw is svg picture tool
