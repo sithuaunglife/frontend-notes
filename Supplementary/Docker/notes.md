@@ -4,20 +4,20 @@
 - Notes
 
 ## Syntax
-- Heading
+**Heading**
 ```js 
  <!-- code here -->
 ```
-  - Description
+- Description
 
 ## Terminal Commands
 ### 
 
-- Heading
+**Heading**
 ```bash
  <!-- code here -->
 ```
-  - Description
+- Description
 
 ## Tools
 - Notes
