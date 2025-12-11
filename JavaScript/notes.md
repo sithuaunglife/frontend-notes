@@ -44,7 +44,7 @@ const makeUser = () => ({ name: "Sithu" });
 - In Example 2, the parentheses force JS to treat ```{}``` as an object, not a block.
 
 
-** ``` { } ``` in Destructuring**
+**``` { } ``` in Destructuring**
 ```js
 const user = { name: "Sithu", age: 23 };
 const { name } = user;
