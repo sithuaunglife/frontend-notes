@@ -14,6 +14,7 @@ const user = {
 - ``` { } ``` = object literal.
 - Inside it → key/value pairs.
 
+
 **``` { } ``` as a code block**
 ```js
 if (true) {
@@ -26,6 +27,7 @@ if (true) {
 - ``` while ```
 - ``` function ```
 - …it means a code block, NOT an object.
+
 
 **``` { } ``` in arrow function**
 - Example 1: 
@@ -40,6 +42,7 @@ const makeUser = () => ({ name: "Sithu" });
 ```
 - In Example 1, there is a return keyword, this ```{}``` is a block, not an object.
 - In Example 2, the parentheses force JS to treat ```{}``` as an object, not a block.
+
 
 ** ``` { } ``` in Destructuring**
 ```js
