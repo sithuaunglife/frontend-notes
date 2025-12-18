@@ -48,7 +48,6 @@
 - ```git status``` check git status and changes.
 
 
-
 **Git Configuration**
 
 1.
@@ -64,7 +63,6 @@ git config --global user.name <Your name>
 git config --global user.email <Your email>
 ```
 - Those are necessary for git to work in local machine and it is only set first time using git in machine.
-
 
 
 - For ```--global``` it is for system. For project it is better to use ```--local```.
