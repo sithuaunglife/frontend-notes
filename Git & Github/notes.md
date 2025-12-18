@@ -46,13 +46,16 @@
 - Pressing Up ```↑``` arrow key shows the previously used command.
 - ```git init``` create .git repository that is hidden. Use ```ls -la``` to view. It is also a main branch at first creation.
 - ```git status``` check git status and changes.
-- 1.```
+- 1.
+```
 git config ---global init.defaultbranch main
 ```
-2.```
+2.
+```
 git config --global user.name <Your name>
 ```
-3.```
+3.
+```
 git config --global user.email <Your email>
 ```
 Those are necessary for git to work in local machine and it is only set first time using git in machine.
