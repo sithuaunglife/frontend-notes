@@ -49,6 +49,7 @@
 
 
 **Git Configuration**
+
 1.
 ```
 git config ---global init.defaultbranch main
