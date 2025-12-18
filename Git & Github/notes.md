@@ -20,9 +20,8 @@
 - Description
 
 ## Terminal Commands
-### Gitbash
+### Git Bash
 
-**Gitbash commands**
 - ```mkdir``` create folder.
 - ```touch``` create file.
 - ```ls``` show files and folder.
