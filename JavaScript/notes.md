@@ -1,7 +1,18 @@
 # JavaScript
 
 ## Facts
-- Curly braces ``` { } ``` is Object literal, Code block, Destructing pattern. 
+- Curly braces ``` { } ``` is Object literal, Code block, Destructing pattern.
+- If an arrow function needs more than one statement, use ``` { } ``` and an explicit ```return```.
+An implicit-return arrow function can return only one expression.
+- A return value belongs to the function caller, not the function itself.
+- Expressions and Statements are not same they are different concepts.
+- The right side of = is usually an expression and expressions produce values.
+- Number, string, boolean, object, array, function, arrow function are all values.
+- If JavaScript can store it, pass it, return it, or render it — it’s a value.
+- In an object, one key can reference only one value, but that value can contain many things.
+- One object key can hold one value — and that value can be a function, or an object that contains many functions.
+- In function Parameters are placeholders. Arguments are the real values passed in.
+- When you destructure props, you are extracting object keys. If a key’s value is a function, you can use it as a function in that component (or pass it further).
 
 ## Syntax
 **Object literal**
@@ -50,7 +61,32 @@ const user = { name: "Sithu", age: 23 };
 const { name } = user;
 ```
 - This ```{ name }``` is not creating an object. It’s selecting the ``` name ``` key.
-   
+
+
+**```e``` (event) controller**
+```js
+const handleClickSub = (e) => {
+  e.preventDefault();
+  console.log(e.target);
+};
+```
+- ```e``` (event) is controller to read or control its default behavior. If there is no event to control don't need ```e``` in function.
+
+
+**Arrow functions**
+- Example 1: 
+```js
+setX((prev) => {
+  return prev + 1;
+});
+```
+- Example 2:
+```js
+setX((prev) => (prev + 1));
+```
+- In Example 1, ``` { } ``` creates a function body (code block), so you must use ```return``` to send a value back.
+- In Example 2, there is no code block, so the arrow function uses an implicit return and the expression result is returned automatically.
+
 ## Terminal Commands
 ### 
 
