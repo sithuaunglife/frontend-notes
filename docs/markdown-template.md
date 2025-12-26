@@ -54,11 +54,17 @@
 
 ## My Confusion & Understanding
 
--Confusion:
-Understanding:
+-**Confusion:**
+Example note
+**Understanding:**:
+Example note
 
--Confusion:
-Understanding:
+-**Confusion:**
+Example note
+**Understanding:**:
+Example note
+
+
 
 
 
