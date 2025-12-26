@@ -12,7 +12,10 @@ An implicit-return arrow function can return only one expression.
 - In an object, one key can reference only one value, but that value can contain many things.
 - One object key can hold one value — and that value can be a function, or an object that contains many functions.
 - In function Parameters are placeholders. Arguments are the real values passed in.
+- Parameters are just placeholders. The arrow function defines what should happen when real arguments are passed in later.
 - When you destructure props, you are extracting object keys. If a key’s value is a function, you can use it as a function in that component (or pass it further).
+- Function calling does not happen inside the arrow function. The arrow function only defines what should happen when it is called.
+- Nested arrow functions can access the parameters of their outer function.
 
 ## Syntax
 **Object literal**

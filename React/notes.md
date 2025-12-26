@@ -16,6 +16,8 @@ Normal JavaScript rules apply (statements like if, for, variable declarations, f
 Inside ```return ( ... )```: JSX world.
 JSX only allows expressions (things that produce values), not statements like if or while.
 - ```set``` is a built-in function provided by Zustand for updating the store.
+- Real values are passed to functions through JSX expressions (often in event handlers).
+- ```get()``` is a Zustand built-in function. When called, it returns the entire current store state object, which can then be destructured.
 
 ## Syntax
 **JSX → Under the Hood**
@@ -49,6 +51,15 @@ Everything you return inside create() in Zustand becomes the store state (values
 - object → state
 - function → also state (but we call these “actions”)
 They all live in one store object and Zustand doesn't care what it is.
+
+
+**Zustand get()**
+```js
+const { products } = get();
+```
+- ```get()``` returns the entire Zustand store state object.
+- { products } destructures only the products property.
+- It does not keep the entire state, only products.
 
 ## Terminal Commands
 ### Json server

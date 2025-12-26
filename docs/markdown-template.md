@@ -52,4 +52,16 @@
 ## Tools
 - Notes
 
+## My Confusion & Understanding
+
+-Confusion:
+Understanding:
+
+-Confusion:
+Understanding:
+
+
+
+
+
 
