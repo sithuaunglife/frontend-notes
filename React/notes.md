@@ -3,10 +3,7 @@
 ## Facts
 - React is a JavaScript library.
 - React uses a combination of JavaScript, HTML-like syntax (JSX), and CSS.
-- React DOM provides different APIs for rendering:
-- Client API
-- Server API
-- Static API
+- React DOM provides different APIs for rendering: Client API, Server API, Static API.
 - React has Legacy API
 - Props look like HTML attributes, but they are JS objects passed into a component.
 - Props customize a component by giving it data, options, or behavior from the outside.
@@ -18,6 +15,11 @@ JSX only allows expressions (things that produce values), not statements like if
 - ```set``` is a built-in function provided by Zustand for updating the store.
 - Real values are passed to functions through JSX expressions (often in event handlers).
 - ```get()``` is a Zustand built-in function. When called, it returns the entire current store state object, which can then be destructured.
+- JSX needs one parent element.
+- How you USE something depends on how it was DEFINED. This rule applies when recalling object keys (e.g. state, props, stores). Example: Defined as data → use it as data, Defined as function → call it with ().
+- It is recommended to use ```htmlFor``` in React Hook Form.
+- JSX borrowed HTML’s attribute rules for string literals.
+- JSX borrows the look of HTML, but it is JavaScript.
 
 ## Syntax
 **JSX → Under the Hood**
@@ -60,6 +62,40 @@ const { products } = get();
 - ```get()``` returns the entire Zustand store state object.
 - { products } destructures only the products property.
 - It does not keep the entire state, only products.
+
+
+**React Hook Form define**
+```jsx
+ const {
+    register, // connects inputs
+    handleSubmit, // handles validation + submit
+    formState: { errors }, // validation errors
+    reset, // resets form state
+  } = useForm();
+```
+- This calls the useForm() hook then destructures useful tools returned by React Hook Form.
+
+
+**React Hook Form Object passing**
+```jsx
+ const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    const newProductId = products[products.length - 1].id + 1;
+    const newProduct = {
+      id: newProductId,
+      title: data.new_product_name,
+      price: data.product_price,
+      category: data.category,
+      image: `/images/${newProductId}.png`,
+    }
+};
+```
+- React Hook Form creates an object and PASSES it to the parameter that it calls ``` ( ) ```, specifically: onSubmit, validation resolvers callbacks that RHF owns. The parameter itself never changes. It’s just a variable name.
 
 ## Terminal Commands
 ### Json server

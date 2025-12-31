@@ -16,6 +16,9 @@ An implicit-return arrow function can return only one expression.
 - When you destructure props, you are extracting object keys. If a key’s value is a function, you can use it as a function in that component (or pass it further).
 - Function calling does not happen inside the arrow function. The arrow function only defines what should happen when it is called.
 - Nested arrow functions can access the parameters of their outer function.
+- ```.``` is used to access values inside an object by its key.
+- ```value``` is used to control what’s inside both <input> and <option> elements.
+- An <input> cannot display content by itself like <p> or <h1> does.
 
 ## Syntax
 **Object literal**
