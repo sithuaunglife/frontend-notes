@@ -20,6 +20,8 @@ JSX only allows expressions (things that produce values), not statements like if
 - It is recommended to use ```htmlFor``` in React Hook Form.
 - JSX borrowed HTML’s attribute rules for string literals.
 - JSX borrows the look of HTML, but it is JavaScript.
+- To pass data as a prop, JSX must use propName={value} syntax. Example: item={item} is required to pass the item data.
+- When passing props, if another component needs the same data, that component must receive it as a parameter (prop).
 
 ## Syntax
 **JSX → Under the Hood**
@@ -131,6 +133,13 @@ npm install dayjs
 
 ## Tools
 - unDraw is svg picture tool
+
+## My Confusion & Understanding
+
+-Confusion: Does destructuring use the initial state? 
+
+Understanding: My confusion was thinking destructuring used the previous empty state.
+In reality, Zustand updates state first, then React re-renders and passes the updated data.
 
 
 

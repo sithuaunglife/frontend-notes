@@ -19,6 +19,8 @@ An implicit-return arrow function can return only one expression.
 - ```.``` is used to access values inside an object by its key.
 - ```value``` is used to control what’s inside both <input> and <option> elements.
 - An <input> cannot display content by itself like <p> or <h1> does.
+- When using ```...state.items, newItem``` the new values live in ```items``` not in ```newItem``` To access updated data later, always always read from ```items```. ```newItem``` is temporary and only exists at creation time.
+- Destructuring reads current props, not previous state.
 
 ## Syntax
 **Object literal**
