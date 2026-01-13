@@ -122,6 +122,5 @@ src/
 │
 └─ types/                            # GLOBAL TYPES
    └─ index.ts
-
 ```
 - app/ → routing & layouts only (no business logic), features/ → domain-based UI + logic (self-contained), components/ui → shadcn primitives (design system), styles/ → global CSS & themes, stores/ → app-wide state, services/ → cross-feature APIs, lib/ → utilities & helpers.
