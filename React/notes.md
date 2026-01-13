@@ -22,6 +22,8 @@ JSX only allows expressions (things that produce values), not statements like if
 - JSX borrows the look of HTML, but it is JavaScript.
 - To pass data as a prop, JSX must use propName={value} syntax. Example: item={item} is required to pass the item data.
 - When passing props, if another component needs the same data, that component must receive it as a parameter (prop).
+- Components push data into Zustand, and other components read that data by subscribing to the store.
+- A component watches Zustand, and if the subscribed state changes, the component re-renders.
 
 ## Syntax
 **JSX → Under the Hood**
