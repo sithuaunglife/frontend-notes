@@ -15,7 +15,7 @@
 src/
 ├─ app/                              # ROUTES (where)
 │  ├─ layout.tsx                     # Root layout (html, body, providers)
-│  ├─ page.tsx                       # /
+│  ├─ page.tsx                       # /  → uses features/home
 │  ├─ loading.tsx
 │  ├─ error.tsx
 │  │
@@ -34,13 +34,25 @@ src/
 │     └─ register/page.tsx
 │
 ├─ features/                         # DOMAIN LOGIC (how)
+│  ├─ home/                          # HOME FEATURE
+│  │  ├─ components/
+│  │  │  ├─ HomePage.tsx             # Main home UI
+│  │  │  ├─ HeroSection.tsx
+│  │  │  └─ FeatureList.tsx
+│  │  ├─ hooks/
+│  │  │  └─ useHome.ts
+│  │  ├─ store/
+│  │  │  └─ home.store.ts
+│  │  └─ services/
+│  │     └─ home.api.ts
+│  │
 │  ├─ dashboard/
 │  │  ├─ components/
 │  │  │  ├─ AppSidebar.tsx
 │  │  │  └─ DashboardHeader.tsx
 │  │  ├─ hooks/
 │  │  │  └─ useSidebar.ts
-│  │  ├─ store/                      # Feature-level state
+│  │  ├─ store/
 │  │  │  └─ sidebar.store.ts
 │  │  └─ services/
 │  │     └─ dashboard.api.ts
@@ -110,5 +122,6 @@ src/
 │
 └─ types/                            # GLOBAL TYPES
    └─ index.ts
+
 ```
 - app/ → routing & layouts only (no business logic), features/ → domain-based UI + logic (self-contained), components/ui → shadcn primitives (design system), styles/ → global CSS & themes, stores/ → app-wide state, services/ → cross-feature APIs, lib/ → utilities & helpers.
