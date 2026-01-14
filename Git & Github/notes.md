@@ -71,6 +71,9 @@ git config --global user.email <Your email>
 - ```git branch -d <branch-name>``` delete local branch (safe – only if merged).
 - ```git branch -D <branch-name>``` force delete local branch (even if not merged).
 - ```git fetch --prune``` remove deleted remote branches from local.
+- ```git fetch``` pulls (downloads) data from the remote source. Does not combine (merge) anything.
+- ```git merge``` combines branches together, Does not download data.
+- ```git pull``` downloads data and then combines it. It is same as git fetch + git merge.
 
 ## Tools
 - Notes
