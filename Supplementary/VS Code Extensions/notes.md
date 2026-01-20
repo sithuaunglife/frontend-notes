@@ -1,7 +1,7 @@
 # Example Title
 
 ## Facts
-- Notes
+- Prettier format hotkey -> Windows / Linux: Shift + Alt + F, MacOS: Shift + Option + F
 
 ## Syntax
 ### Arrow Function Snippets

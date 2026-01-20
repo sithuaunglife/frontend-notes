@@ -24,6 +24,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - When passing props, if another component needs the same data, that component must receive it as a parameter (prop).
 - Components push data into Zustand, and other components read that data by subscribing to the store.
 - A component watches Zustand, and if the subscribed state changes, the component re-renders.
+- In React Hook Form, a resolver is a function that lets an external validation library (like Zod) validate form data and return errors in the format React Hook Form understands.
 
 ## Syntax
 **JSX → Under the Hood**
@@ -100,6 +101,32 @@ const { products } = get();
 };
 ```
 - React Hook Form creates an object and PASSES it to the parameter that it calls ``` ( ) ```, specifically: onSubmit, validation resolvers callbacks that RHF owns. The parameter itself never changes. It’s just a variable name.
+
+
+**Normal React Component (manual children wrapping)**
+```tsx 
+// features/dashboard/DashboardPage.tsx
+import LayoutShell from "./LayoutShell";
+
+export default function DashboardPage() {
+  return (
+    <LayoutShell>
+      <h1>Dashboard</h1>
+    </LayoutShell>
+  );
+}
+```
+```tsx 
+// features/dashboard/LayoutShell.tsx
+export default function LayoutShell({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <main>{children}</main>;
+}
+```
+- ```children``` must be explicitly wrapped and passed. 
 
 ## Terminal Commands
 ### Json server
