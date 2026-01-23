@@ -9,10 +9,13 @@
 - Without ```"use client"``` a component cannot have interactivity (state, effects, event handlers).
 - If you want to use children inside a feature layout component, then you must explicitly wrap the child content with that layout component.
 - The Next.js App Router automatically injects children, while in normal React components you must manually wrap and pass children.
+- In Next.js App Router, if the page changes based on data use dynamic route, if the page never changes use normal route.
+- A dynamic route defines a variable URL; the page receives params.id and, if no matching data exists for that value, it returns a real 404.
+- ```<Link> </Link>``` is for navigating (hopping) to another route when the user clicks that link.
 
 ## Syntax
 **Route Groups – ()**
-```css 
+```txt 
 src/
  └─ app/
      └─ (dashboard)/
@@ -27,6 +30,21 @@ src/
 - All routes inside (dashboard) use layout.tsx
 - Folder names inside the group (dashboard, example) become actual routes
 
+
+**Dynamic Routes - []**
+```txt
+src/
+ └─ app/
+     └─ users/
+         └─ [id]/
+             └─ page.tsx      ← /users/:id
+```
+- ```[id]``` creates a dynamic route segment
+- The folder name inside [] becomes a URL variable
+- The URL can be - ```/users/1``` or ```/users/abc```
+- The page receives the value through params.id
+- The route matches the URL shape, not the data
+- The page decides - data exists → render, data missing → return a real 404 (notFound())
 
 **Dynamic Import – Disable SSR (Hydration Fix)**
 ```js 
@@ -67,6 +85,48 @@ export default function DashboardLayout({ children }) {
 - Inject Client Components ```"use client"``` into App Router layouts (Server Components) to enable interactivity.
 - Server Components define structure & data
 - Client Components inject behavior
+
+
+**Dynamic route**
+```tsx
+const examples = {
+  "1": { title: "Apple" },
+  "2": { title: "Banana" },
+  "3": { title: "Cherry" },
+};
+
+export default function Page({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const data = examples[params.id];
+
+  if (!data) {
+    return <h1>Not found</h1>;
+  }
+
+  return <h1>{data.title}</h1>;
+}
+```
+- Route matches → page renders
+- id exists → data shown
+- id missing → fallback UI
+
+Let's use this route: 
+```bash
+app/examples/[id]/page.tsx
+```
+And this URL:
+```bash
+/examples/3
+```
+- What Next.js does:
+- Sees /examples/3
+- Matches it to /examples/[id]
+- Extracts id = "3"
+- Renders page.tsx
+- Passes { params: { id: "3" } }
 
 ## Terminal Commands
 ### Terminal tool name 1

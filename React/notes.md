@@ -25,6 +25,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - Components push data into Zustand, and other components read that data by subscribing to the store.
 - A component watches Zustand, and if the subscribed state changes, the component re-renders.
 - In React Hook Form, a resolver is a function that lets an external validation library (like Zod) validate form data and return errors in the format React Hook Form understands.
+- Inside JSX you can no longer declare variables.
 
 ## Syntax
 **JSX → Under the Hood**
