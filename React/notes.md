@@ -26,6 +26,9 @@ JSX only allows expressions (things that produce values), not statements like if
 - A component watches Zustand, and if the subscribed state changes, the component re-renders.
 - In React Hook Form, a resolver is a function that lets an external validation library (like Zod) validate form data and return errors in the format React Hook Form understands.
 - Inside JSX you can no longer declare variables.
+- React follows a simple rule: JSX treats lowercase tags as strings (HTML elements), while PascalCase identifiers are treated as custom React components.
+- ```useEffect``` runs after the UI has rendered and been painted to the screen.
+- A side effect is an interaction with something React does not control. ```useEffect``` is one way (but not the only way) to handle side effects.
 
 ## Syntax
 **JSX → Under the Hood**
@@ -127,7 +130,7 @@ export default function LayoutShell({
   return <main>{children}</main>;
 }
 ```
-- ```children``` must be explicitly wrapped and passed. 
+- ```children``` must be explicitly wrapped and passed.
 
 ## Terminal Commands
 ### Json server

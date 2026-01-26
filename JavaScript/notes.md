@@ -21,6 +21,11 @@ An implicit-return arrow function can return only one expression.
 - An <input> cannot display content by itself like <p> or <h1> does.
 - When using ```...state.items, newItem``` the new values live in ```items``` not in ```newItem``` To access updated data later, always always read from ```items```. ```newItem``` is temporary and only exists at creation time.
 - Destructuring reads current props, not previous state.
+- JavaScript is single-threaded but asynchronous.
+- Synchronous (sync) run one task runs at a time. Each task must finish before the next one starts. Example: A → B → C
+- Asynchronous (async) tasks can be started, and JavaScript doesn’t wait for them to finish before moving on. Results come back later when ready. Example: Start A, Start B, Start C → results arrive when ready
+- fetch() returns a Promise out of the box.
+- ```await``` does not make JavaScript synchronous. It makes async code work like synchronous.
 
 ## Syntax
 **Object literal**
@@ -94,6 +99,19 @@ setX((prev) => (prev + 1));
 ```
 - In Example 1, ``` { } ``` creates a function body (code block), so you must use ```return``` to send a value back.
 - In Example 2, there is no code block, so the arrow function uses an implicit return and the expression result is returned automatically.
+
+
+**Fetching data using async**
+```js
+async function fetchData() {
+  const res = await fetch("https://fakestoreapi.com/products/1");
+  const data = await res.json();
+  console.log(data);
+}
+
+fetchData();
+```
+- Fetching data from API.
 
 ## Terminal Commands
 ### 

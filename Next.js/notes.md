@@ -12,6 +12,11 @@
 - In Next.js App Router, if the page changes based on data use dynamic route, if the page never changes use normal route.
 - A dynamic route defines a variable URL; the page receives params.id and, if no matching data exists for that value, it returns a real 404.
 - ```<Link> </Link>``` is for navigating (hopping) to another route when the user clicks that link.
+- Next.js route files use lowercase file names (e.g. page.jsx), while the exported function inside the file must use PascalCase (e.g. export default function Page()).
+- ```"use client"``` does NOT block data fetching. Client Components can fetch data normally.
+- In Next.js App Router, route files (page.jsx) should live under app/. Feature folders should contain reusable UI and logic, not route files.
+- Modern routers (Next.js App Router, TanStack Router) separate routing files from feature/UI files. Routes define navigation; features define behavior and UI.
+- When fetching API data from Client Component ("use client") you need to use useEffect. When fetching API data from Server Component (no "use client") you don't need to use useEffect.
 
 ## Syntax
 **Route Groups – ()**
@@ -127,6 +132,50 @@ And this URL:
 - Extracts id = "3"
 - Renders page.tsx
 - Passes { params: { id: "3" } }
+
+
+**Fetch data from API using async ("use client")**
+```jsx
+"use client";
+
+import { useEffect } from "react";
+
+const FakeStore = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch("https://fakestoreapi.com/products/1");
+      const data = await res.json();
+      console.log(data);
+    };
+
+    fetchData();
+  }, []);
+
+  return <div>Fake Store</div>;
+};
+
+export default FakeStore;
+```
+- Fetching data from API using ```useEffect```.
+
+
+**Next.js Server Component fetching data API using async (no "use client")**
+```jsx
+// app/products/page.tsx
+const ProductsPage = async () => {
+  const res = await fetch("https://fakestoreapi.com/products/1");
+  const product = await res.json();
+
+  return (
+    <div>
+      <h1>{product.title}</h1>
+    </div>
+  );
+};
+
+export default ProductsPage;
+```
+- Fetching data from API.
 
 ## Terminal Commands
 ### Terminal tool name 1
