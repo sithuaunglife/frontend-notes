@@ -12,6 +12,7 @@
 - “Out of the box” means something works immediately by default, without any extra setup, configuration, or libraries. Example 1: JavaScript — fetch() is promise-based out of the box; no installation required; no manual Promise wrapping needed. Example 2: React — useState works out of the box; no configuration needed; just import and use. Example 3: Next.js — Routing works out of the box; no router setup required; folder structure automatically maps to routes.
 - Let errors crash loudly during development, but handle them gracefully in production to protect user trust.
 - Anti-virus can block programming relative package, library and activity.
+- Syntax is like muscle memory. You don’t need to feel guilty if you can’t remember it. Muscle memory is built through repeated coding and constant reference. It’s similar to driving a car or playing an RTS game: once you’ve done it enough times, you no longer think about every action. You simply act. Programming works the same way. You don’t need to memorize syntax; you let muscle memory handle it and focus on understanding what the syntax does. If you forget something, you can always reference your notes or use AI.
 
 ## Syntax
 **Next.js folder structure**
