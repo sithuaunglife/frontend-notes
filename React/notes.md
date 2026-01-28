@@ -42,6 +42,24 @@ React.createElement(type, props, children);
 - React uses this to build the Virtual DOM tree.
 
 
+**```&&``` (logical AND) — conditional rendering**
+```jsx
+{loading && <p>Loading...</p>}
+```
+- If loading is true → React renders <p>Loading...</p>
+- If loading is false → React renders nothing
+- ```&&``` is for render or not render
+
+
+**```? :``` (ternary) — conditional choice**
+```jsx
+{loading ? <p>Loading...</p> : <p>Done</p>}
+```
+- If loading is true → show first part
+- If loading is false → show second part
+- ```? :``` is for render this or that
+
+
 **Zustand create()**
 ```js 
 const useCategoryStore = create((set) => {
@@ -134,29 +152,6 @@ export default function LayoutShell({
 - ```children``` must be explicitly wrapped and passed.
 
 ## Terminal Commands
-### Json server
-
-**Install json server**
-```bash
-npm install -g json-server
-```
-- This command install json server.
-
-
-**Check json server version**
-```bash
-json-server --version
-```
-- This command check json server version.
-
-
-**Run json server**
-```bash
-json-server --watch data.json --port 8000
-```
-- This command watches data.json and runs JSON Server on port 8000.
-
-
 ### Day.js
 
 **Install Day.js**
@@ -166,7 +161,7 @@ npm install dayjs
 - This command install Day.js.
 
 ## Tools
-- unDraw is svg picture tool
+- unDraw is svg picture tool. It can customize color according to your web color.
 
 ## My Confusion & Understanding
 

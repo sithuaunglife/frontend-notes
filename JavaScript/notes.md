@@ -29,7 +29,25 @@ An implicit-return arrow function can return only one expression.
 - ```try...catch``` is used to handle unpredictable failures so the app can recover gracefully and preserve user trust instead of crashing.
 - ```try``` runs risky code, ```catch``` handles failure, ```finally``` cleans up. 
 - ```throw``` acts as a stop-sign for invalid states, helping developers catch bugs early and protecting the app from unsafe behavior; once the issue is properly fixed, the ```throw``` can be removed.
+- ```finally``` is for cancelling or resetting actions that were started earlier (like loading) and must stop, whether the operation succeeds or fails — basically cleanup. If you ever find yourself writing the same cleanup code in both try and catch, it belongs in ```finally```.
 - ```try...catch``` is most commonly used around API fetching and other operations that can fail unpredictably.
+- JSON is a string format
+- JSON is a universal data format used as a bridge between different programming applications.
+- ```JSON.parse()``` converts JSON (text/string) into a JavaScript value (object or array).
+- ```JSON.stringify()``` converts JavaScript value (object or array) into a JSON (text/string).
+- Fake Store API is a mock REST API made for frontend practice.
+- Every usable API has documentation.
+- Even API users (frontend) must follow REST standards.
+- In an API, the URL becomes an endpoint. Example 1: ("https://fakestoreapi.com
+") This is the base URL, not an endpoint. Example 2: ("https://fakestoreapi.com/products/1
+") This is an endpoint because it points to a specific resource.
+- Response 200 means the request was successful.
+- In JSON, all keys are strings.
+- JSON values can be string, number, boolean, array, object, or null.
+- If there is no value, do not include the key at all. Use null only when the value exists but is intentionally empty.
+- There is a tool called JSON Server.
+- You do not need to run as admin to use ```curl``` on Windows in most cases.
+- In API there is response time.
 
 ## Syntax
 **Object literal**
@@ -167,13 +185,36 @@ try {
 - ```try...catch finally```. ```finally``` is run no matter what, whether an error occurs or not.
 
 ## Terminal Commands
-### 
+### Curl
 
-**Heading**
+**Curl**
 ```bash
-Terminal Code
+curl "https://fakestoreapi.com/products/1"
 ```
-- Description
+- Using ```curl``` to test an API on Windows.
+
+
+### Json server
+
+**Install json server**
+```bash
+npm install -g json-server
+```
+- This command install json server.
+
+
+**Check json server version**
+```bash
+json-server --version
+```
+- This command check json server version.
+
+
+**Run json server**
+```bash
+json-server --watch data.json --port 8000
+```
+- This command watches data.json and runs JSON Server on port 8000.
 
 ## Tools
 - Notes
