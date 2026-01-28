@@ -16,7 +16,7 @@
 - ```"use client"``` does NOT block data fetching. Client Components can fetch data normally.
 - In Next.js App Router, route files (page.jsx) should live under app/. Feature folders should contain reusable UI and logic, not route files.
 - Modern routers (Next.js App Router, TanStack Router) separate routing files from feature/UI files. Routes define navigation; features define behavior and UI.
-- When fetching API data from Client Component ("use client") you need to use useEffect. When fetching API data from Server Component (no "use client") you don't need to use useEffect.
+- When fetching API data from Client Component ("use client") ```useEffect``` is needed if you want an API call to run automatically without user interaction, with user interaction you don't need ```useEffect```. When fetching API data from Server Component (no "use client") you don't need to use ```useEffect```.
 
 ## Syntax
 **Route Groups – ()**
@@ -157,6 +157,7 @@ const FakeStore = () => {
 export default FakeStore;
 ```
 - Fetching data from API using ```useEffect```.
+- It is needed if you want an API call to run automatically without user interaction.
 
 
 **Next.js Server Component fetching data API using async (no "use client")**

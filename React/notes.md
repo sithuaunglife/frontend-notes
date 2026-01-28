@@ -27,7 +27,8 @@ JSX only allows expressions (things that produce values), not statements like if
 - In React Hook Form, a resolver is a function that lets an external validation library (like Zod) validate form data and return errors in the format React Hook Form understands.
 - Inside JSX you can no longer declare variables.
 - React follows a simple rule: JSX treats lowercase tags as strings (HTML elements), while PascalCase identifiers are treated as custom React components.
-- ```useEffect``` runs after the UI has rendered and been painted to the screen.
+- ```useEffect``` runs after React finishes rendering the UI.
+- ```useEffect``` is not for interactivity.
 - A side effect is an interaction with something React does not control. ```useEffect``` is one way (but not the only way) to handle side effects.
 
 ## Syntax

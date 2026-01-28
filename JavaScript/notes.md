@@ -26,6 +26,10 @@ An implicit-return arrow function can return only one expression.
 - Asynchronous (async) tasks can be started, and JavaScript doesn’t wait for them to finish before moving on. Results come back later when ready. Example: Start A, Start B, Start C → results arrive when ready
 - fetch() returns a Promise out of the box.
 - ```await``` does not make JavaScript synchronous. It makes async code work like synchronous.
+- ```try...catch``` is used to handle unpredictable failures so the app can recover gracefully and preserve user trust instead of crashing.
+- ```try``` runs risky code, ```catch``` handles failure, ```finally``` cleans up. 
+- ```throw``` acts as a stop-sign for invalid states, helping developers catch bugs early and protecting the app from unsafe behavior; once the issue is properly fixed, the ```throw``` can be removed.
+- ```try...catch``` is most commonly used around API fetching and other operations that can fail unpredictably.
 
 ## Syntax
 **Object literal**
@@ -112,6 +116,55 @@ async function fetchData() {
 fetchData();
 ```
 - Fetching data from API.
+
+
+**Basic try...catch**
+```js
+try {
+  // code that may throw an error
+} catch (error) {
+  // code that runs if an error happens
+}
+```
+- Basic ```try...catch```. 
+
+
+**Async / Await try...catch**
+```js
+try {
+  const res = await fetch(url)
+  const data = await res.json()
+} catch (error) {
+  console.error(error)
+}
+```
+- Async / Await try...catch.
+
+
+**try...catch throw**
+```js
+try {
+  if (!user) {
+    throw new Error("User not found")
+  }
+} catch (error) {
+  console.log(error.message)
+}
+```
+- ```try...catch throw```. ```throw``` is like a stop sign and after fix it can be safely removed.
+
+
+**try...catch finally**
+```js
+try {
+  // risky code
+} catch (error) {
+  console.error(error)
+} finally {
+  // always runs (cleanup, reset state, etc.)
+}
+```
+- ```try...catch finally```. ```finally``` is run no matter what, whether an error occurs or not.
 
 ## Terminal Commands
 ### 
