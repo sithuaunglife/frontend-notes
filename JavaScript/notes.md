@@ -46,8 +46,11 @@ An implicit-return arrow function can return only one expression.
 - JSON values can be string, number, boolean, array, object, or null.
 - If there is no value, do not include the key at all. Use null only when the value exists but is intentionally empty.
 - There is a tool called JSON Server.
+- JSON Server is not used in production; it is only for testing and development.
 - You do not need to run as admin to use ```curl``` on Windows in most cases.
 - In API there is response time.
+- In the terminal, endpoints are links.
+- You can use DOM manipulation with JSON data.
 
 ## Syntax
 **Object literal**
@@ -184,7 +187,27 @@ try {
 ```
 - ```try...catch finally```. ```finally``` is run no matter what, whether an error occurs or not.
 
+
+**Fetch data from API**
+```js
+const baseUrl = "http://localhost:8000"
+fetch(`${baseUrl}/fruits`)
+  .then((res) => res.json())
+  .then((json) => console.log(json));
+```
+- This code is used to fetch data from an API (JSON Server or backend) and log the response data to the console.
+- It asks the server for fruit data and prints it in the browser console.
+
 ## Terminal Commands
+### Terminal hotkeys
+
+**Stop Terminal → Stop Running Command**
+```bash
+Ctrl + C
+```
+- Stops the running command in the terminal.
+
+
 ### Curl
 
 **Curl**

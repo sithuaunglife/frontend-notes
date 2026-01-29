@@ -2,6 +2,7 @@
 
 ## Facts
 - Prettier format hotkey -> Windows / Linux: Shift + Alt + F, MacOS: Shift + Option + F
+- Live Server runs on port 5500 by default.
 
 ## Syntax
 ### Arrow Function Snippets

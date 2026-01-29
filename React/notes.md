@@ -30,6 +30,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - ```useEffect``` runs after React finishes rendering the UI.
 - ```useEffect``` is not for interactivity.
 - A side effect is an interaction with something React does not control. ```useEffect``` is one way (but not the only way) to handle side effects.
+- Vite Server runs on port 5173 by default.
 
 ## Syntax
 **JSX → Under the Hood**
