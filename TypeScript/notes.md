@@ -1,4 +1,4 @@
-# Example Title
+# TypeScript
 
 ## Facts
 - If a type is reused or represents domain data → put the ```types``` file outside (global). If a type is local and disposable → keep the ```types``` file inside the feature.

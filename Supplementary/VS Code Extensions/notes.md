@@ -1,4 +1,4 @@
-# Example Title
+# VS Code Extensions
 
 ## Facts
 - Prettier format hotkey -> Windows / Linux: Shift + Alt + F, MacOS: Shift + Option + F

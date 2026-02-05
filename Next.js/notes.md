@@ -1,4 +1,4 @@
-# Example Title
+# Next.js
 
 ## Facts
 - ```layout.tsx``` applies persistent UI only to its folder and children (downward), and it unmounts completely when you leave that route segment.
@@ -17,6 +17,12 @@
 - In Next.js App Router, route files (page.jsx) should live under app/. Feature folders should contain reusable UI and logic, not route files.
 - Modern routers (Next.js App Router, TanStack Router) separate routing files from feature/UI files. Routes define navigation; features define behavior and UI.
 - When fetching API data from Client Component ("use client") ```useEffect``` is needed if you want an API call to run automatically without user interaction, with user interaction you don't need ```useEffect```. When fetching API data from Server Component (no "use client") you don't need to use ```useEffect```.
+- Frontend development mainly focuses on client-side behavior and UI, while still interacting with server-side logic for data and rendering when needed.
+- Layouts can be composed either feature-first (components with children) or route-first (route layouts combining components), depending on whether structure or reuse is the priority.
+- In feature-first composition, parent components must be reused manually, while in route-first (Next.js App Router), layouts automatically provide `children` at the route level.
+
+
+
 
 ## Syntax
 **Route Groups – ()**
