@@ -25,7 +25,7 @@
 ### Shadcn
 
 **My shadcn present**
-```bash
+```cmd
 pnpm dlx shadcn@latest create --preset "https://ui.shadcn.com/init?base=base&style=nova&baseColor=neutral&theme=red&iconLibrary=lucide&font=roboto&menuAccent=bold&menuColor=default&radius=default&template=next&rtl=false" --template next
 ```
 - An opinionated shadcn/ui initialization preset for Next.js built as a clean and scalable starting point for modern applications, featuring:
