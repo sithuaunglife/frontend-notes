@@ -2,6 +2,7 @@
 
 ## Facts
 - If a type is reused or represents domain data → put the ```types``` file outside (global). If a type is local and disposable → keep the ```types``` file inside the feature.
+- Types files are written in PascalCase to represent models or contracts, not runtime values, and to distinguish them from functions and variables.
 
 ## Syntax
 **Heading 1**

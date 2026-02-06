@@ -20,9 +20,8 @@
 - Frontend development mainly focuses on client-side behavior and UI, while still interacting with server-side logic for data and rendering when needed.
 - Layouts can be composed either feature-first (components with children) or route-first (route layouts combining components), depending on whether structure or reuse is the priority.
 - In feature-first composition, parent components must be reused manually, while in route-first (Next.js App Router), layouts automatically provide `children` at the route level.
-
-
-
+- Hydration errors usually happen when interactive shadcn components (dialogs, dropdowns, comboboxes) are rendered on the server, so the page or section must be a Client Component.
+- In Next.js, files named page.tsx must export a Page() component to register the route.
 
 ## Syntax
 **Route Groups – ()**
@@ -56,6 +55,7 @@ src/
 - The page receives the value through params.id
 - The route matches the URL shape, not the data
 - The page decides - data exists → render, data missing → return a real 404 (notFound())
+
 
 **Dynamic Import – Disable SSR (Hydration Fix)**
 ```js 
