@@ -6,6 +6,8 @@
 - In shadcn/ui, dark theme styles are defined under the `.dark` selector in `styles/globals.css`.
 - On Windows when using shadcn presets with URLs → use CMD, not PowerShell.
 - Shadcn needs WireGuard as Protocol in VPN to work in my country (Myanmar).
+- Base UI and Radix UI are different libraries with different DOM behaviors, even though their APIs look similar.
+- Hydration errors aren’t always SSR issues, they can happen when incompatible UI libraries (e.g., Base UI vs Radix UI) are mixed.
 
 ## Syntax
 **Heading 1**

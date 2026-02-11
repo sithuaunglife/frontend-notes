@@ -22,6 +22,7 @@
 - In feature-first composition, parent components must be reused manually, while in route-first (Next.js App Router), layouts automatically provide `children` at the route level.
 - Hydration errors usually happen when interactive shadcn components (dialogs, dropdowns, comboboxes) are rendered on the server, so the page or section must be a Client Component.
 - In Next.js, files named page.tsx must export a Page() component to register the route.
+- API connection requires .env.local because NEXT_PUBLIC_* variables (e.g. NEXT_PUBLIC_BASE_URL=<API_URL>) are injected at build time and are unavailable without explicit definition.
 
 ## Syntax
 **Route Groups – ()**
