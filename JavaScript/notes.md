@@ -51,6 +51,7 @@ An implicit-return arrow function can return only one expression.
 - In API there is response time.
 - In the terminal, endpoints are links.
 - You can use DOM manipulation with JSON data.
+- A function can only use: Variables inside itself, Variables from outer scope, Variables passed as parameters, Values returned from other functions.
 
 ## Syntax
 **Object literal**

@@ -6,11 +6,13 @@
 - ```PATH``` decides which executable runs first when multiple versions exist; fixing the ```PATH``` order in System Properties resolves version conflicts.
 
 ## Syntax
-**Heading**
-```js 
- <!-- code here -->
+**pnpm-workspace-yaml**
+```yaml 
+packages:
+  - "apps/*"
+  - "packages/*"
 ```
-- Description
+- If ```pnpm install``` throws ```“packages field missing or empty”``` in a monorepo, make sure ```pnpm-workspace.yaml``` defines the packages paths like this.
 
 ## Terminal Commands
 ### 
