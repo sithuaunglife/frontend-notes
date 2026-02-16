@@ -26,20 +26,22 @@ src/
 │  ├─ error.tsx
 │  │
 │  ├─ dashboard/
+│  │  ├─ customer/     
+│  │  │  └─ page.tsx              
 │  │  ├─ layout.tsx                  # Dashboard shell (sidebar, header)
 │  │  ├─ page.tsx                    # /dashboard
 │  │  │
 │  │  ├─ profile/
 │  │  │  └─ page.tsx                 # /dashboard/profile
 │  │  │
-│  │  ├─ appearance/
-│  │  │  └─ page.tsx                 # /dashboard/appearance
+│  │  └─ appearance/
+│  │     └─ page.tsx                 # /dashboard/appearance
 │  │
 │  └─ auth/
 │     ├─ login/page.tsx
 │     └─ register/page.tsx
 │
-├─ modules/ or features/                         # DOMAIN LOGIC (how)
+├─ modules/ or features/             # DOMAIN LOGIC (how)
 │  ├─ home/                          # HOME FEATURE
 │  │  ├─ components/
 │  │  │  ├─ HomePage.tsx             # Main home UI
@@ -51,6 +53,23 @@ src/
 │  │  │  └─ home.store.ts
 │  │  └─ services/
 │  │     └─ home.api.ts
+│  │
+│  ├─ customer/
+│  │  ├─ components/                  
+│  │  │     ├─ create/
+│  │  │     │  └─ CustomerCreateForm.tsx
+│  │  │     ├─ detail/            
+│  │  │     │  └─ CustomerDetailCard.tsx
+│  │  │     ├─ edit/  
+│  │  │     │  └─ CustomerEditForm.tsx
+│  │  │     └─ index/  
+│  │  │        └─ CustomerSection.tsx
+│  │  ├─ hooks/
+│  │  │  └─ useCustomer.ts
+│  │  ├─ store/
+│  │  │  └─ customer.store.ts
+│  │  └─ services/
+│  │     └─ customer.api.ts
 │  │
 │  ├─ dashboard/
 │  │  ├─ components/
@@ -131,3 +150,6 @@ src/
 ```
 - app/ → routing & layouts only (no business logic), features/ → domain-based UI + logic (self-contained), components/ui → shadcn primitives (design system), styles/ → global CSS & themes, stores/ → app-wide state, services/ → cross-feature APIs, lib/ → utilities & helpers.
 - If stores, services, types, or hooks are reused across features or modules, they live outside; if they belong to a single feature, they live inside that feature.
+- create/detail/edit/index are CRUD and are features.
+- If components don’t talk to an API, no need to use create/detail/edit/index structure. Just put normal components under feature/components.
+- Use Noun + Verb + UI type naming (e.g., CustomerCreateForm) for feature-specific components.
