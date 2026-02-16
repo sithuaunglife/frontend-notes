@@ -39,7 +39,7 @@ src/
 │     ├─ login/page.tsx
 │     └─ register/page.tsx
 │
-├─ features/                         # DOMAIN LOGIC (how)
+├─ modules/ or features/                         # DOMAIN LOGIC (how)
 │  ├─ home/                          # HOME FEATURE
 │  │  ├─ components/
 │  │  │  ├─ HomePage.tsx             # Main home UI
