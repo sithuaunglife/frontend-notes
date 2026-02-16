@@ -55,7 +55,7 @@ src/
 │  │  └─ services/
 │  │     └─ home.api.ts
 │  │
-│  ├─ customer/
+│  ├─ customer/ or customers/
 │  │  ├─ components/                  
 │  │  │     ├─ create/
 │  │  │     │  └─ CustomerCreateForm.tsx
@@ -157,3 +157,5 @@ src/
 - services files (e.g, authService.ts) are written in camelCase.
 - types files (e.g, UserTypes.ts) are written in PascalCase since they define interfaces or types.
 - hooks files (e.g, useCustomerCreate.ts) need to use ```use``` since they define custom React hooks. stores files also use ```use``` too since they are implemented as hook-based stores (e.g., with Zustand).
+- Use plural nouns for route paths (e.g., /customers) to represent resource collections and keep routing consistent.
+- MV = Model + View (data layer and UI layer), while VM = ViewModel, which acts as the logic layer connecting data to the UI (often implemented as hooks in React).
