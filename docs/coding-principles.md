@@ -25,17 +25,18 @@ src/
 │  ├─ loading.tsx
 │  ├─ error.tsx
 │  │
-│  ├─ dashboard/
-│  │  ├─ customer/     
-│  │  │  └─ page.tsx              
+│  ├─ dashboard/     
 │  │  ├─ layout.tsx                  # Dashboard shell (sidebar, header)
 │  │  ├─ page.tsx                    # /dashboard
 │  │  │
 │  │  ├─ profile/
 │  │  │  └─ page.tsx                 # /dashboard/profile
 │  │  │
-│  │  └─ appearance/
-│  │     └─ page.tsx                 # /dashboard/appearance
+│  │  ├─ appearance/                 # /dashboard/appearance
+│  │  │  └─ page.tsx         
+│  │  │
+│  │  └─ customer/
+│  │     └─ page.tsx                
 │  │
 │  └─ auth/
 │     ├─ login/page.tsx
@@ -139,8 +140,8 @@ src/
 │  └─ settings.store.ts
 │
 ├─ services/                         # GLOBAL SERVICES
-│  ├─ auth.service.ts
-│  └─ upload.service.ts
+│  ├─ authService.ts
+│  └─ uploadService.ts
 │
 ├─ hooks/                            # SHARED HOOKS
 │  └─ useDebounce.ts
@@ -152,4 +153,7 @@ src/
 - If stores, services, types, or hooks are reused across features or modules, they live outside; if they belong to a single feature, they live inside that feature.
 - create/detail/edit/index are CRUD and are features.
 - If components don’t talk to an API, no need to use create/detail/edit/index structure. Just put normal components under feature/components.
-- Use Noun + Verb + UI type naming (e.g., CustomerCreateForm) for feature-specific components.
+- Use Noun + Verb + UI type naming (e.g., CustomerCreateForm.tsx) for feature-specific components.
+- services files (e.g, authService.ts) are written in camelCase.
+- types files (e.g, UserTypes.ts) are written in PascalCase since they define interfaces or types.
+- hooks files (e.g, useCustomerCreate.ts) need to use ```use``` since they define custom React hooks. stores files also use ```use``` too since they are implemented as hook-based stores (e.g., with Zustand).
