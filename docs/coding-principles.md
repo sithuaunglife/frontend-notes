@@ -14,7 +14,11 @@
 - Anti-virus can block programming relative package, library and activity.
 - Syntax is like muscle memory. You don’t need to feel guilty if you can’t remember it. Muscle memory is built through repeated coding and constant reference. It’s similar to driving a car or playing an RTS game: once you’ve done it enough times, you no longer think about every action. You simply act. Programming works the same way. You don’t need to memorize syntax; you let muscle memory handle it and focus on understanding what the syntax does. If you forget something, you can always reference your notes or use AI.
 - Muscle memory emerges unconsciously through repeated, practice.
-
+- Model (M). This is your data & business layer. Usually: services/, types/, stores/ (zustand), validation logic. This layer: Talks to backend, Knows business rules, Doesn’t care about UI.
+- View (V). This is your UI like ```CustomerTable.tsx``` ```CustomerForm.tsx``` ```Modal.tsx```. It: Renders data, Calls functions, Doesn’t know how API works internally. It just says: ```const { customers } = useCustomerList()```.
+- ViewModel (VM). This is the bridge. The brain between View and Model. In React world? It’s your custom hooks. Example: ```useCustomerList.ts``` ```useCustomerCreate.ts```. Inside that hook: Call service, Handle loading, Handle error, Transform data, Connect zustand, Then the View just consumes it. That hook = ViewModel.
+- Separation of concerns is important.
+ 
 ## Syntax
 **Next.js folder structure**
 ```css 
@@ -48,73 +52,52 @@ src/
 │  │  │  ├─ HomePage.tsx             # Main home UI
 │  │  │  ├─ HeroSection.tsx
 │  │  │  └─ FeatureList.tsx
-│  │  ├─ hooks/
-│  │  │  └─ useHome.ts
-│  │  ├─ store/
-│  │  │  └─ home.store.ts
-│  │  └─ services/
-│  │     └─ home.api.ts
+│  │  └─ hooks/
+│  │     └─ useHome.ts
 │  │
 │  ├─ customer/ or customers/
 │  │  ├─ components/                  
 │  │  │     ├─ create/
 │  │  │     │  └─ CustomerCreateForm.tsx
+│  │  │     ├─ delete/
+│  │  │     │  └─ CustomerDeleteBtn.tsx
 │  │  │     ├─ detail/            
 │  │  │     │  └─ CustomerDetailCard.tsx
 │  │  │     ├─ edit/  
 │  │  │     │  └─ CustomerEditForm.tsx
-│  │  │     └─ index/  
-│  │  │        └─ CustomerSection.tsx
-│  │  ├─ hooks/
-│  │  │  └─ useCustomer.ts
-│  │  ├─ store/
-│  │  │  └─ customer.store.ts
-│  │  └─ services/
-│  │     └─ customer.api.ts
+│  │  │     └─ list/  
+│  │  │        └─ CustomerListSection.tsx
+│  │  │        └─ CustomerTable.tsx
+│  │  └─ hooks/
+│  │     └─ useCustomer.ts
 │  │
 │  ├─ dashboard/
 │  │  ├─ components/
 │  │  │  ├─ AppSidebar.tsx
 │  │  │  └─ DashboardHeader.tsx
-│  │  ├─ hooks/
-│  │  │  └─ useSidebar.ts
-│  │  ├─ store/
-│  │  │  └─ sidebar.store.ts
-│  │  └─ services/
-│  │     └─ dashboard.api.ts
+│  │  └─ hooks/
+│  │     └─ useSidebar.ts
 │  │
 │  ├─ profile/
 │  │  ├─ components/
 │  │  │  ├─ ProfileForm.tsx
 │  │  │  ├─ DeleteUser.tsx
 │  │  │  └─ PageHeader.tsx
-│  │  ├─ hooks/
-│  │  │  └─ useProfile.ts
-│  │  ├─ store/
-│  │  │  └─ profile.store.ts
-│  │  └─ services/
-│  │     └─ profile.api.ts
+│  │  └─ hooks/
+│  │     └─ useProfile.ts
 │  │
 │  ├─ appearance/
 │  │  ├─ components/
 │  │  │  └─ ThemeSelector.tsx
-│  │  ├─ hooks/
-│  │  │  └─ useTheme.ts
-│  │  ├─ store/
-│  │  │  └─ theme.store.ts
-│  │  └─ services/
-│  │     └─ appearance.api.ts
+│  │  └─ hooks/
+│  │     └─ useTheme.ts
 │  │
 │  └─ auth/
 │     ├─ components/
 │     │  ├─ LoginForm.tsx
 │     │  └─ RegisterForm.tsx
-│     ├─ hooks/
-│     │  └─ useAuth.ts
-│     ├─ store/
-│     │  └─ auth.store.ts
-│     └─ services/
-│        └─ auth.api.ts
+│     └─ hooks/
+│        └─ useAuth.ts
 │
 ├─ components/
 │  └─ ui/                            # DESIGN SYSTEM (shadcn)
