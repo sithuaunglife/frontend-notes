@@ -21,6 +21,11 @@
 - There is engineering guided vibe coding.
 - Vibe coding maybe standard in future.
 - Schema → Type, Hook → Logic, Component → UI
+- Good file architecture is very important. Thanks to separation of concerns, each file has a clear responsibility, making it easier and faster to locate, understand, and maintain code.
+- The ```services``` folder is responsible for API communication and external data handling, not UI logic.
+- The ```types``` folder is responsible for storing shared TypeScript types and interfaces used across the application, including inferred schema types and payload definitions.
+- The ```hooks``` folder is responsible for encapsulating reusable logic, including state management, side effects, and business logic. It may use schemas and types, but its main purpose is logic, not type storage.
+- The ```components``` folder is responsible for rendering UI and receiving data through props. It focuses on presentation, not business logic.
  
 ## Syntax
 **Next.js folder structure**
@@ -65,7 +70,8 @@ src/
 │  │  │     ├─ delete/
 │  │  │     │  └─ CustomerDeleteBtn.tsx
 │  │  │     ├─ detail/            
-│  │  │     │  └─ CustomerDetailCard.tsx
+│  │  │     │  ├─ CustomerDetailCard.tsx
+│  │  │     │  └─ CustomerDetailCardLoader.tsx     # Skeleton Loader 
 │  │  │     ├─ edit/  
 │  │  │     │  └─ CustomerEditForm.tsx
 │  │  │     └─ list/  

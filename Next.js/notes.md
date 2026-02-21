@@ -23,6 +23,7 @@
 - Hydration errors usually happen when interactive shadcn components (dialogs, dropdowns, comboboxes) are rendered on the server, so the page or section must be a Client Component.
 - In Next.js, files named page.tsx must export a Page() component to register the route.
 - API connection requires .env.local because NEXT_PUBLIC_* variables (e.g. NEXT_PUBLIC_BASE_URL=<API_URL>) are injected at build time and are unavailable without explicit definition.
+- In edit or detail routes, a dynamic parameter such as an ID or slug ```[id]``` is required to uniquely identify which resource should be displayed or modified.
 
 ## Syntax
 **Route Groups – ()**
