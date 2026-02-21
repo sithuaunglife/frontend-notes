@@ -9,6 +9,7 @@
 - Most shared domain types (like User) are defined once and connected through the Zustand store, so components can reuse them without redefining the types.
 - A generic type acts as a placeholder that adapts to whatever specific type is provided to it when used.
 - ```<T>``` is a generic type parameter that serves as a placeholder and becomes whatever specific type is passed to it when the generic is used.
+- If a field exists in the Zod schema, it must: exist in the UI (Controller / input), exist in defaultValues, exist in the TypeScript type, use the exact same name everywhere. If the schema requires a field that is not rendered in the UI: Validation will fail, onSubmit will not run, It will feel like the button is “not clickable”.
 
 ## Syntax
 **Void**

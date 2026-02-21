@@ -33,6 +33,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - Vite Server runs on port 5173 by default.
 - Controller is from react hook form. Controller is used to integrate controlled or custom components (date pickers, calendars, UI libraries) with React Hook Form when register cannot be used.
 - useEffect handles custom side effects, while Controller handles custom UI components.
+- You can't declare inside JSX.
 
 ## Syntax
 **JSX → Under the Hood**

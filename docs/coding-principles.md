@@ -18,6 +18,9 @@
 - View (V). This is your UI like ```CustomerTable.tsx``` ```CustomerForm.tsx``` ```Modal.tsx```. It: Renders data, Calls functions, Doesn’t know how API works internally. It just says: ```const { customers } = useCustomerList()```.
 - ViewModel (VM). This is the bridge. The brain between View and Model. In React world? It’s your custom hooks. Example: ```useCustomerList.ts``` ```useCustomerCreate.ts```. Inside that hook: Call service, Handle loading, Handle error, Transform data, Connect zustand, Then the View just consumes it. That hook = ViewModel.
 - Separation of concerns is important.
+- There is engineering guided vibe coding.
+- Vibe coding maybe standard in future.
+- Schema → Type, Hook → Logic, Component → UI
  
 ## Syntax
 **Next.js folder structure**
@@ -100,13 +103,15 @@ src/
 │        └─ useAuth.ts
 │
 ├─ components/
-│  └─ ui/                            # DESIGN SYSTEM (shadcn)
-│     ├─ button.tsx
-│     ├─ input.tsx
-│     ├─ label.tsx
-│     ├─ dropdown-menu.tsx
-│     ├─ scroll-area.tsx
-│     └─ sidebar.tsx
+│  ├─ ui/                            # DESIGN SYSTEM (shadcn)
+│  │  ├─ button.tsx
+│  │  ├─ input.tsx
+│  │  ├─ label.tsx
+│  │  ├─ dropdown-menu.tsx
+│  │  ├─ scroll-area.tsx
+│  │  └─ sidebar.tsx
+│  │
+│  └─ TablePagination.tsx            # Custom Centralized Component     
 │
 ├─ styles/                           # GLOBAL STYLES
 │  ├─ globals.css

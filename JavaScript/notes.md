@@ -199,6 +199,34 @@ fetch(`${baseUrl}/fruits`)
 - This code is used to fetch data from an API (JSON Server or backend) and log the response data to the console.
 - It asks the server for fruit data and prints it in the browser console.
 
+
+**map()**
+```js
+const numbers = [1, 2, 3];
+const doubled = numbers.map((n) => {
+  return n * 2;
+});
+// doubled → [2, 4, 6]
+```
+- numbers = [1, 2, 3]
+- n represents each value inside numbers
+- n will be 1, then 2, then 3
+
+
+**Storing values in map()**
+```js
+const numbers = [1, 2, 3];
+const doubled = numbers.map(el => {
+  el = el * 2;
+  return el;
+});
+```
+- map() does not automatically store calculated values.
+- map() only stores what you return.
+- If you calculate something but don’t return it, the value is thrown away.
+- If you want to return the calculated value, you must return the result of the calculation. Writing ```el * 2; return el;``` will return the original value because the calculated result was never returned. You can either assign and return it ```el = el * 2; return el;``` or simply return the calculation directly ```return el * 2;```.
+- The original array is not modified.
+
 ## Terminal Commands
 ### Terminal hotkeys
 
