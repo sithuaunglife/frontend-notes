@@ -52,6 +52,8 @@ An implicit-return arrow function can return only one expression.
 - In the terminal, endpoints are links.
 - You can use DOM manipulation with JSON data.
 - A function can only use: Variables inside itself, Variables from outer scope, Variables passed as parameters, Values returned from other functions.
+- Destructuring ```{ }``` appears on the left side of ```=``` as a pattern to extract values.
+- Destructuring replaces the variable name — it does not sit beside it.
 
 ## Syntax
 **Object literal**

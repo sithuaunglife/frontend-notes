@@ -7,14 +7,16 @@
 ## Syntax
 **Parts of the link**
 ```js
-"https//www.google.com/search?q=hello"
+"https://www.google.com/search?q=hello&filter=fruit"
 ```
 - https is protocol
 - www.google.com is host (domain)
-- search is path
-- ?q=hello is query string
+- /search is path
+- ?q=hello&filter=fruit is query string
 - q is query parameter key
 - hello is query parameter value
+- & is separator between query parameters
+- If backend decide q as filter word the word behind ? for example in this case q become a filter.
 
 
 **Heading 2**

@@ -24,6 +24,8 @@
 - In Next.js, files named page.tsx must export a Page() component to register the route.
 - API connection requires .env.local because NEXT_PUBLIC_* variables (e.g. NEXT_PUBLIC_BASE_URL=<API_URL>) are injected at build time and are unavailable without explicit definition.
 - In edit or detail routes, a dynamic parameter such as an ID or slug ```[id]``` is required to uniquely identify which resource should be displayed or modified.
+- If you want ```useParams()``` to return something, you must have a dynamic segment wrapped in [] in your route when using Next.js.
+- useSearchParams() reads query string values from the URL (the part after ?).
 
 ## Syntax
 **Route Groups – ()**

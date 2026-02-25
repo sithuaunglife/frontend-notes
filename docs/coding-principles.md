@@ -26,6 +26,10 @@
 - The ```types``` folder is responsible for storing shared TypeScript types and interfaces used across the application, including inferred schema types and payload definitions.
 - The ```hooks``` folder is responsible for encapsulating reusable logic, including state management, side effects, and business logic. It may use schemas and types, but its main purpose is logic, not type storage.
 - The ```components``` folder is responsible for rendering UI and receiving data through props. It focuses on presentation, not business logic.
+- BFF (Backend for Frontend) is a backend layer designed specifically for one frontend, focus more on backend, understand UI needs deeply, understand backend services deeply, think across layers. Their mindset is very similar to full-stack thinking but they are still writing backend code.
+- List hook (useCategoryList) fetches and manages multiple items. Detail hook (useCategoryDetail) fetches and manages one single item.
+- When learning, isolate one concept (like useSearchParams) and focus only on understanding what it’s doing instead of thinking about everything at once. Zoom in and isolate that one thing like useSearchParams to understand what it is trying to do, and ignore other parts and syntax. After understanding what it is trying to do, zoom out and reconnect it back to the system. Don’t try to think about everything at once — it will overload your brain and cause confusion and frustration. Break problems into pieces, understand each piece, then reconnect the pieces.
+- Backend defines the API contract, but frontend can rename fields after fetching the data.
  
 ## Syntax
 **Next.js folder structure**
