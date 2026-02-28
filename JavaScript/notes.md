@@ -54,6 +54,7 @@ An implicit-return arrow function can return only one expression.
 - A function can only use: Variables inside itself, Variables from outer scope, Variables passed as parameters, Values returned from other functions.
 - Destructuring ```{ }``` appears on the left side of ```=``` as a pattern to extract values.
 - Destructuring replaces the variable name — it does not sit beside it.
+- A parameter is just a variable that receives something.
 
 ## Syntax
 **Object literal**
@@ -228,6 +229,34 @@ const doubled = numbers.map(el => {
 - If you calculate something but don’t return it, the value is thrown away.
 - If you want to return the calculated value, you must return the result of the calculation. Writing ```el * 2; return el;``` will return the original value because the calculated result was never returned. You can either assign and return it ```el = el * 2; return el;``` or simply return the calculation directly ```return el * 2;```.
 - The original array is not modified.
+
+
+**Destructuring using {}**
+```js
+printUser({
+  name: "Sithu",
+  address: {
+    city: "Yangon",
+    zip: 12345,
+    postal: {
+      zip: "001",
+      suite: "A1"
+    }
+  }
+});
+
+function printUser({
+  name,
+  address: {
+    city,
+    zip,
+    postal: { zip: postalZip, suite }
+  }
+}) {
+  console.log(name, city, zip, postalZip, suite);
+}
+```
+- Once you destructure you can use destructured value directly.
 
 ## Terminal Commands
 ### Terminal hotkeys

@@ -13,3 +13,33 @@
 
 ---
 
+## 26-February-2026
+
+### Today
+- Reviewed my teacher CRUD
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos to learn
+
+---
+
+## 27-February-2026
+
+### Today
+- Reviewed object destructure deeply while reviewing zhangliang mala pos
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos to learn
+
+---
+
+## 28-February-2026
+
+### Today
+- Reviewed Typescript <T> generic annotation and : type annotation for their use case
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos at Category Module to learn more
+
+
+

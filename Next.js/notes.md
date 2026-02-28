@@ -26,6 +26,8 @@
 - In edit or detail routes, a dynamic parameter such as an ID or slug ```[id]``` is required to uniquely identify which resource should be displayed or modified.
 - If you want ```useParams()``` to return something, you must have a dynamic segment wrapped in [] in your route when using Next.js.
 - useSearchParams() reads query string values from the URL (the part after ?).
+- If using ```href``` in Link you don't need to ```router.push()``` manually Next.js handles client-side navigation automatically for you.
+- All values coming from the URL (query strings or route params) are always strings. Convert them to the correct type in your application if needed.
 
 ## Syntax
 **Route Groups – ()**
