@@ -16,6 +16,7 @@
 - ```:``` just says - This variable thing has this type. ```<T>``` just says - This thing is generic and needs a type supplied.
 - Typescript is like a security guard checking codes not turn the code into something.
 - TypeScript mainly improves DX (Developer Experience).
+- TypeScript is telling the data that it must be this shape not passing value.
 
 ## Syntax
 **Void**

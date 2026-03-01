@@ -155,6 +155,15 @@ export default function LayoutShell({
 ```
 - ```children``` must be explicitly wrapped and passed.
 
+
+**Prop passing**
+```ts
+data.data.map((el: CategoryDetailType) => (
+  <CategoryTableRow key={el.id} category={el} />
+))
+```
+- ```category={el}``` category comes from props and it is defined by child
+
 ## Terminal Commands
 ### Day.js
 

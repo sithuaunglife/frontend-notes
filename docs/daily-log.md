@@ -40,6 +40,17 @@
 
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos at Category Module to learn more
+- Find out the category={el} besides key={id} that is it wrapper or not
 
+---
+
+## 01-March-2026
+
+### Today
+- Reviewed functions, category={el} is just child prop passing not wrapper
+- Understood the data pipeline
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos at Category Module to learn more
 
 
