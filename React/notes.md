@@ -25,6 +25,8 @@ JSX only allows expressions (things that produce values), not statements like if
 - Components push data into Zustand, and other components read that data by subscribing to the store.
 - A component watches Zustand, and if the subscribed state changes, the component re-renders.
 - In React Hook Form, a resolver is a function that lets an external validation library (like Zod) validate form data and return errors in the format React Hook Form understands.
+- ```formData``` validate form values.
+- ```formData``` is simply the collected and validated data from your form at the moment the user clicks submit. 
 - Inside JSX you can no longer declare variables.
 - React follows a simple rule: JSX treats lowercase tags as strings (HTML elements), while PascalCase identifiers are treated as custom React components.
 - ```useEffect``` runs after React finishes rendering the UI.
@@ -34,6 +36,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - Controller is from react hook form. Controller is used to integrate controlled or custom components (date pickers, calendars, UI libraries) with React Hook Form when register cannot be used.
 - useEffect handles custom side effects, while Controller handles custom UI components.
 - You can't declare inside JSX.
+- Data sometimes come from prop passing after mapping. Example: ```data.data.map((el: CategoryDetailType)=>(<CategoryTableRow key={el.id} category={el} />)``` category={el} is data passing.
 
 ## Syntax
 **JSX → Under the Hood**
@@ -163,6 +166,43 @@ data.data.map((el: CategoryDetailType) => (
 ))
 ```
 - ```category={el}``` category comes from props and it is defined by child
+
+
+**payload**
+```ts
+export const categoryCreateFormSchema = z.object({
+  title: z.string().min(1, "Title is required"),
+  stay_here: z.boolean(),
+  confirm: z.boolean().refine((val) => val === true, {
+    message: "You must check to create new category",
+    path: ["confirm"],
+  }),
+});
+
+function useCategoryCreate() {
+  const form = useForm<CategoryCreateFormValues>({
+    resolver: zodResolver(categoryCreateFormSchema),
+    defaultValues: {
+      title: "",
+      stay_here: false,
+      confirm: false,
+    },
+  });
+
+  const router = useRouter();
+
+  const onSubmit = async (formData: CategoryCreateFormValues) => {
+    try {
+      const { stay_here, confirm, ...payload } = formData;
+      const res = await storeCategory(payload);
+      const json = await res.json();
+```
+- ``` const { stay_here, confirm, ...payload } = formData;``` this is the data I am sending to backend
+- ```...payload``` can be renamed. It is a variable 
+- ```...payload``` is born from ```formData```
+- ```const res = await storeCategory(payload);``` it is sending data from frontend to backend
+- ```formData``` is from react hook form
+- Because resolver connects Zod validation to React Hook Form, I could reuse the values from schema above
 
 ## Terminal Commands
 ### Day.js

@@ -58,6 +58,7 @@ An implicit-return arrow function can return only one expression.
 - ```?.``` is optional chaining if data exists it gives data, if no data it prevents crash.
 - A function exists after building it. The function will start working only after you call it and pass parameters into it. When parameters are passed in, the function runs. After it finishes running, it stops working. The function itself still exists, but the temporary values inside it disappear. You need to use return to send the processed value out of the function. If you want to store that value, you need to use a variable like const as a box to hold it. It is like a machine — it works when you input something into it. After it finishes processing, it stops. If you want the finished product from the machine, you need to return it, and if you want to keep it, you need a box to store it.
 - In function in parameter with machine analogy if the machine expects material but you give nothing: In JavaScript → it receives undefined, In TypeScript → the supervisor stops you, With default value → machine uses backup material.
+- You can directly destructure in function parameter using ```const x = ({ category, title }) => {console.log(category, title)}```. This is nested destructuring in parameter ```const x({category: {id, title}}) => {console.log(id, title)}```.
 
 ## Syntax
 **Object literal**

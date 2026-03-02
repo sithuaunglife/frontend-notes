@@ -53,4 +53,17 @@
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos at Category Module to learn more
 
+---
+
+## 02-March-2026
+
+### Today
+- Understood data origins, data origin come from map prop passing, payload values data origin come from formData,  
+- Understood more about typescript types. 
+- Understood the data pipeline more
+- Becoming to see more separately with typescript annotations and objects.
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos at Category Module of categoryService.ts to learn more about CRUD
+
 

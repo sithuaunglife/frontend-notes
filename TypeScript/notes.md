@@ -17,6 +17,11 @@
 - Typescript is like a security guard checking codes not turn the code into something.
 - TypeScript mainly improves DX (Developer Experience).
 - TypeScript is telling the data that it must be this shape not passing value.
+- Resolver is the bridge between React Hook Form and Zod schema.
+- Without resolver it is TypeScript only (compile-time safety). With resolver Runtime validation happens.
+- You can create real data in UI. When a user: types into an input, clicks a checkbox, selects from a dropdown that creates real JavaScript values in memory. When I use data with form field it create real data.
+- Payload is the actual data being sent. It is usually an object. Example: {id: "1", category: "juice"} this object is the payload.
+- Every time you see ```type``` key remember it is type checking and only exist at compile time only. After compiling it is finish. It is not passing value. 
 
 ## Syntax
 **Void**
@@ -113,6 +118,18 @@ function CategoryTableRow({ category }: CategoryTableRowProps) {
 - You can type your data in three ways.
 - Type at the source or component level, not inside .map() unless necessary.
 
+
+**Omit**
+```ts
+export type CategoryStorePayloadValues = Omit<
+  CategoryCreateFormValues,
+  "confirm" | "stay_here"
+>;
+```
+- Omit<Type, Keys>
+- From CategoryCreateFormValues remove "confirm" and "stay_here" at type level only
+- Creates a new type without those fields
+- Does not remove values at runtime
 
 ## Terminal Commands
 ### Terminal tool name 1
