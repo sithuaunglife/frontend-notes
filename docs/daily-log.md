@@ -66,4 +66,14 @@
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos at Category Module of categoryService.ts to learn more about CRUD
 
+---
+
+## 03-March-2026
+
+### Today
+- Understood more about method, headers, body in CRUD
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos at Category Module of categoryService.ts to learn more about CRUD
+
 
