@@ -76,4 +76,15 @@
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos at Category Module of categoryService.ts to learn more about CRUD
 
+---
+
+## 04-March-2026
+
+### Today
+- Review about VPC, Server Scaling, Web hook, Coolify, Digital Ocean most about backend infrastructure
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos at Category Module of categoryService.ts to learn more about CRUD
+
+
 
