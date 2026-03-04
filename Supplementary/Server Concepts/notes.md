@@ -5,11 +5,9 @@
 - Server respond to Client.
 - Vertical scaling (Scale Up ⬆, more CPU / RAM) increase power, 1 strong machine, Limited growth, single Point of Failure, simple architecture and risky if crash.
 - Horizontal scaling (Scale Out ➡, Server A | Server B | Server C) increase instances, many machines, scalable, fault tolerant (if designed correctly), needs load balancer and safer.
-- VPC (Virtual Private Cloud) is your private network in the cloud.
-- After connecting GitHub webhook → Coolify automatically builds and deploys (CI/CD).
-- Webhook does: GitHub notifies Coolify on push, Coolify rebuilds the app, Coolify redeploys automatically. That whole automation pipeline is CI/CD.
-- Proxy is traffic router.
 - Horizontal scaling reduces workload by sharing traffic across multiple servers.
+- VPC (Virtual Private Cloud) is your private network in the cloud.
+- Proxy is traffic router.
 
 ## Syntax
 **Parts of the link**

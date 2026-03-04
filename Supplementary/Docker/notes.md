@@ -7,6 +7,7 @@
 - Volumes sync files into the container, hot reload is done by the dev server.
 - Without volumes, hot reload does not work in Docker dev environments.
 - <docker-compose.yml> is used to define and run multiple Docker containers together.
+- If building locally, you do not need `docker login`. If building and pushing to Docker Hub or another registry, you must first run `docker login`, then use `docker push username/myapp:latest` to push the built image.
 
 ## Syntax
 **Heading**
@@ -44,6 +45,19 @@ docker compose down
 docker compose up --build
 ```
 - It run the docker compose and build. ```--build``` is needed when image-related things changed. 
+
+
+**Multi-arch build (AMD64 target)**
+```bash
+docker buildx build \
+  --platform linux/amd64 \
+  -t myapp:latest \
+  --push .
+```
+- ```--push``` → sends directly to registry
+- ```-t``` already tags the image
+- useful for CI/CD
+- common in Coolify workflows
 
 ## Tools
 - Notes
