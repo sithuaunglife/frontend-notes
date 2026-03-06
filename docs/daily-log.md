@@ -86,5 +86,25 @@
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos at Category Module of categoryService.ts to learn more about CRUD
 
+---
+
+## 05-March-2026
+
+### Today
+- Review about difference between use case of generic ```<T>``` and types ```:``` annotations.
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos at Category Module of categoryService.ts to learn more about CRUD
+
+---
+
+## 06-March-2026
+
+### Today
+- Understood more about difference between use case of generic ```<T>``` and types ```:``` annotations.
+
+### Tomorrow
+- Review my teacher infrastructure,DevOps, VPS of zhangliang mala pos
+
 
 

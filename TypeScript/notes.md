@@ -14,6 +14,10 @@
 - Use typescript annotation when typeScript cannot infer type, defining component props / function contracts, Inference is too loose (any, empty array).
 - In typescript - ```:``` → type a variable, ```<T>``` → configure a generic function.
 - ```:``` just says - This variable thing has this type. ```<T>``` just says - This thing is generic and needs a type supplied.
+- ```:``` is for declaring a variable ```id: number``` / parameter / return ```(): Promise<Response>``` type.
+- ```<T>``` defines a flexible type placeholder that values in the function will become, while ```:``` enforces that parameters and returns must follow a specific type or shape.
+- If the generic already has a concrete type, it must follow that type. Example: ```Promise<Response>```. Here ```Response``` is already defined, so the Promise must resolve to a `Response`. But with: ```Promise<T>``` ```T``` is a placeholder type that is not defined yet. It will be replaced later with a specific type when the function is used.
+- ```<T>``` declare placeholder, ```Promise<T>``` generic container, ```Promise<Response>``` container filled with Response.
 - Typescript is like a security guard checking codes not turn the code into something.
 - TypeScript mainly improves DX (Developer Experience).
 - TypeScript is telling the data that it must be this shape not passing value.
@@ -21,7 +25,7 @@
 - Without resolver it is TypeScript only (compile-time safety). With resolver Runtime validation happens.
 - You can create real data in UI. When a user: types into an input, clicks a checkbox, selects from a dropdown that creates real JavaScript values in memory. When I use data with form field it create real data.
 - Payload is the actual data being sent. It is usually an object. Example: {id: "1", category: "juice"} this object is the payload.
-- Every time you see ```type``` key remember it is type checking and only exist at compile time only. After compiling it is finish. It is not passing value. 
+- Every time you see ```type``` key remember it is type checking and only exist at compile time only. After compiling it is finish. It is not passing value.
 
 ## Syntax
 **Void**
