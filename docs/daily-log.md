@@ -106,5 +106,15 @@
 ### Tomorrow
 - Review my teacher infrastructure,DevOps, VPS of zhangliang mala pos
 
+---
+
+## 07-March-2026
+
+### Today
+- Understood more about backend infrastructure, VPS, RSA key, Public and Private key, server scaling
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos at Category Module to learn more
+
 
 

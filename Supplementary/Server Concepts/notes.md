@@ -7,7 +7,16 @@
 - Horizontal scaling (Scale Out ➡, Server A | Server B | Server C) increase instances, many machines, scalable, fault tolerant (if designed correctly), needs load balancer and safer.
 - Horizontal scaling reduces workload by sharing traffic across multiple servers.
 - VPC (Virtual Private Cloud) is your private network in the cloud.
+- A VPC is a private network that isolates resources from the public internet and allows them to communicate securely with each other.
+- VPC provides network isolation, while horizontal scaling handles increased traffic. They are not directly related.
+- A Droplet (Digital Ocean) is a compute server, while networking (like VPC) defines how Droplets and other resources communicate.
+- In Cloudflare ```@``` represents the root domain, ```*``` represents a wildcard subdomain, and a custom name like ```cloud``` can point to a specific service such as Coolify.
+- The part directly before ```.com``` (ygnsh.com) is the root domain (also called the second-level domain).
+- To identify the root domain and subdomains, read the domain from right to left. Example: ```"https://test.apple.ygnsh.com"``` ygnsh is root domain, apple is subdomain, test is sub-subdomain.
 - Proxy is traffic router.
+- When one server wants to connect to another server using SSH, the connecting server must have a private key, and the destination server must have the corresponding public key.
+- You can use a terminal command to generate your own RSA SSH key.
+- App server is the server that actually runs the application. You can have multiple app servers. Builder server is used to build the application, not to run it. Usually only one builder is needed. Coolify server is the control panel or orchestrator that manages deployments.
 
 ## Syntax
 **Parts of the link**
@@ -49,13 +58,14 @@
 - ```Accept``` is more about negotiation than requirement
 
 ## Terminal Commands
-### Terminal tool name 1
+### SSH
 
-**Heading 1**
+**Chmod**
 ```bash
- <!-- code here -->
+chmod 700
 ```
-- Description
+- It is permission setting.
+- It means the owner has full access, and everyone else has no access.
 
 
 **Heading 2**
