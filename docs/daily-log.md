@@ -116,5 +116,15 @@
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos at Category Module to learn more
 
+---
+
+## 08-March-2026
+
+### Today
+- Understood more about javascript object, async and promise, VS Code hover read
+
+### Tomorrow
+- Start building the minimalist, high tech, sleek, personal portfolio
+
 
 

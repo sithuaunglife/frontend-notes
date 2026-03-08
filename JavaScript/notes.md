@@ -35,6 +35,7 @@ An implicit-return arrow function can return only one expression.
 - JSON is a universal data format used as a bridge between different programming applications.
 - ```JSON.parse()``` converts JSON (text/string) into a JavaScript value (object or array).
 - ```JSON.stringify()``` converts JavaScript value (object or array) into a JSON (text/string).
+- If I want to work with the data, I use ```JSON.parse()``` to convert the JSON string into a JavaScript object. If I want to send data to the backend, I use ```JSON.stringify()``` to convert the JavaScript object into a JSON string.
 - Fake Store API is a mock REST API made for frontend practice.
 - Every usable API has documentation.
 - Even API users (frontend) must follow REST standards.
@@ -54,11 +55,13 @@ An implicit-return arrow function can return only one expression.
 - A function can only use: Variables inside itself, Variables from outer scope, Variables passed as parameters, Values returned from other functions.
 - Destructuring ```{ }``` appears on the left side of ```=``` as a pattern to extract values.
 - Destructuring replaces the variable name — it does not sit beside it.
+- ```const { name: username } = user;``` While destructuring the ```user``` object, take the name property and store it in a variable called ```username```.
 - A parameter is just a variable that receives something.
 - ```?.``` is optional chaining if data exists it gives data, if no data it prevents crash.
 - A function exists after building it. The function will start working only after you call it and pass parameters into it. When parameters are passed in, the function runs. After it finishes running, it stops working. The function itself still exists, but the temporary values inside it disappear. You need to use return to send the processed value out of the function. If you want to store that value, you need to use a variable like const as a box to hold it. It is like a machine — it works when you input something into it. After it finishes processing, it stops. If you want the finished product from the machine, you need to return it, and if you want to keep it, you need a box to store it.
 - In function in parameter with machine analogy if the machine expects material but you give nothing: In JavaScript → it receives undefined, In TypeScript → the supervisor stops you, With default value → machine uses backup material.
 - You can directly destructure in function parameter using ```const x = ({ category, title }) => {console.log(category, title)}```. This is nested destructuring in parameter ```const x({category: {id, title}}) => {console.log(id, title)}```.
+- ```Try...,catch``` need async function. If using promise style you need to use .catch().
 
 ## Syntax
 **Object literal**
@@ -261,6 +264,22 @@ function printUser({
 }
 ```
 - Once you destructure you can use destructured value directly.
+
+
+**Object Property Shorthand**
+```json
+const user = "John";
+const age = 23;
+
+const person = { user, age };
+
+// Equivalent to
+const person = {
+  user: user,
+  age: age
+};
+```
+- It is like ```{ variable } → { variable: variable }```
 
 ## Terminal Commands
 ### Terminal hotkeys

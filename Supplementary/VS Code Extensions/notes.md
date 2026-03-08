@@ -3,6 +3,7 @@
 ## Facts
 - Prettier format hotkey -> Windows / Linux: Shift + Alt + F, MacOS: Shift + Option + F
 - Live Server runs on port 5500 by default.
+- In VS Code, hovering over code shows helpful information such as: TypeScript type inference, function parameters and return types, variable types, documentation comments, sometimes the source definition of the code. The text inside () (for example (function), (const), (method)) indicates what kind of thing the identifier is.
 
 ## Syntax
 ### Arrow Function Snippets
