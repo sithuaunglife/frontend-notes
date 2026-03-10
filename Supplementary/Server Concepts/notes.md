@@ -17,6 +17,15 @@
 - When one server wants to connect to another server using SSH, the connecting server must have a private key, and the destination server must have the corresponding public key.
 - You can use a terminal command to generate your own RSA SSH key.
 - App server is the server that actually runs the application. You can have multiple app servers. Builder server is used to build the application, not to run it. Usually only one builder is needed. Coolify server is the control panel or orchestrator that manages deployments.
+- SSH key files are renameable. You can also set password or no password.
+- In this case ``` next  next.pub``` next is private key while next.pub is private key.
+- You can create multiple SSH keys and use them for different servers.
+- It is recommended not to access the server directly using the server IP in the browser. Instead, use the domain name because browsers can cache the IP and the server is usually meant to be accessed through a domain.
+- Set in VS Code settings: ```"remote.SSH.path": "C:\Windows\System32\OpenSSH\ssh.exe"``` to make SSH works correctly.
+- Space in username → can break some SSH clients.
+- Normal Version (Server-Dependent) The app requires the full project environment to run. Needs things like node_modules, package.json, and installed dependencies on the server.
+- Standalone Version (Self-Contained Build) The build packages the required runtime files together. Only a minimal set of dependencies is included. You don’t need to install the whole project on the server.
+- PM2 is a production process manager for Node.js applications.
 
 ## Syntax
 **Parts of the link**
@@ -57,6 +66,16 @@
 - ```Accept``` tells backend: “I expect JSON back.”, even without ```Accept``` it still works but it is better to use it always
 - ```Accept``` is more about negotiation than requirement
 
+
+**SSH Config (Windows Path With Spaces)**
+```config
+Host 178.128.126.239
+  HostName 178.128.126.239
+  User root
+  IdentityFile "C:/Users/HP 14s/.ssh/next"
+```
+- Quotes ```" "``` ensure the SSH client treats the entire path as one string.
+
 ## Terminal Commands
 ### SSH
 
@@ -68,20 +87,21 @@ chmod 700
 - It means the owner has full access, and everyone else has no access.
 
 
-**Heading 2**
-```bash
- <!-- code here -->
-```
-- Description
+- ```ssh-keygen``` generates a key pair on your own computer.
+- ```.ssh``` is a directory in Ubuntu that stores SSH-related files (such as SSH keys) in the user's home directory.
+- ```cat next.pub``` read the public key.
+- ```ssh -i ~/.ssh/next root@178.128.126.239``` This command connects to a remote server using a specific SSH private key.
+- ```chmod 600``` is private key permission.
+- ```chmod 644``` is public key permission.
 
+### PM2
 
-### Terminal tool name 2
-
-**Heading 1**
-```bash
- <!-- code here -->
-```
-- Description
+- ```npm install -g pm2``` install PM2.
+- ```pm2 start pnpm --name "next-app" -- start``` start PM2.
+- ```pm2 save``` save PM2.
+- ```pm2 startup``` start PM2.
+- ```pm2 start next-app``` start PM2. 
+- ```pm2 stop next-app``` stop PM2. 
 
 
 **Heading 2**

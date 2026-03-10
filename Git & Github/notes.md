@@ -15,6 +15,8 @@
 - Deleting on GitHub removes the remote branch, not the local one.
 - Adding ```github.dev``` to a GitHub repo URL opens the project in the web version of VS Code.
 - There is a Template repository setting on GitHub. If you enable it, you can use the repository as a template to create new repositories.
+- In GitHub Settings → Developer Settings → Personal Access Tokens, you can generate tokens for authentication. Use Tokens (classic).
+- You can't let other people know about your Personal access token. 
 
 ## Syntax
 **Heading**
@@ -52,7 +54,6 @@
 
 
 **Git Configuration**
-
 1.
 ```
 git config ---global init.defaultbranch main

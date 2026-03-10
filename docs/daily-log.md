@@ -126,5 +126,15 @@
 ### Tomorrow
 - Start building the minimalist, high tech, sleek, personal portfolio
 
+---
+
+## 10-March-2026
+
+### Today
+- Review web deployment infrastructure
+
+### Tomorrow
+- Review more about web deployment infrastructure
+
 
 
