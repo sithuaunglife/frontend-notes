@@ -1,7 +1,7 @@
 # Nginx
 
 ## Facts
-- Example
+- - After editing Nginx configuration files, run ```nginx -t``` to test the configuration, then reload Nginx to apply the changes.
 
 ## Syntax
 **Heading 1**
@@ -26,6 +26,8 @@
 - ```/var/www/html``` This is the default directory where Nginx stores website HTML files.
 - ```/var/www/``` This directory is commonly used to store website source code on the server.
 - ```sudo nano /etc/nginx/sites-available/next.kohtet.store``` This command creates or edits the Nginx configuration file for a website inside the sites-available directory.
+- ```sudo ln -s /etc/nginx/sites-available/next.kohtet.store /etc/nginx/sites-enabled/``` Creates a symbolic link from `sites-available` to `sites-enabled`, which activates the Nginx website configuration.
+- ```sudo nginx -t``` test the Nginx.
 
 ### Terminal tool name 2
 

@@ -26,6 +26,8 @@
 - Normal Version (Server-Dependent) The app requires the full project environment to run. Needs things like node_modules, package.json, and installed dependencies on the server.
 - Standalone Version (Self-Contained Build) The build packages the required runtime files together. Only a minimal set of dependencies is included. You don’t need to install the whole project on the server.
 - PM2 is a production process manager for Node.js applications.
+- Leaving the SSL configuration added by Certbot in the default Nginx config still works if the server_name matches the domain.
+- It is recommended to run Certbot on the correct Nginx site configuration file (in `sites-available`) instead of the default site, so the SSL settings are added to the correct domain configuration.
 
 ## Syntax
 **Parts of the link**
@@ -101,14 +103,15 @@ chmod 700
 - ```pm2 save``` save PM2.
 - ```pm2 startup``` start PM2.
 - ```pm2 start next-app``` start PM2. 
-- ```pm2 stop next-app``` stop PM2. 
+- ```pm2 stop next-app``` stop PM2.
+- ```pm2 restart next-app``` Restart PM2. 
 
 
-**Heading 2**
-```bash
- <!-- code here -->
-```
-- Description
+### Certbot
+
+- ```sudo apt install certbot python3-certbot-nginx -y``` This command install Certbot.
+- ```sudo certbot --nginx -d next.kohtet.store``` This command run certbot in Nginx.
+- ```sudo certbot renew --dry-run``` This command auto renew SSL.
 
 ## Tools
 - Notes

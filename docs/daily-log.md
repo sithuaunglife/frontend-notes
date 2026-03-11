@@ -136,5 +136,15 @@
 ### Tomorrow
 - Review more about web deployment infrastructure
 
+---
+
+## 11-March-2026
+
+### Today
+- Review more about web deployment infrastructure
+
+### Tomorrow
+- Start building the minimalist, high tech, sleek, personal portfolio
+
 
 
