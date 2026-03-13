@@ -157,5 +157,17 @@
 ### Tomorrow
 - Design the minimalist, high tech, sleek, personal portfolio with gathered inspiration
 
+---
+
+## 13-March-2026
+
+### Today
+- Planned the layout and style rough wireframe becoming the style I want
+
+### Tomorrow
+- Start coding the rough wireframe
+
+
+
 
 
