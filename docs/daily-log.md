@@ -167,6 +167,16 @@
 ### Tomorrow
 - Start coding the rough wireframe
 
+---
+
+## 14-March-2026
+
+### Today
+- Added navbar and hero section layout of portfolio
+
+### Tomorrow
+- Continue the hero section layout of portfolio
+
 
 
 
