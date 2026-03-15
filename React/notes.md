@@ -159,6 +159,24 @@ export default function LayoutShell({
 - ```children``` must be explicitly wrapped and passed.
 
 
+**Layout Hierarchy**
+```tsx
+function HeroLayout({ children }: Props) {
+  return (
+    <>
+      <Header />          // fixed layout element
+      <HeroSection />     // fixed landing section
+      {children}          // dynamic sections injected here
+    </>
+  );
+}
+```
+- HeroLayout is a wrapper (parent layout)
+- Header and HeroSection are owned / controlled by the layout
+- Anything passed between <HeroLayout> ... </HeroLayout> becomes children
+- If a route uses HeroLayout, then Header and HeroSection will also be rendered automatically, because they are fixed elements defined inside the layout
+
+
 **Prop passing**
 ```ts
 data.data.map((el: CategoryDetailType) => (

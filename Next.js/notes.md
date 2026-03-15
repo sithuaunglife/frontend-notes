@@ -191,6 +191,26 @@ export default ProductsPage;
 ```
 - Fetching data from API.
 
+
+**Next.js Layout Auto Wrapper**
+```ts
+// app/layout.tsx
+export default function RootLayout({ children }) {
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  )
+}
+```
+- In Next.js App Router, every layout.tsx is a parent wrapper
+- You do not manually wrap pages
+- It auto wrap pages for you
+- ```children``` are automatically injected by Next.js routing system 
+- Each route segment can have its own layout
+- Layouts nest automatically
+
 ## Terminal Commands
 ### Terminal tool name 1
 

@@ -31,6 +31,7 @@
 - When learning, isolate one concept (like useSearchParams) and focus only on understanding what it’s doing instead of thinking about everything at once. Zoom in and isolate that one thing like useSearchParams to understand what it is trying to do, and ignore other parts and syntax. After understanding what it is trying to do, zoom out and reconnect it back to the system. Don’t try to think about everything at once — it will overload your brain and cause confusion and frustration. Break problems into pieces, understand each piece, then reconnect the pieces.
 - Backend defines the API contract, but frontend can rename fields after fetching the data.
 - Data passing is like a pipeline. The real values come from the backend. TypeScript is just type checking. It doesn’t create real values and it disappears at runtime. The real data is created in the backend and carried through services and hooks until it reaches the component. Frontend only receives and renders the data. Now everything makes sense because I understand that TypeScript only checks structure, but backend is the one that provides the actual data.
+- Engineering Mindset Rule is do not add abstraction / tools / structure unless the situation truly requires it. If something is unnecessary, if it adds confusion, if it doesn’t solve a real problem then remove it.
  
 ## Syntax
 **Next.js folder structure**

@@ -177,6 +177,16 @@
 ### Tomorrow
 - Continue the hero section layout of portfolio
 
+---
+
+## 15-March-2026
+
+### Today
+- Refine hero section and add social links icons of portfolio
+
+### Tomorrow
+- Continue the hero section layout of portfolio
+
 
 
 
