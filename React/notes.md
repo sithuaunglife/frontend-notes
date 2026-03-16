@@ -8,6 +8,13 @@
 - Props look like HTML attributes, but they are JS objects passed into a component.
 - Props customize a component by giving it data, options, or behavior from the outside.
 - React JSX uses expressions, not statements.
+- If user interaction or async data causes UI update → React lifecycle concept. If you changing source code it causes UI update → Dev tooling concept.
+- Render and re-render happen at runtime while the user is using the application, when reactive data changes (such as state, props, context, or async results), not when the developer edits source code during development.
+- Re-rendering and browser refresh are not the same. Re-render means:React runs your component function again to update UI. React updates the UI (component or parts of it) when state/props change. Only the necessary parts change. Page does not reload. Browser refresh is not involved.
+- State/props change → React re-renders → Then React updates DOM.
+- state change → React component runs again (re-render) → Virtual DOM compare → Real DOM update (only changed parts).
+- Browser refresh means:Whole React app is destroyed and started again.
+- Mounting does NOT mean you coded the component before or placed it in a layout. Mounting happens at during runtime when React puts the component into the DOM. If you refresh browser mounting always happen. If you refresh browser mounting always happen so re-render always happen. 
 - Before ```return```: JavaScript world.
 Normal JavaScript rules apply (statements like if, for, variable declarations, functions, etc.).
 Inside ```return ( ... )```: JSX world.
@@ -31,12 +38,18 @@ JSX only allows expressions (things that produce values), not statements like if
 - React follows a simple rule: JSX treats lowercase tags as strings (HTML elements), while PascalCase identifiers are treated as custom React components.
 - ```useEffect``` runs after React finishes rendering the UI.
 - ```useEffect``` is not for interactivity.
+- ```useEffect``` really means “After render is finished and DOM is updated… now you can safely do real world actions.”
 - A side effect is an interaction with something React does not control. ```useEffect``` is one way (but not the only way) to handle side effects.
 - Vite Server runs on port 5173 by default.
 - Controller is from react hook form. Controller is used to integrate controlled or custom components (date pickers, calendars, UI libraries) with React Hook Form when register cannot be used.
 - useEffect handles custom side effects, while Controller handles custom UI components.
 - You can't declare inside JSX.
 - Data sometimes come from prop passing after mapping. Example: ```data.data.map((el: CategoryDetailType)=>(<CategoryTableRow key={el.id} category={el} />)``` category={el} is data passing.
+- React does not save component execution or local variables. But it saves state, refs, and previous render tree so it can manage UI updates efficiently.
+- ```useRef``` value persists across re-renders because React keeps the same ref object. The value only resets when the component unmounts, such as during route change, conditional removal, key change, or browser refresh.
+- ```useRef``` acts like a persistent storage box attached to a component. It keeps values across re-renders but does not trigger rendering. Other logic such as state updates, effects, or event handlers may read from or write to it.
+- useState → storing value AND telling React to update UI, useRef → storing value WITHOUT telling React anything.
+- When state/props change → that mounted component re-renders. If a component is already mounted in the DOM, and its state changes or its props change, React will re-run that whole component function.
 
 ## Syntax
 **JSX → Under the Hood**

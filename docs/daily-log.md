@@ -187,6 +187,16 @@
 ### Tomorrow
 - Continue the hero section layout of portfolio
 
+---
+
+## 16-March-2026
+
+### Today
+- Understood more about React's render, re-render, useRef, useState
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos of MenuCreateForm.tsx useRef at menu Module to learn more
+
 
 
 
