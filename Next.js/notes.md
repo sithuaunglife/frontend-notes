@@ -30,6 +30,7 @@
 - All values coming from the URL (query strings or route params) are always strings. Convert them to the correct type in your application if needed.
 - Next.js app deployment: Node.js → runs the app, npm → already included out of the box with Node.js, pnpm → if you want to use pnpm you need to install pnpm, MySQL and MongoDB → databases, Nginx → web server, Redis → in-memory database used for caching and fast data access, PM2 → process manager to keep Node.js app running, Supervisor → process control system to monitor and restart processes, Certbot → used to generate SSL certificate for HTTPS, Cloudflare → used for DNS, CDN, and SSL protection.
 - Route navigation usually causes the current page component to unmount and the next page to mount. However in Next.js shared layouts persist and do not unmount during navigation.
+- ```searchParams``` limit controls how many items (and matching skeleton loaders) should be displayed per page so the loading UI stays consistent with the expected paginated content.
 
 ## Syntax
 **Route Groups – ()**
