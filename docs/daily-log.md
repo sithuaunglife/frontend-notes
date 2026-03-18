@@ -207,6 +207,17 @@
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos of MenuCreateForm.tsx useRef at menu Module to learn more
 
+---
+
+## 18-March-2026
+
+### Today
+- Finished zhangliang mala pos of menu filters
+- Understood more about react key and value
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos of MenuCreateForm.tsx useRef at menu Module to learn more
+
 
 
 

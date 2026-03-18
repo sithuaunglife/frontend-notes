@@ -45,11 +45,17 @@ JSX only allows expressions (things that produce values), not statements like if
 - useEffect handles custom side effects, while Controller handles custom UI components.
 - You can't declare inside JSX.
 - Data sometimes come from prop passing after mapping. Example: ```data.data.map((el: CategoryDetailType)=>(<CategoryTableRow key={el.id} category={el} />)``` category={el} is data passing.
+- ```users.map(user => (<input key={user.id} value={user.name} />))``` user.name is taken from each object inside the users array during each iteration of .map().
 - React does not save component execution or local variables. But it saves state, refs, and previous render tree so it can manage UI updates efficiently.
 - ```useRef``` value persists across re-renders because React keeps the same ref object. The value only resets when the component unmounts, such as during route change, conditional removal, key change, or browser refresh.
 - ```useRef``` acts like a persistent storage box attached to a component. It keeps values across re-renders but does not trigger rendering. Other logic such as state updates, effects, or event handlers may read from or write to it.
 - useState → storing value AND telling React to update UI, useRef → storing value WITHOUT telling React anything.
 - When state/props change → that mounted component re-renders. If a component is already mounted in the DOM, and its state changes or its props change, React will re-run that whole component function.
+- React ```key``` helps React uniquely identify list elements during reconciliation to update DOM efficiently and correctly.
+- React reuses DOM nodes when keys are missing, causing previous content to be overwritten instead of properly removed.
+- ```key``` is for React internal list identity. It helps during Reconciliation React uses it to know: which item stayed, which item moved, which item got removed.
+- ```<UserCard name={name} />``` Send name data from parent → child component. Child receives: props.name. This is component communication.
+- Controlling an input ```<input value={user.name} />``` Meaning: Tell the input what text it should display. This is UI control (form state). This ```value``` prop belongs to the <input> element, and the input should display that value.
 
 ## Syntax
 **JSX → Under the Hood**
