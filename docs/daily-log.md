@@ -218,6 +218,16 @@
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos of MenuCreateForm.tsx useRef at menu Module to learn more
 
+---
+
+## 19-March-2026
+
+### Today
+- Finished teacher assignment zhangliang mala pos of image to customer detail and menu detail
+
+### Tomorrow
+- Continue working on image of customer detail skeleton loader, image of menu detail skeleton loader, Api integration to Menu UnitFilter and Api integration to Menu CategoryFilter
+
 
 
 

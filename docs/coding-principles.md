@@ -34,6 +34,7 @@
 - Engineering Mindset Rule is do not add abstraction / tools / structure unless the situation truly requires it. If something is unnecessary, if it adds confusion, if it doesn’t solve a real problem then remove it.
 - From now on I view render and re-render from the user perspective and runtime perspective. Rendering does not happen because I coded the component. It happens at runtime when user interaction, state changes, routing, data fetching or browser refresh causes React to execute the component again.
 - Whenever something confuses you, ask “From whose perspective am I seeing this?” Browser perspective, React perspective, User perspective, State perspective, Developer perspective. Frontend problems become solvable when you switch viewpoints.
+- Sometimes the problem is not a frontend bug. If the backend server / API is down, slow, or not implemented yet, the frontend may show: No data rendering, Loading forever, Fetch / network errors, Filters or actions not working. Before debugging frontend logic deeply, always check API status, response, and backend readiness (Network tab / console / backend team confirmation).
  
 ## Syntax
 **Next.js folder structure**
