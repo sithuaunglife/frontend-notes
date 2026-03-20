@@ -228,6 +228,16 @@
 ### Tomorrow
 - Continue working on image of customer detail skeleton loader, image of menu detail skeleton loader, Api integration to Menu UnitFilter and Api integration to Menu CategoryFilter
 
+---
+
+## 20-March-2026
+
+### Today
+- Finished teacher assignment zhangliang mala pos of customer detail skeleton loader, image of menu detail skeleton loader, Api integration to Menu UnitFilter and Api integration to Menu CategoryFilter
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos of MenuCreateForm.tsx useRef at menu Module to learn more
+
 
 
 
