@@ -238,6 +238,17 @@
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos of MenuCreateForm.tsx useRef at menu Module to learn more
 
+---
+
+## 21-March-2026
+
+### Today
+- Finished my teacher code of zhangliang mala pos of Api integration to Menu CategoryFilter
+- Understood more about pagination and searchParams
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos of MenuCreateForm.tsx useRef at menu Module to learn more
+
 
 
 
