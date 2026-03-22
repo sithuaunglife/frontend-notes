@@ -16,7 +16,9 @@
 - Adding ```github.dev``` to a GitHub repo URL opens the project in the web version of VS Code.
 - There is a Template repository setting on GitHub. If you enable it, you can use the repository as a template to create new repositories.
 - In GitHub Settings → Developer Settings → Personal Access Tokens, you can generate tokens for authentication. Use Tokens (classic).
-- You can't let other people know about your Personal access token. 
+- You can't let other people know about your Personal access token.
+- Even if branch names are different like feat/sale and feat/sale/order Git treats them as conflicting. Git stores branch names as file paths internally.
+- ```git fetch --prune``` deletes remote-tracking references. It does not delete your local branches.
 
 ## Syntax
 **Heading**
