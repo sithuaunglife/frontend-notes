@@ -26,6 +26,8 @@
 - You can create real data in UI. When a user: types into an input, clicks a checkbox, selects from a dropdown that creates real JavaScript values in memory. When I use data with form field it create real data.
 - Payload is the actual data being sent. It is usually an object. Example: {id: "1", category: "juice"} this object is the payload.
 - Every time you see ```type``` key remember it is type checking and only exist at compile time only. After compiling it is finish. It is not passing value.
+- Why Generics ```<T>``` Exist is to let Library cannot know: your API response, your store state, your form fields so they build flexible typed systems.
+- You use Props type when you are defining a component function (Before return). Not inside component usage.
 
 ## Syntax
 **Void**
@@ -92,6 +94,58 @@ function CategoryTableRow({ category: {id, title, created_at, user}}: Props)
 - The value of that property must follow ```CategoryDetailType```
 - TypeScript understands: category has id, category has title, category has created_at, category has user because ```CategoryDetailType``` defines those fields.
 - I define ```category: CategoryDetailType``` so TypeScript knows the shape of ```category```. Because TypeScript knows the shape, I am allowed to destructure its fields safely.
+
+
+**Type Annotation**
+```ts
+type MenuDetailType = { 
+  id: number
+  name: string
+}
+
+{data?.data.map((menu: MenuDetailType) => (
+  <SaleMenuListItem key={menu.id} menu={menu} />
+))}
+```
+- ```MenuDetailType``` is a blueprint (object structure contract)
+- TypeScript checks at compile time whether ```menu``` matches this structure
+- If mismatch → TypeScript shows error before runtime
+- You can't do like this menu.id to menu.Id since Id is not defined inside the MenuDetailType property
+- menu → MenuDetailType (whole object)
+- menu.id → number (property type defined inside MenuDetailType)
+- menu.name → string
+
+
+**Generic Type <T>**
+```ts
+type ProfileState = {
+  profile: User | null;
+  setProfile: (user: User) => void;
+  clearProfile: () => void;
+};
+
+export const useProfileStore = create<ProfileState>()(
+  persist(
+    (set) => ({
+      profile: null,
+
+      setProfile: (user) => set({ profile: user }),
+
+      clearProfile: () => set({ profile: null }),
+    }),
+    {
+      name: "profile-storage",
+    },
+  ),
+);
+```
+- Generic is placeholder type
+- Library / function doesn’t know your data shape
+- Real type will be decided later by developer
+- You provide it later using ```<>```
+- Most of the Generic are already written by library author so you just need to fill their placeholder generic ```<T>``` to with your type <ProfileState> to fill their placeholder
+- You can see Generic type mostly in library and hooks.
+- If you are going to write your own generic you have to buld your own generic ```<T>```
 
 
 **Typing in .map() (TypeScript + React)**

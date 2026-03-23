@@ -259,6 +259,16 @@
 ### Tomorrow
 - Review my teacher code of zhangliang mala pos to learn more
 
+---
+
+## 23-March-2026
+
+### Today
+- Understood more about Typescript type annotation (:) and generic type (<>)
+
+### Tomorrow
+- Review my teacher code of zhangliang mala pos to learn more
+
 
 
 
