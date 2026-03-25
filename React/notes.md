@@ -241,6 +241,50 @@ function useCategoryCreate() {
 - ```formData``` is from react hook form
 - Because resolver connects Zod validation to React Hook Form, I could reuse the values from schema above
 
+
+**React Rendering Pattern — Mapping Data to Components**
+- Example 1:
+```tsx
+data.data.map((el: CategoryDetailType) => (
+  <CategoryTableRow key={el.id} category={el} />
+))
+```
+- Example 2:
+```tsx
+data.data.map((el: CategoryDetailType) => (
+  <CategoryTableRow key={el.id} categoryId={el.id} categoryTitle={el.title} />
+))
+```
+- Example 3:
+```tsx
+data.data.map(({ id, title }: CategoryDetailType) => (
+  <CategoryTableRow key={id} id={id} title={title} />
+))
+```
+- ```.map()``` always loops the whole array (each object per iteration)
+- In Example 1: pass the entire object as a prop
+- In Example 2: pass selected properties from the object
+- In Example 3: destructure properties inside the map and pass them
+
+
+**React Data Flow Principle — Mapping Data to Child Components**
+```tsx
+<div className=" grid gap-4 md:grid-cols-3 lg:grid-cols-4">
+      {data?.data.map((menu: MenuDetailType) => (
+        <SaleMenuListItem key={menu.id} menu={menu} />
+      ))}
+    </div>
+
+type Props = {
+  menu: MenuDetailType;
+};
+```
+- Parent component receives array data (e.g. from backend / state)
+- ```.map()``` loops the array and gives one item per iteration
+- Each item is passed as props to a child component
+- menu={menu} each mapped data is passed as props to another component (child component)
+- Child component then renders one UI unit using that data
+
 ## Terminal Commands
 ### Day.js
 

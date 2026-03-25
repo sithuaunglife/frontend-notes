@@ -279,6 +279,16 @@
 ### Tomorrow
 - wait for my teacher review situation of my assignment and if there is a need of fix fix it and if there is not review my teacher code of zhangliang mala pos to learn more
 
+---
+
+## 25-March-2026
+
+### Today
+- Understood more about map() and Props passing
+
+### Tomorrow
+- wait for my teacher review situation of my assignment and if there is a need of fix fix it and if there is not review my teacher code of zhangliang mala pos to learn more
+
 
 
 

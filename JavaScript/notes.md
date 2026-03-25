@@ -223,6 +223,25 @@ const doubled = numbers.map((n) => {
 - n will be 1, then 2, then 3
 
 
+**JS Principle — Array Method Callback vs Normal Function Parameters**
+Example 1:
+```ts
+array.map((value, index) => {})
+```
+Example 2:
+```ts
+function createUser(name: string, age: number, city: string) {}
+```
+- In Example 1: Array iteration methods like `.map()`, `.forEach()`, `.filter()` automatically pass:
+- ```value``` → current item
+- ```index``` → position in array
+- (optional) ```array``` → original array
+- In Example 2: Normal functions do NOT receive automatic `index`
+- Normal functions can have any number of parameters defined manually
+- Array methods control the arguments
+- Normal functions are controlled by the developer
+
+
 **Storing values in map()**
 ```js
 const numbers = [1, 2, 3];
