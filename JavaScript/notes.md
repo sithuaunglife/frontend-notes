@@ -300,6 +300,29 @@ const person = {
 ```
 - It is like ```{ variable } → { variable: variable }```
 
+
+**Nested Looping**
+```js
+skill.map((category) => (
+          <Card key={category.title} className="p-4">
+            <CardContent className="space-y-4">
+              <h3 className="text-lg font-semibold">{category.title}</h3>
+
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((item) => (
+                  <Badge key={item} variant="secondary">
+                    {item}
+                  </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        ))
+```
+- You can loop inside another loop when dealing with nested data
+- First ```.map()``` → loops through outer array (skill)
+- Second ```.map()``` → loops through inner array (category.skills)
+
 ## Terminal Commands
 ### Terminal hotkeys
 
