@@ -56,6 +56,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - ```key``` is for React internal list identity. It helps during Reconciliation React uses it to know: which item stayed, which item moved, which item got removed.
 - ```<UserCard name={name} />``` Send name data from parent → child component. Child receives: props.name. This is component communication.
 - Controlling an input ```<input value={user.name} />``` Meaning: Tell the input what text it should display. This is UI control (form state). This ```value``` prop belongs to the <input> element, and the input should display that value.
+- In Base UI, ```PopoverTrigger``` already renders a <button>. You cannot place another <button> inside it (invalid HTML). asChild is not supported in Base UI. HTML has strict rules → no nested <button>. Violating this → hydration errors in React/Next.js. The Correct Approach is use the existing ```PopoverTrigger``` as your button and Apply your button styles directly to it.
 
 ## Syntax
 **JSX → Under the Hood**
