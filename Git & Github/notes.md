@@ -19,6 +19,7 @@
 - You can't let other people know about your Personal access token.
 - Even if branch names are different like feat/sale and feat/sale/order Git treats them as conflicting. Git stores branch names as file paths internally.
 - ```git fetch --prune``` deletes remote-tracking references. It does not delete your local branches.
+- Sometimes GitHub doesn’t track folder name changes properly. Even if you rename a folder in VS Code, Git may not detect it. This usually happens with case changes (components → Components). Result: Vercel build fails because the path doesn’t match.
 
 ## Syntax
 **Heading**
