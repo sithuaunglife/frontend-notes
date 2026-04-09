@@ -1,13 +1,18 @@
 # JavaScript
 
 ## Facts
-- Curly braces ``` { } ``` is Object literal, Code block, Destructing pattern.
+- Array is an ordered list of values. You access items using their index (position) with `[]`.
+- `const [first, second] = fruits;` this is array destructuring.
+- Curly braces ``` { } ``` is Object literal, Code block, Destructuring pattern.
 - If an arrow function needs more than one statement, use ``` { } ``` and an explicit ```return```.
 An implicit-return arrow function can return only one expression.
 - A return value belongs to the function caller, not the function itself.
 - Expressions and Statements are not same they are different concepts.
 - The right side of = is usually an expression and expressions produce values.
 - Number, string, boolean, object, array, function, arrow function are all values.
+- undefined → missing value. You didn’t set it, so JavaScript gives it automatically.
+- `?.` protects the thing before it, not after it. Example 1: (`user?.name`) user is protected.
+- null → empty value. You set it yourself on purpose.
 - If JavaScript can store it, pass it, return it, or render it — it’s a value.
 - In an object, one key can reference only one value, but that value can contain many things.
 - One object key can hold one value — and that value can be a function, or an object that contains many functions.
@@ -17,8 +22,8 @@ An implicit-return arrow function can return only one expression.
 - Function calling does not happen inside the arrow function. The arrow function only defines what should happen when it is called.
 - Nested arrow functions can access the parameters of their outer function.
 - ```.``` is used to access values inside an object by its key.
-- ```value``` is used to control what’s inside both <input> and <option> elements.
-- An <input> cannot display content by itself like <p> or <h1> does.
+- ```value``` is used to control what’s inside both ```<input>``` and ```<option>``` elements.
+- An ```<input>``` cannot display content by itself like ```<p>``` or ```<h1>``` does.
 - When using ```...state.items, newItem``` the new values live in ```items``` not in ```newItem``` To access updated data later, always always read from ```items```. ```newItem``` is temporary and only exists at creation time.
 - Destructuring reads current props, not previous state.
 - JavaScript is single-threaded but asynchronous.
@@ -60,6 +65,10 @@ An implicit-return arrow function can return only one expression.
 - ```?.``` is optional chaining if data exists it gives data, if no data it prevents crash.
 - A function exists after building it. The function will start working only after you call it and pass parameters into it. When parameters are passed in, the function runs. After it finishes running, it stops working. The function itself still exists, but the temporary values inside it disappear. You need to use return to send the processed value out of the function. If you want to store that value, you need to use a variable like const as a box to hold it. It is like a machine — it works when you input something into it. After it finishes processing, it stops. If you want the finished product from the machine, you need to return it, and if you want to keep it, you need a box to store it.
 - In function in parameter with machine analogy if the machine expects material but you give nothing: In JavaScript → it receives undefined, In TypeScript → the supervisor stops you, With default value → machine uses backup material.
+- A function contains instructions ```return``` is used to send a value outside the function.
+- ```const``` inside a function stores a value temporarily within that function.
+- You call the function once then store the returned value in a variable outside.
+- A function can break when you call it without a parameter if it depends on that parameter in a way that requires a real value.
 - You can directly destructure in function parameter using ```const x = ({ category, title }) => {console.log(category, title)}```. This is nested destructuring in parameter ```const x({category: {id, title}}) => {console.log(id, title)}```.
 - ```Try...,catch``` need async function. If using promise style you need to use .catch().
 
