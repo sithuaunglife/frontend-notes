@@ -4,8 +4,7 @@
 - Array is an ordered list of values. You access items using their index (position) with `[]`.
 - `const [first, second] = fruits;` this is array destructuring.
 - Curly braces ``` { } ``` is Object literal, Code block, Destructuring pattern.
-- If an arrow function needs more than one statement, use ``` { } ``` and an explicit ```return```.
-An implicit-return arrow function can return only one expression.
+- If an arrow function needs more than one statement, use ``` { } ``` and an explicit ```return```. An implicit-return arrow function can return only one expression.
 - A return value belongs to the function caller, not the function itself.
 - Expressions and Statements are not same they are different concepts.
 - The right side of = is usually an expression and expressions produce values.
