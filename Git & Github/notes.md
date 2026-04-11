@@ -18,7 +18,6 @@
 - In GitHub Settings → Developer Settings → Personal Access Tokens, you can generate tokens for authentication. Use Tokens (classic).
 - You can't let other people know about your Personal access token.
 - Even if branch names are different like feat/sale and feat/sale/order Git treats them as conflicting. Git stores branch names as file paths internally.
-- ```git fetch --prune``` deletes remote-tracking references. It does not delete your local branches.
 - Sometimes GitHub doesn’t track folder name changes properly. Even if you rename a folder in VS Code, Git may not detect it. This usually happens with case changes (components → Components). Result: Vercel build fails because the path doesn’t match.
 
 ## Syntax
@@ -54,6 +53,10 @@
 - Pressing Up ```↑``` arrow key shows the previously used command.
 - ```git init``` create .git repository that is hidden. Use ```ls -la``` to view. It is also a main branch at first creation.
 - ```git status``` check git status and changes.
+- ```git fetch --prune``` deletes remote-tracking references. It does not delete your local branches.
+- `git log --oneline` find the commit ID.
+- `git revert <commit-ID>` it revert to that commit point. Remember to push to main branch after revert. 
+- `git revert -m 1 <commit-ID>` is used only when the commit is a merge commit.
 
 
 **Git Configuration**
