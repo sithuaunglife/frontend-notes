@@ -57,6 +57,8 @@
 - `git log --oneline` find the commit ID.
 - `git revert <commit-ID>` it revert to that commit point. Remember to push to main branch after revert. 
 - `git revert -m 1 <commit-ID>` is used only when the commit is a merge commit.
+- `git reset --hard <commit-ID>` moves the branch pointer back to that commit and discards all commits after it.
+- `git push origin main --force` updates the remote branch to match your local history (rewrites history).
 
 
 **Git Configuration**
