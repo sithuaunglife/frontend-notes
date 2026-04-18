@@ -58,6 +58,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - Controlling an input ```<input value={user.name} />``` Meaning: Tell the input what text it should display. This is UI control (form state). This ```value``` prop belongs to the <input> element, and the input should display that value.
 - In Base UI, ```PopoverTrigger``` already renders a <button>. You cannot place another <button> inside it (invalid HTML). asChild is not supported in Base UI. HTML has strict rules → no nested <button>. Violating this → hydration errors in React/Next.js. The Correct Approach is use the existing ```PopoverTrigger``` as your button and Apply your button styles directly to it.
 - Parent component passing props and child receiving props → the prop name must be the same. After the child receives the prop, it can be destructured and renamed locally.
+- Hydration is the process of loading saved data (e.g. from localStorage) and putting it back into your app state.
 
 ## Syntax
 **JSX → Under the Hood**
@@ -102,22 +103,34 @@ const useCategoryStore = create((set) => {
     activeCategory: "All",
   }})
 ```
-Everything you return inside create() in Zustand becomes the store state (values + functions).
+Everything you return inside create() in Zustand becomes the store state (values + functions)
 - string → state
 - number → state
 - array → state
 - object → state
 - function → also state (but we call these “actions”)
-They all live in one store object and Zustand doesn't care what it is.
+They all live in one store object and Zustand doesn't care what it is
 
 
 **Zustand get()**
 ```js
 const { products } = get();
 ```
-- ```get()``` returns the entire Zustand store state object.
-- { products } destructures only the products property.
-- It does not keep the entire state, only products.
+- ```get()``` returns the entire Zustand store state object
+- { products } destructures only the products property
+- It does not keep the entire state, only products
+
+
+**Zustand built in hydration storage**
+```js
+  hasHydrated: false,
+  setHasHydrated: (state) => set({ hasHydrated: state }),
+
+  onRehydrateStorage: () => (state) => {
+    state.setHasHydrated(true);
+  },
+```
+- `onRehydrateStorage(...)` is a Zustand persist lifecycle callback that runs after state is rehydrated from storage
 
 
 **React Hook Form define**
