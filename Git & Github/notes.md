@@ -19,6 +19,9 @@
 - You can't let other people know about your Personal access token.
 - Even if branch names are different like feat/sale and feat/sale/order Git treats them as conflicting. Git stores branch names as file paths internally.
 - Sometimes GitHub doesn’t track folder name changes properly. Even if you rename a folder in VS Code, Git may not detect it. This usually happens with case changes (components → Components). Result: Vercel build fails because the path doesn’t match.
+- In versioning, 0.0.0: The first number represents breaking changes, the second number represents feature releases, the third number represents bug fixes.
+- In versioning, some people carry over their version numbers. For example: v0.11.1 → v1.11.1. But some people reset the feature and bug fix numbers when a breaking change happens. For example: v0.11.1 → v1.0.0.
+- In versioning, 0.0.0: Version numbers don’t represent how many features or bugs you added, you don’t increase numbers based on count. For example: Adding multiple features → 0.1.0 (not 0.2.0), Fixing multiple bugs → 0.1.1 (not 0.1.2). You only increase the version based on the type of change, not the number of changes. 
 
 ## Syntax
 **Heading**
