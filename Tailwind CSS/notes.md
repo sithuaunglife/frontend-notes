@@ -12,13 +12,25 @@
 - `sm:` ≥ small screens 640px+, `md:` ≥ medium 768px+, `lg:` ≥ large 1024px+, `xl:` ≥ extra large 1280px+.
 - Tailwind is mobile first. You write styles for mobile by default, then add styles for bigger screens using sm, md, lg.
 - `mx-auto` adds auto margin left/right. This centers the 400px box.
+- Anything that uses `@import`, like: `@import url('https://fonts.googleapis.com/...');` `@import "some-library.css";`. These must come before: `@import "tailwindcss";`.
 
 ## Syntax
-**Heading**
-```js 
- <!-- code here -->
+**Shadcn using custom font**
+```css 
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap');
+
+@theme inline {
+  --font-heading: "Playwrite AU NSW", cursive; 
+} 
+
+@layer base {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+}
 ```
-- Description
+- In globals.css with shadcn ui, defining `--font-heading` + `.font-heading` creates a custom font utility
+- If you use `--font-sans` at `@theme inline` it change the entire font
 
 ## Terminal Commands
 ### 
