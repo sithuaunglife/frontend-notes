@@ -66,7 +66,10 @@
 - In function in parameter with machine analogy if the machine expects material but you give nothing: In JavaScript → it receives undefined, In TypeScript → the supervisor stops you, With default value → machine uses backup material.
 - A function contains instructions ```return``` is used to send a value outside the function.
 - ```const``` inside a function stores a value temporarily within that function.
+- Inside the function → placeholders (parameters). When calling the function → real values are passed in.
 - You call the function once then store the returned value in a variable outside.
+- A function can use variables from the scope where it is defined.
+- Even if I destructure the function somewhere else, it can still use variables from its original scope
 - A function can break when you call it without a parameter if it depends on that parameter in a way that requires a real value.
 - You can directly destructure in function parameter using ```const x = ({ category, title }) => {console.log(category, title)}```. This is nested destructuring in parameter ```const x({category: {id, title}}) => {console.log(id, title)}```.
 - ```Try...,catch``` need async function. If using promise style you need to use .catch().
