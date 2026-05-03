@@ -11,6 +11,8 @@
 - Number, string, boolean, object, array, function, arrow function are all values.
 - undefined → missing value. You didn’t set it, so JavaScript gives it automatically.
 - `?.` protects the thing before it, not after it. Example 1: (`user?.name`) user is protected.
+- `&&` → one-sided condition “maybe show”.
+- `? :` → two-sided condition “choose between two things”.
 - `[...items, newItem]` combines old items with the new one.
 - `{ items: newItem }` replaces the old items completely.
 - The key always stays the same. Only the value changes whether you replace it or build a new one using spread.

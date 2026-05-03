@@ -60,6 +60,8 @@ JSX only allows expressions (things that produce values), not statements like if
 - Parent component passing props and child receiving props → the prop name must be the same. After the child receives the prop, it can be destructured and renamed locally.
 - Hydration is the process of loading saved data (e.g. from localStorage) and putting it back into your app state.
 - Zustand store has initial (predefined) state, and it only changes when you call its actions (functions) with data.
+- State and functions are different. State = data, Function = action.
+- React UI is driven by state changes.
 
 ## Syntax
 **JSX → Under the Hood**

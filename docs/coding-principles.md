@@ -36,6 +36,9 @@
 - Whenever something confuses you, ask “From whose perspective am I seeing this?” Browser perspective, React perspective, User perspective, State perspective, Developer perspective. Frontend problems become solvable when you switch viewpoints.
 - Sometimes the problem is not a frontend bug. If the backend server / API is down, slow, or not implemented yet, the frontend may show: No data rendering, Loading forever, Fetch / network errors, Filters or actions not working. Before debugging frontend logic deeply, always check API status, response, and backend readiness (Network tab / console / backend team confirmation).
 - Learning Mindset Local Focus Principle - Don’t restart from full basics when confused. Isolate one unclear part of the system. Understand that small piece deeply. Then zoom out and reconnect to the whole flow Formula: Big Problem → Find Small Confusion → Fix → Reintegrate → Continue Building. Senior devs don’t know everything. They know where to zoom in.
+- Break problems into small steps, understand the logic, and build it step by step—syntax will follow.
+- We are valued for our ability to think and solve problems, not for memorizing syntax.
+- Write down the problem first in simple human language (// Problem). Then break it into small steps (// Steps) and translate those steps into code. If I forget syntax, I can look it up. Syntax fluency will come with repetition like muscle memory. It’s okay to forget syntax—I need to focus more on understanding the logic.
  
 ## Syntax
 **Next.js folder structure**
@@ -163,3 +166,21 @@ src/
 - hooks files (e.g, useCustomerCreate.ts) need to use ```use``` since they define custom React hooks. stores files also use ```use``` too since they are implemented as hook-based stores (e.g., with Zustand).
 - Use plural nouns for route paths (e.g., /customers) to represent resource collections and keep routing consistent.
 - MV = Model + View (data layer and UI layer), while VM = ViewModel, which acts as the logic layer connecting data to the UI (often implemented as hooks in React).
+
+
+**Problem Solving template**
+```md
+// Problem
+Describe the goal in simple human language
+
+// Steps
+Break it into small logical actions
+
+// Code
+Translate each step into syntax
+```
+- Solve the problem using human language first
+- break it down step by step
+- turn those steps into code
+- If I forget syntax, I look it up
+- Focus on understanding the logic, not memorizing syntax
