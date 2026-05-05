@@ -13,6 +13,9 @@
 - Tailwind is mobile first. You write styles for mobile by default, then add styles for bigger screens using sm, md, lg.
 - `mx-auto` adds auto margin left/right. This centers the 400px box.
 - Anything that uses `@import`, like: `@import url('https://fonts.googleapis.com/...');` `@import "some-library.css";`. These must come before: `@import "tailwindcss";`.
+- `break-words` breaks long chunks if needed.
+- `whitespace-normal` allows line breaks.
+- `max-w-[220px]` gives a boundary.
 
 ## Syntax
 **Shadcn using custom font**
