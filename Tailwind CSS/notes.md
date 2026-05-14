@@ -35,14 +35,27 @@
 - In globals.css with shadcn ui, defining `--font-heading` + `.font-heading` creates a custom font utility
 - If you use `--font-sans` at `@theme inline` it change the entire font
 
-## Terminal Commands
-### 
 
-**Heading**
-```bash
- <!-- code here -->
+**Tailwind v4 Setup (globals.css)** 
+```css
+@import "tailwindcss";
+@plugin "tailwind-scrollbar";
 ```
-- Description
+- Registers the scrollbar plugin in Tailwind v4
+- Commonly used in Next.js projects using Tailwind v4
+- Enables classes like: `scrollbar` `scrollbar-thin` `scrollbar-thumb-red-500` `scrollbar-track-gray-800`
+- Allows styling native browser scrollbars directly with Tailwind classes
+
+## Terminal Commands
+### Tailwind plugin
+
+**Tailwind installing custom scrollbar using Tailwind plugin**
+```bash
+pnpm install tailwind-scrollbar
+```
+- Installs the `tailwind-scrollbar` plugin.
+- Allows styling native browser scrollbars using Tailwind utility classes.
+- Useful for dashboards, admin panels, POS systems, and custom UI themes.
 
 ## Tools
 - Notes
