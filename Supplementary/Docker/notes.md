@@ -8,6 +8,7 @@
 - Without volumes, hot reload does not work in Docker dev environments.
 - <docker-compose.yml> is used to define and run multiple Docker containers together.
 - If building locally, you do not need `docker login`. If building and pushing to Docker Hub or another registry, you must first run `docker login`, then use `docker push username/myapp:latest` to push the built image.
+- Package manager, Node.js, and Docker version mismatches can cause dependency conflicts and deployment build failures due to different environment behaviors.
 
 ## Syntax
 **Heading**
