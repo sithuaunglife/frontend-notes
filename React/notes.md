@@ -136,6 +136,25 @@ const { products } = get();
 - `onRehydrateStorage(...)` is a Zustand persist lifecycle callback that runs after state is rehydrated from storage
 
 
+**Zustand Local Storage**
+```js
+{
+  name: "bakery-products"
+}
+```
+- Defines the localStorage key name used by Zustand Persist to save and restore store state
+
+
+**Suppressing Hydration Error**
+```jsx
+<span suppressHydrationWarning>
+  {value}
+</span>
+```
+- `suppressHydrationWarning` hides hydration mismatch warnings for that element
+- Useful for client-only values like localStorage, dates, and random values
+
+
 **React Hook Form define**
 ```jsx
  const {
