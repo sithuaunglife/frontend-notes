@@ -9,6 +9,7 @@
 - <docker-compose.yml> is used to define and run multiple Docker containers together.
 - If building locally, you do not need `docker login`. If building and pushing to Docker Hub or another registry, you must first run `docker login`, then use `docker push username/myapp:latest` to push the built image.
 - Package manager, Node.js, and Docker version mismatches can cause dependency conflicts and deployment build failures due to different environment behaviors.
+- Our source code are stored inside docker environment, usually inside nginx container at: `/var/www/html`. So even if the frontend code exists on local machine, the app actually runs inside docker container environment. That is why dependencies sometimes need to install inside container instead of local machine.
 
 ## Syntax
 **Heading**

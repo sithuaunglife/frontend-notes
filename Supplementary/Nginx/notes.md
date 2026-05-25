@@ -1,7 +1,7 @@
 # Nginx
 
 ## Facts
-- - After editing Nginx configuration files, run ```nginx -t``` to test the configuration, then reload Nginx to apply the changes.
+- After editing Nginx configuration files, run ```nginx -t``` to test the configuration, then reload Nginx to apply the changes.
 
 ## Syntax
 **Heading 1**
