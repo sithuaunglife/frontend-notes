@@ -2,6 +2,7 @@
 
 ## Facts
 - After editing Nginx configuration files, run ```nginx -t``` to test the configuration, then reload Nginx to apply the changes.
+- The source codes are mounted into `/var/www/html` or `/app` inside Docker container. Since container is isolated from local machine, dependencies need to be installed again inside container environment. When mounted with Docker volumes, Next.js dev server (`bun dev` / `next dev`) handles file watching and hot reload automatically.
 
 ## Syntax
 **Heading 1**

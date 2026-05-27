@@ -62,6 +62,8 @@ JSX only allows expressions (things that produce values), not statements like if
 - Zustand store has initial (predefined) state, and it only changes when you call its actions (functions) with data.
 - State and functions are different. State = data, Function = action.
 - React UI is driven by state changes.
+- Don’t rely only on Next.js error overlay Next.js error messages usually show the symptom, not the real cause. Example: Cannot read properties of undefined (reading 'data') real cause was actually: 405 Method Not Allowed. Use: Chrome DevTools, Network tab, Console, Request/Response inspector.
+- Understand data.data. Example: `const { data } = useSWR(url, fetcher);` Then: `data.data` Explanation: first `data` part mean SWR response variable, second `data` part mean	backend JSON field.
 
 ## Syntax
 **JSX → Under the Hood**

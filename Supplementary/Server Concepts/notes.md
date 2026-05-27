@@ -28,6 +28,10 @@
 - PM2 is a production process manager for Node.js applications.
 - Leaving the SSL configuration added by Certbot in the default Nginx config still works if the server_name matches the domain.
 - It is recommended to run Certbot on the correct Nginx site configuration file (in `sites-available`) instead of the default site, so the SSL settings are added to the correct domain configuration.
+- Understand HTTP `405`. `405` Method Not Allowed Meaning: Route exists but that HTTP method is not allowed. Example: `GET /banners/3` but backend route only supports: `PUT /banners/3` and DELETE /banners/3. Then `GET` returns: 405 Method Not Allowed.
+- `404` means route does not exist.
+- `405` means route exists but method not allowed.
+- Backend controllers are kept at `app/Http/Controllers` while their routes are kept inside `routes` folder. When you see `except()` in routes, it means that CRUD route is excluded and can return `405 Method Not Allowed`. You can inspect their CRUD methods inside the controller.
 
 ## Syntax
 **Parts of the link**
