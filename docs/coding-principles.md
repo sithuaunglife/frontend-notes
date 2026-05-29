@@ -39,6 +39,8 @@
 - Break problems into small steps, understand the logic, and build it step by step—syntax will follow.
 - We are valued for our ability to think and solve problems, not for memorizing syntax.
 - Write down the problem first in simple human language (// Problem). Then break it into small steps (// Steps) and translate those steps into code. If I forget syntax, I can look it up. Syntax fluency will come with repetition like muscle memory. It’s okay to forget syntax—I need to focus more on understanding the logic.
+- Documenting code means writing clear explanations about why the code exists, how it works, and the important decisions behind it by using comments or writing notes elsewhere, so future developers including yourself can understand and maintain it more easily.
+
  
 ## Syntax
 **Next.js folder structure**
