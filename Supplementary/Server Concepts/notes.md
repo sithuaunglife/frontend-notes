@@ -32,6 +32,7 @@
 - `404` means route does not exist.
 - `405` means route exists but method not allowed.
 - Backend controllers are kept at `app/Http/Controllers` while their routes are kept inside `routes` folder. When you see `except()` in routes, it means that CRUD route is excluded and can return `405 Method Not Allowed`. You can inspect their CRUD methods inside the controller.
+- If an image URL works in one browser but fails in another with `ERR_QUIC_PROTOCOL_ERROR` or `QUIC_NETWORK_IDLE_TIMEOUT` the issue may be network-related (Wi-Fi, ISP, firewall, VPN, or HTTP/3/QUIC routing) rather than a problem with Next.js, MinIO, or the application code.
 
 ## Syntax
 **Parts of the link**

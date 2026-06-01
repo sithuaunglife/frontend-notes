@@ -215,6 +215,19 @@ export default function RootLayout({ children }) {
 - Each route segment can have its own layout
 - Layouts nest automatically
 
+
+**Banner Image URL**
+```tsx
+src={
+  image
+    ? `https://minio.teapos.shop/web-pos-api/${image}`
+    : "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+}
+```
+- Use this pattern when the backend returns only the image filename (e.g. `abc123.jpg`)
+- If the backend already returns a full image URL (e.g. `https://minio.teapos.shop/web-pos-api/abc123.jpg`), use: `src={image}`
+- Always check the API response before deciding which approach to use
+
 ## Terminal Commands
 ### Terminal tool name 1
 
