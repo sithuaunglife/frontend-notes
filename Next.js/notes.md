@@ -33,6 +33,7 @@
 - ```searchParams``` limit controls how many items (and matching skeleton loaders) should be displayed per page so the loading UI stays consistent with the expected paginated content.
 - When using filters with API data fetching, backend pagination can limit the returned dataset. Use things like ```limit=100``` to fetch full dataset so filter can work correctly.
 - Never bind filter option fetching to searchParams.
+- Next.js image optimization sometimes fails when fetching images from MinIO. Use `unoptimized` to load the image directly from the source URL.
 
 ## Syntax
 **Route Groups – ()**
