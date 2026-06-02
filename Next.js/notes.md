@@ -34,6 +34,7 @@
 - When using filters with API data fetching, backend pagination can limit the returned dataset. Use things like ```limit=100``` to fetch full dataset so filter can work correctly.
 - Never bind filter option fetching to searchParams.
 - Next.js image optimization sometimes fails when fetching images from MinIO. Use `unoptimized` to load the image directly from the source URL.
+- If all dynamic `[id]` routes suddenly return 404 after code changes, restart the Next.js dev server first, as the issue may be caused by stale route caching rather than broken code.
 
 ## Syntax
 **Route Groups – ()**
