@@ -7,7 +7,8 @@
 - In Settings>General in URL you can set up your domain URL there. Example: ```"https://cloud.teapos.store"```.
 - In Servers>localhost in wildcard domain you can setup your wildcare domain there. Example: ```"https://teapos.store"```
 - You need to ```reboot``` in ubuntu terminal for proxy to work.
-- In Keys & Tokens you can create Private Keys. You can choose Generate new ED25519 SSH Key or Generate new RSA SSH Key. RSA SSH Key is popular choice. You can rename Key name. Public Key is the key you need to put to connecting server. After setting up server you need to Validate Server & Install Docker Engine. 
+- In Keys & Tokens you can create Private Keys. You can choose Generate new ED25519 SSH Key or Generate new RSA SSH Key. RSA SSH Key is popular choice. You can rename Key name. Public Key is the key you need to put to connecting server. After setting up server you need to Validate Server & Install Docker Engine.
+- When some routes on the live deployment returned 404 unexpectedly, running: `docker compose up` `docker compose down` appeared to restore normal route behavior. The exact root cause is still unknown and may be related to deployment, caching, networking, or proxy configuration.
 
 ## Syntax
 **Heading 1**
