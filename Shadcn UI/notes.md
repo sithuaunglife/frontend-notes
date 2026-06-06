@@ -8,13 +8,27 @@
 - Shadcn needs WireGuard as Protocol in VPN to work in my country (Myanmar).
 - Base UI and Radix UI are different libraries with different DOM behaviors, even though their APIs look similar.
 - Hydration errors aren’t always SSR issues, they can happen when incompatible UI libraries (e.g., Base UI vs Radix UI) are mixed.
+- In shadcn/ui, `background` defines the main surface, `foreground` is primary content on it, `muted` is a subtle surface, and `muted-foreground` is low-emphasis content on muted surfaces, all adapting automatically to light and dark themes.
+- Shadcn/ui’s purpose is to avoid hard-coded Tailwind color utilities (like `dark:`) by using semantic, theme-aware CSS variables.
+- Shadcn/ui provides a theme-aware color system that automatically adapts to light and dark modes, so you don’t need to manually adjust colors.
 
 ## Syntax
-**Heading 1**
-```js 
- <!-- code here -->
+**Shadcn using custom font**
+```css 
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap');
+
+@theme inline {
+  --font-heading: "Playwrite AU NSW", cursive; 
+} 
+
+@layer base {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+}
 ```
-- Description
+- In globals.css with shadcn ui, defining `--font-heading` + `.font-heading` creates a custom font utility
+- If you use `--font-sans` at `@theme inline` it change the entire font
 
 
 **Heading 2**
