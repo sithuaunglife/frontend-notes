@@ -35,6 +35,7 @@
 - Never bind filter option fetching to searchParams.
 - Next.js image optimization sometimes fails when fetching images from MinIO. Use `unoptimized` to load the image directly from the source URL.
 - If all dynamic `[id]` routes suddenly return 404 after code changes, restart the Next.js dev server first, as the issue may be caused by stale route caching rather than broken code.
+- Next.js Build with Bun. `bun run build` executes the `build` script in `package.json` (e.g. `next build`). `bun build` uses Bun's bundler directly and requires an entry file. For Next.js projects, use `bun run build` instead of `bun build`.
 
 ## Syntax
 **Route Groups – ()**
