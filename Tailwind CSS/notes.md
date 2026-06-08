@@ -15,6 +15,8 @@
 - `max-w-[220px]` gives a boundary.
 - `max-h-[60vh]` sets the maximum height to 60% of the viewport height.
 - `pr-2` adds right padding inside the container, creating space between the content and the scrollbar.
+- Use temporary borders (`border-red-500`, `border-blue-500`, `border-green-500`), background colors (`bg-red-500/20`, `bg-blue-500/20`, `bg-green-500/20`), or outlines (`outline outline-2 outline-red-500`) to visualize element boundaries and inspect actual container sizes when debugging unexpected spacing, absolute positioning issues, Flexbox/Grid alignment problems, overflow issues, or parent containers that are larger than expected; if an absolutely positioned element appears far away, add a border to the relative parent first and verify the parent's size before modifying the child element's position.
+- `!` in Tailwind adds `!important` to a utility class, e.g. `!w-fit` → `width: fit-content !important`, useful for overriding conflicting styles.
 
 ## Syntax
 **Tailwind v4 Setup (globals.css)** 
