@@ -11,6 +11,8 @@
 - In shadcn/ui, `background` defines the main surface, `foreground` is primary content on it, `muted` is a subtle surface, and `muted-foreground` is low-emphasis content on muted surfaces, all adapting automatically to light and dark themes.
 - Shadcn/ui’s purpose is to avoid hard-coded Tailwind color utilities (like `dark:`) by using semantic, theme-aware CSS variables.
 - Shadcn/ui provides a theme-aware color system that automatically adapts to light and dark modes, so you don’t need to manually adjust colors.
+- In Base UI, ```PopoverTrigger``` already renders a <button>. You cannot place another <button> inside it (invalid HTML). asChild is not supported in Base UI. HTML has strict rules → no nested <button>. Violating this → hydration errors in React/Next.js. The Correct Approach is use the existing ```PopoverTrigger``` as your button and Apply your button styles directly to it.
+- If you encounter hydration or nested descendant errors `<button>` inside `<button>`, use `buttonVariants()` to apply the styles directly to the primitive trigger component.
 
 ## Syntax
 **Shadcn using custom font**

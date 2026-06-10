@@ -56,7 +56,6 @@ JSX only allows expressions (things that produce values), not statements like if
 - ```key``` is for React internal list identity. It helps during Reconciliation React uses it to know: which item stayed, which item moved, which item got removed.
 - ```<UserCard name={name} />``` Send name data from parent → child component. Child receives: props.name. This is component communication.
 - Controlling an input ```<input value={user.name} />``` Meaning: Tell the input what text it should display. This is UI control (form state). This ```value``` prop belongs to the <input> element, and the input should display that value.
-- In Base UI, ```PopoverTrigger``` already renders a <button>. You cannot place another <button> inside it (invalid HTML). asChild is not supported in Base UI. HTML has strict rules → no nested <button>. Violating this → hydration errors in React/Next.js. The Correct Approach is use the existing ```PopoverTrigger``` as your button and Apply your button styles directly to it.
 - Parent component passing props and child receiving props → the prop name must be the same. After the child receives the prop, it can be destructured and renamed locally.
 - Hydration is the process of loading saved data (e.g. from localStorage) and putting it back into your app state.
 - Zustand store has initial (predefined) state, and it only changes when you call its actions (functions) with data.
@@ -64,6 +63,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - React UI is driven by state changes.
 - Don’t rely only on Next.js error overlay Next.js error messages usually show the symptom, not the real cause. Example: Cannot read properties of undefined (reading 'data') real cause was actually: 405 Method Not Allowed. Use: Chrome DevTools, Network tab, Console, Request/Response inspector.
 - Understand data.data. Example: `const { data } = useSWR(url, fetcher);` Then: `data.data` Explanation: first `data` part mean SWR response variable, second `data` part mean	backend JSON field.
+- When building reusable React components, avoid hardcoding content that may vary between different pages or features. Instead of: `<AlertDialogDescription> Are you sure you want to delete this banner? </AlertDialogDescription>` Pass the content as a prop: `<AlertDelete description="Are you sure you want to delete this banner?"/>` The reusable component receives the value through props: `type Props = {description:string;};` `function AlertDelete({ description }: Props) {return (<AlertDialogDescription>{description}</AlertDialogDescription>);}`
 
 ## Syntax
 **JSX → Under the Hood**
