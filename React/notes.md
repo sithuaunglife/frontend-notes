@@ -64,6 +64,9 @@ JSX only allows expressions (things that produce values), not statements like if
 - Don’t rely only on Next.js error overlay Next.js error messages usually show the symptom, not the real cause. Example: Cannot read properties of undefined (reading 'data') real cause was actually: 405 Method Not Allowed. Use: Chrome DevTools, Network tab, Console, Request/Response inspector.
 - Understand data.data. Example: `const { data } = useSWR(url, fetcher);` Then: `data.data` Explanation: first `data` part mean SWR response variable, second `data` part mean	backend JSON field.
 - When building reusable React components, avoid hardcoding content that may vary between different pages or features. Instead of: `<AlertDialogDescription> Are you sure you want to delete this banner? </AlertDialogDescription>` Pass the content as a prop: `<AlertDelete description="Are you sure you want to delete this banner?"/>` The reusable component receives the value through props: `type Props = {description:string;};` `function AlertDelete({ description }: Props) {return (<AlertDialogDescription>{description}</AlertDialogDescription>);}`
+- `triggerClassName` → Optional Tailwind classes passed from the parent component.
+- `variant: variant ?? "secondary"` → Use the provided variant; otherwise use `"secondary"`.
+- `size: size ?? "xs"` → Use the provided size; otherwise use `"xs"`.
 
 ## Syntax
 **JSX → Under the Hood**
