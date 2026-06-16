@@ -23,6 +23,8 @@
 - In versioning, some people carry over their version numbers. For example: v0.11.1 → v1.11.1. But some people reset the feature and bug fix numbers when a breaking change happens. For example: v0.11.1 → v1.0.0.
 - In versioning, 0.0.0: Version numbers don’t represent how many features or bugs you added, you don’t increase numbers based on count. For example: Adding multiple features → 0.1.0 (not 0.2.0), Fixing multiple bugs → 0.1.1 (not 0.1.2). You only increase the version based on the type of change, not the number of changes.
 - Skip copying -> `node_modules` `.next` `dist` `build` because those are generated files and huge files and can fail the copying process.
+- `git pull` and `git fetch` are different. `git fetch` downloads updates from GitHub and updates your local Git's knowledge of remote branches without making changes to your current working branch. `git pull` downloads updates and applies them to your current branch by fetching and then merging (or rebasing) the changes.
+- If Git behaves strangely and normal troubleshooting does not work delete the local repository folder and clone the repository again.
 
 ## Syntax
 **Heading**
@@ -64,7 +66,7 @@
 - `git reset --hard <commit-ID>` moves the branch pointer back to that commit and discards all commits after it.
 - `git push origin main --force` updates the remote branch to match your local history (rewrites history).
 - `git branch -r` shows remote-tracking branches from repositories like `origin` or teammate remotes.
-
+- `git fetch origin` fetches remote branches and commits from GitHub into your local Git repository without merging them into your current branch.
 
 **Git Configuration**
 1.
