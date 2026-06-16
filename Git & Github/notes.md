@@ -68,6 +68,7 @@
 - `git branch -r` shows remote-tracking branches from repositories like `origin` or teammate remotes.
 - `git fetch origin` fetches remote branches and commits from GitHub into your local Git repository without merging them into your current branch.
 
+
 **Git Configuration**
 1.
 ```
@@ -95,5 +96,3 @@ git config --global user.email <Your email>
 
 ## Tools
 - Notes
-
-
