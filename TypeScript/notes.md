@@ -28,6 +28,9 @@
 - Every time you see ```type``` key remember it is type checking and only exist at compile time only. After compiling it is finish. It is not passing value.
 - Why Generics ```<T>``` Exist is to let Library cannot know: your API response, your store state, your form fields so they build flexible typed systems.
 - You use Props type when you are defining a component function (Before return). Not inside component usage.
+- `:` → "This value must be this shape.", `<T>` → "I don't know the shape yet; tell me later.".
+- I noticed that `<>` is mostly used to define the overall shape for generic libraries and hooks, while `:` is mostly used when typing parameters, especially during prop destructuring.
+- Don't confuse generic types `<>` with parameter types `:`. Generic types are usually used to provide the overall shape to a generic library, hook, or utility, while parameter types are used to define the shape of the data being passed into a function during development.
 
 ## Syntax
 **Void**
@@ -146,6 +149,7 @@ export const useProfileStore = create<ProfileState>()(
 - Most of the Generic are already written by library author so you just need to fill their placeholder generic ```<T>``` to with your type <ProfileState> to fill their placeholder
 - You can see Generic type mostly in library and hooks.
 - If you are going to write your own generic you have to buld your own generic ```<T>```
+- The <ProfileState> defines the expected shape of the entire store, so TypeScript validates that `profile` `setProfile` and `clearProfile` match that shape.
 
 
 **Typing in .map() (TypeScript + React)**
