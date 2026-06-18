@@ -327,6 +327,34 @@ type Props = {
 - menu={menu} each mapped data is passed as props to another component (child component)
 - Child component then renders one UI unit using that data
 
+
+**One-Liner Function**
+```js
+const result = products.filter(
+  (product) => product.price > 3000
+);
+```
+- Use when the logic is simple and only used once.
+- Short and simple.
+- Easy to read for small logic.
+- Common in React applications.
+
+
+**Reusable Function**
+```js
+const getPriceGreaterThan = (minPrice) => {
+  return (item) => item.price > minPrice;
+};
+
+const result = products.filter(
+  getPriceGreaterThan(3000)
+);
+```
+- Use when the same logic is used multiple times.
+- Reusable.
+- Reduces duplicated code.
+- Easier to maintain when logic becomes complex.
+
 ## Terminal Commands
 ### Day.js
 

@@ -1,6 +1,9 @@
 # JavaScript
 
 ## Facts
+- JavaScript supports both Imperative and Declarative programming styles.
+- Imperative focuses on how to do something step by step while Declarative focuses on the desired result and lets JavaScript handle the implementation details.
+- React and modern frontend development mainly use the Declarative style through methods like `map()` `filter()` and React components, although Imperative code is still used when necessary.
 - Array is an ordered list of values. You access items using their index (position) with `[]`.
 - `const [first, second] = fruits;` this is array destructuring.
 - Curly braces ``` { } ``` is Object literal, Code block, Destructuring pattern.
@@ -338,6 +341,33 @@ skill.map((category) => (
 - You can loop inside another loop when dealing with nested data
 - First ```.map()``` → loops through outer array (skill)
 - Second ```.map()``` → loops through inner array (category.skills)
+
+
+**Higher-Order Function (HOF) and Callback Function**
+```js
+const isCheap = (cart) => cart.price < 4000; // Callback Function
+const result = carts.filter(isCheap); // filter is a Higher-Order Function
+```
+- Callback Function and Higher-Order Function (HOF) are not the same
+- A Callback Function is a function passed as an argument to another function
+- A Higher-Order Function (HOF) is a function that accepts another function as an argument or returns a function
+- Baby explanation: A callback function = the function you give. A higher-order function = the function that receives another function
+
+
+**Outer Function and Inner Function (Closure)**
+```js
+const getPriceGreaterThan = (minPrice) => {
+  return (item) => item.price > minPrice;
+};
+const over3000 = getPriceGreaterThan(3000);
+```
+- Outer parameter: `minPrice` = setup/configuration value
+- Inner parameter: `item` = actual item being processed
+- The outer function runs first and returns a new function. 
+- Inner function remembers outer variables through closure. Example: The inner function remembers the value of `minPrice` from the outer function `minPrice` even after the outer function has finished running.
+- Without a closure, the inner function would not be able to access `minPrice` after the outer function has finished running. Because JavaScript supports closures, the inner function remembers `minPrice` and can still access it later
+- Baby explanation: Think of it like the inner function looking up to the outer function's parameter and borrowing that value whenever it needs it. Even if the outer function has already finished running, the inner function still remembers where that value came from and can keep using it
+- Another Baby explanation: Think of outer giving inner a piece of paper: secret = "I love apples". When outer leaves the room, inner keeps the paper in its pocket. Later, inner can still read the paper even though outer is gone.
 
 ## Terminal Commands
 ### Terminal hotkeys
