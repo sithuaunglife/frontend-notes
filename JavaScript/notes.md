@@ -1,6 +1,23 @@
 # JavaScript
 
 ## Facts
+- JavaScript was originally created for browsers, but today it runs in many places. (Example: Computer/Mobile Apps, Desktop Apps, Cloud Servers)
+- JavaScript can command computer since it is programming language.
+- `let` is declaring(creating) variable. For example: `let x=5`. `=` is the assignment operator. It assigns the value on the right (5) to the variable on the left (x).
+- `let lunchbox = ["rice", "curry"]` it is setting up array. lunchbox[0] it is indexing/accessing the first item ("rice") of array.
+- `let myself = {name: "John", age:22}` it is object. `name` is key while `John` is value. `myself["name"]` it is accessing the `name` value (John). You can also use `myself.name` to get value.
+- Typing only the variable can show its value in the browser console or Node.js REPL.
+- Variables are usually temporary and disappear when the program stops or when you close/refresh the browser page.
+- In browser console `localStorage.setItem("x",5)` stores the value `5` in Local Storage under the key `x` and keep them. 
+- In browser console `localStorage.getItem("x")` get value stored under the key `x`.
+- In the browser console, the ↑ (Up Arrow) and ↓ (Down Arrow) keys let you navigate through previously executed commands, similar to a terminal.
+- `++` means +1 while `--` means -1.
+- `===` checks whether both the value and the data type are strictly equal and the same.
+- `!==` checks whether two values are not strictly equal. It returns true if the value is different or the type is different.
+- JavaScript can concatenate values even when the data types are different. When using + with a string, JavaScript automatically converts the other value to a string. Example: `"John" + 5` will result `John5`. 1. number + number → numeric addition, result is a number. 2. string + string → string concatenation, result is a string. 3. string + number → number is converted to a string, result is a string. 4. number + string → number is converted to a string, result is a string.
+- If you want to use JavaScript inline inside an HTML file, use `<script> </script>`.
+- For larger projects, it's common to write JavaScript in a separate file such as app.js and link it to the HTML file. `<script src="app.js"></script>` in <body></body> to link external JavaScript file.
+- `console.log()` prints/displays a value to the browser console.
 - JavaScript supports both Imperative and Declarative programming styles.
 - Imperative focuses on how to do something step by step while Declarative focuses on the desired result and lets JavaScript handle the implementation details.
 - React and modern frontend development mainly use the Declarative style through methods like `map()` `filter()` and React components, although Imperative code is still used when necessary.
@@ -83,6 +100,24 @@
 - ```Try...,catch``` need async function. If using promise style you need to use .catch().
 
 ## Syntax
+**Function**
+```js
+function findAge(year){
+    let currentYear = 2025
+    let age = currentYear - year
+    return age
+}
+
+console.log(findAge(2002))
+```
+- `function` defines (declares) a function.
+- `findAge` is the function name.
+- `year` is a parameter.
+- `Parameters` are variables that receive values when the function is called.
+- `Argument` is actual value passed when calling the function.
+- `return` sends a value back to the caller.
+
+
 **Object literal**
 ```js 
 const user = {
