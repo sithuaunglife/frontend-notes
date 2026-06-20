@@ -138,7 +138,7 @@ console.log(result)
 - If I `console.log(result)` it will return undefined since it has no returned value
 
 
-**Actions in functions**
+**Action in function**
 ```js
 function greet(name){
      console.log(`Hello ${name}`)
