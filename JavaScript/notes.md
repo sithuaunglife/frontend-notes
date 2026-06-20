@@ -98,6 +98,8 @@
 - A function can break when you call it without a parameter if it depends on that parameter in a way that requires a real value.
 - You can directly destructure in function parameter using ```const x = ({ category, title }) => {console.log(category, title)}```. This is nested destructuring in parameter ```const x({category: {id, title}}) => {console.log(id, title)}```.
 - ```Try...,catch``` need async function. If using promise style you need to use .catch().
+- In Higher-Order Functions (HOFs) like filter(), pass the callback function itself: `carts.filter(expensiveItem)`. Do not call the callback function directly: `carts.filter(expensiveItem())` `filter()` expects a function and will call it later for each item in the array. Using `()` executes the function immediately and passes its result instead of the function.
+- `filter()` passes each array item into the callback's first parameter. `item` represents the current element being processed, not the entire array. That's why you often see parameter names like: `items.filter((item) => ...)` `users.map((user) => ...)` `products.find((product) => ...)`. The parameter represents one element from the array at a time.
 
 ## Syntax
 **Function**
@@ -116,6 +118,38 @@ console.log(findAge(2002))
 - `Parameters` are variables that receive values when the function is called.
 - `Argument` is actual value passed when calling the function.
 - `return` sends a value back to the caller.
+
+
+**Function returning value notes**
+```js
+function findAge(year){
+    let currentYear = 2025
+    let age = currentYear - year
+    console.log(age)
+}
+
+console.log(findAge(2002))
+
+const result = findAge(2002)
+
+console.log(result)
+```
+- In this case `console.log(age)` inside the function display the calculated value not the returned value even I `console.log(findAge(2002))` which pass argument
+- If I `console.log(result)` it will return undefined since it has no returned value
+
+
+**Actions in functions**
+```js
+function greet(name){
+     console.log(`Hello ${name}`)
+}
+
+console.log(greet("John"))
+```
+- `return` is not needed because the function is only performing an action and not returning the values. For example: console.log(),  alert(), localStorage.setItem("x", "5")
+- The action is displaying the name in the console
+- No value needs to be sent back to the caller
+- In TypeScript term this action type is called `void`
 
 
 **Object literal**
@@ -391,14 +425,27 @@ const result = carts.filter(isCheap); // filter is a Higher-Order Function
 
 **Outer Function and Inner Function (Closure)**
 ```js
+const carts = [
+    { id: 1, item: "apple", price: "4000" },
+    { id: 2, item: "banana", price: "2000" },
+    { id: 3, item: "mango", price: "1000" },
+  ],
+
 const getPriceGreaterThan = (minPrice) => {
   return (item) => item.price > minPrice;
 };
-const over3000 = getPriceGreaterThan(3000);
+const callback = getPriceGreaterThan(3000);
+carts.filter(callback);
 ```
 - Outer parameter: `minPrice` = setup/configuration value
 - Inner parameter: `item` = actual item being processed
-- The outer function runs first and returns a new function. 
+- The outer function runs first and returns a new function
+- The returned function is stored in `callback`
+- When `callback` is called, the inner function runs
+- Think of it like a vending machine. First interaction: `const callback = getPriceGreaterThan(3000)` You insert a coin -> Machine prepares itself -> Returns a button. Then: `carts.filter(callback)`. You press the button -> Machine gives result. Two separate interactions
+- `carts.filter(getPriceGreaterThan(3000));` You can write like this instead of defining and storing the Outer function first. It is just you do two things in one expression
+- The outer function must run first to create and return the inner function
+- `carts.filter()` calls the callback function for each item in the array. Each item is passed into the callback's parameter. In this example, the current item is received by the `item` parameter. You can think of `filter()` doing something like: `callback(carts[0]); // item = carts[0], callback(carts[1]); // item = carts[1], callback(carts[2]); // item = carts[2]`
 - Inner function remembers outer variables through closure. Example: The inner function remembers the value of `minPrice` from the outer function `minPrice` even after the outer function has finished running.
 - Without a closure, the inner function would not be able to access `minPrice` after the outer function has finished running. Because JavaScript supports closures, the inner function remembers `minPrice` and can still access it later
 - Baby explanation: Think of it like the inner function looking up to the outer function's parameter and borrowing that value whenever it needs it. Even if the outer function has already finished running, the inner function still remembers where that value came from and can keep using it
