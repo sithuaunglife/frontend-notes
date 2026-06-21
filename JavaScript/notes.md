@@ -18,6 +18,9 @@
 - If you want to use JavaScript inline inside an HTML file, use `<script> </script>`.
 - For larger projects, it's common to write JavaScript in a separate file such as app.js and link it to the HTML file. `<script src="app.js"></script>` in <body></body> to link external JavaScript file.
 - `console.log()` prints/displays a value to the browser console.
+- For `%` JavaScript asks: How much is left over after dividing 10 by 3? (10 ÷ 3 = 3 remainder 1) So: (10 % 3 // 1)
+- Semicolon `;` is used to end a statement. JavaScript can often insert semicolons automatically (ASI). Many developers use semicolons for consistency.
+- A statement is an instruction that JavaScript executes to perform an action, such as creating variables, calling functions, making decisions, or returning values.
 - JavaScript supports both Imperative and Declarative programming styles.
 - Imperative focuses on how to do something step by step while Declarative focuses on the desired result and lets JavaScript handle the implementation details.
 - React and modern frontend development mainly use the Declarative style through methods like `map()` `filter()` and React components, although Imperative code is still used when necessary.
@@ -150,6 +153,19 @@ console.log(greet("John"))
 - The action is displaying the name in the console
 - No value needs to be sent back to the caller
 - In TypeScript term this action type is called `void`
+
+
+**Conditional Statements**
+```js
+if (condition) {
+    // runs if condition is true
+} else {
+    // runs if condition is false
+}
+```
+- `if` checks whether a condition is `true` or `false`
+- If the condition is true, the `if` block runs
+- Otherwise, the `else` block runs
 
 
 **Object literal**
