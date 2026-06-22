@@ -4,6 +4,7 @@
 - JavaScript was originally created for browsers, but today it runs in many places. (Example: Computer/Mobile Apps, Desktop Apps, Cloud Servers)
 - JavaScript can command computer since it is programming language.
 - `let` is declaring(creating) variable. For example: `let x=5`. `=` is the assignment operator. It assigns the value on the right (5) to the variable on the left (x).
+- - `var` is a JavaScript keyword used to declare a variable.
 - `let lunchbox = ["rice", "curry"]` it is setting up array. lunchbox[0] it is indexing/accessing the first item ("rice") of array.
 - `let myself = {name: "John", age:22}` it is object. `name` is key while `John` is value. `myself["name"]` it is accessing the `name` value (John). You can also use `myself.name` to get value.
 - Typing only the variable can show its value in the browser console or Node.js REPL.
@@ -21,6 +22,11 @@
 - For `%` JavaScript asks: How much is left over after dividing 10 by 3? (10 ÷ 3 = 3 remainder 1) So: (10 % 3 // 1)
 - Semicolon `;` is used to end a statement. JavaScript can often insert semicolons automatically (ASI). Many developers use semicolons for consistency.
 - A statement is an instruction that JavaScript executes to perform an action, such as creating variables, calling functions, making decisions, or returning values.
+- `[]` creates an Array in JavaScript.
+- `{}` creates an Object in JavaScript.
+- An expression is anything that produces a value.
+- JavaScript generally ignores extra spaces, tabs, and line breaks.
+- JavaScript often works even if you forget a semicolon because of Automatic Semicolon Insertion (ASI). However, missing semicolons can sometimes cause unexpected bugs. Many other programming languages require semicolons and will produce errors if they are missing. Using semicolons consistently can make code clearer and help avoid certain issues.
 - JavaScript supports both Imperative and Declarative programming styles.
 - Imperative focuses on how to do something step by step while Declarative focuses on the desired result and lets JavaScript handle the implementation details.
 - React and modern frontend development mainly use the Declarative style through methods like `map()` `filter()` and React components, although Imperative code is still used when necessary.
@@ -52,6 +58,10 @@
 - ```value``` is used to control what’s inside both ```<input>``` and ```<option>``` elements.
 - An ```<input>``` cannot display content by itself like ```<p>``` or ```<h1>``` does.
 - When using ```...state.items, newItem``` the new values live in ```items``` not in ```newItem``` To access updated data later, always always read from ```items```. ```newItem``` is temporary and only exists at creation time.
+- There are naming conventions like: camelCase (helloWorld), PascalCase (HelloWorld), kebab-case (hello-world) and snake_case (hello_world).
+- In JavaScript PascalCase case is commonly used for classes and React components.
+- kebab-case is commonly used for file names and CSS properties.
+- snake_case is commonly used in databases, Python, and some APIs.
 - Destructuring reads current props, not previous state.
 - JavaScript is single-threaded but asynchronous.
 - Synchronous (sync) run one task runs at a time. Each task must finish before the next one starts. Example: A → B → C
@@ -105,6 +115,17 @@
 - `filter()` passes each array item into the callback's first parameter. `item` represents the current element being processed, not the entire array. That's why you often see parameter names like: `items.filter((item) => ...)` `users.map((user) => ...)` `products.find((product) => ...)`. The parameter represents one element from the array at a time.
 
 ## Syntax
+**Part of Statement**
+```js
+var a = 7 + "2";
+```
+- `var` is a keyword
+- `a` is a variable name (identifier)
+- `=` is the assignment operator
+- `7 + "2"` is an expression
+- `var a = 7 + "2";` is a variable declaration statement
+
+
 **Function**
 ```js
 function findAge(year){
@@ -166,6 +187,74 @@ if (condition) {
 - `if` checks whether a condition is `true` or `false`
 - If the condition is true, the `if` block runs
 - Otherwise, the `else` block runs
+
+
+**Looping**
+```js
+let i = 1;
+
+while (i <= 100) {
+  console.log(i);
+  i++;
+}
+```
+- `let i = 1` Creates a variable i with value 1.
+- `while (i <= 100)` Checks if i is less than or equal to 100. If true, enters the loop body.
+- `console.log(i)` Prints the current value of i.
+- `i++` Increases i by 1.
+- Goes back to `while (i <= 100)` Checks the condition again with the new value.
+
+
+**Parts of a `for` looping**
+```js
+for(let i = 100; i>= 1; i--){
+    console.log(i);
+  }
+```
+- `let i = 100` Runs once before the loop starts. Sets the starting value. Start the loop at 100.
+- `i>= 1`Checked before every iteration. If true, continue. If false, stop.
+- `i --` Runs after each iteration. Changes the value for the next loop. `i++` `i--` `i*`
+- Start (let i = 100;) → Check (i>= 1) → Run → Update (i--)
+          ↑                                       ↓
+          ←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←←   
+
+
+**Meaning of a `of` in `for...of` loop**
+```js
+const markArr = [
+  "math: 90",
+  "english: 85",
+  "science: 95"
+];
+
+for (x of markArr){
+    console.log(x);
+}
+```
+- `for...of` is used to loop through iterable values like arrays and strings.
+- `x` represents the current item in the array.
+- `of` means "take values from".
+- On each loop, the next value from `markArr` is assigned to `x`.
+- It is shorter and easier to read than a traditional for loop.
+
+
+**Meaning of a `in` in a `for...in` loop**
+```js
+const markObj = {
+  math: 90,
+  english: 85,
+  science: 95
+};
+
+for (x in markObj){
+    console.log(x);
+}
+```
+- `for...in` is used to loop through the keys (property names) of an object.
+- `x` represents the key.
+- `in` means "take keys from".
+- On each loop, the next value from `markObj` is assigned to `x`.
+- It is useful for iterating through an object's properties.
 
 
 **Object literal**
