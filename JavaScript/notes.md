@@ -4,7 +4,7 @@
 - JavaScript was originally created for browsers, but today it runs in many places. (Example: Computer/Mobile Apps, Desktop Apps, Cloud Servers)
 - JavaScript can command computer since it is programming language.
 - `let` is declaring(creating) variable. For example: `let x=5`. `=` is the assignment operator. It assigns the value on the right (5) to the variable on the left (x).
-- - `var` is a JavaScript keyword used to declare a variable.
+- `var` is a JavaScript keyword used to declare a variable.
 - `let lunchbox = ["rice", "curry"]` it is setting up array. lunchbox[0] it is indexing/accessing the first item ("rice") of array.
 - `let myself = {name: "John", age:22}` it is object. `name` is key while `John` is value. `myself["name"]` it is accessing the `name` value (John). You can also use `myself.name` to get value.
 - Typing only the variable can show its value in the browser console or Node.js REPL.
@@ -24,6 +24,23 @@
 - A statement is an instruction that JavaScript executes to perform an action, such as creating variables, calling functions, making decisions, or returning values.
 - `[]` creates an Array in JavaScript.
 - `{}` creates an Object in JavaScript.
+- `{}` creates a block. A block groups one or more statements together so JavaScript can treat them as a single unit. Think of `{}` as a box. Without the box, JavaScript usually takes only the next statement.
+- `var` is still valid JavaScript, but modern JavaScript primarily uses `let` and `const`.
+- `let` can be declared outside a block, but when declared inside `{}`, it is only accessible within that block. `var` is not block-scoped, so variables declared with `var` inside a block are still accessible outside the block.
+- `{}` creates a block. Variables declared with let and const inside that block have block scope.
+- `undefined` means a variable exists, but it has not been assigned a `value` yet.
+- `null` is intentionally set to "nothing".
+- `let` and `const` cannot be redeclared in the same scope, but var can be redeclared.
+- `const` means you cannot reassign the variable to a different value later.
+- Most modern code editors can detect JavaScript errors and show them with a red underline or squiggly line.
+- `undefined` is a primitive data type in JavaScript. It is also the default value assigned to variables that have been declared but not given a value.
+- Variable names in JavaScript can contain letters (`a-z`, `A-Z`), numbers (`0-9`) (but cannot start with a number), underscores (`_`), and dollar signs (`$`). They cannot contain spaces or special characters such as `@`, `#`, `%`, `&`, `!`, or `-`. Variable names are also case-sensitive, so `myName` and `MyName` are considered different variables.
+- You cannot write `'I'm John!'` because the apostrophe in `I'm` closes the string early. Use `"I'm John!"` or `'I\'m John!'` instead.
+- The backslash `\` is called the escape character. It tells JavaScript to treat the character after it differently instead of its normal meaning.
+- Inside template literals (backticks ` `), you can freely use both single quotes `'` and double quotes `"` without escaping them. Template literals also support interpolation using `${}`, which allows you to insert variables or expressions directly into a string.
+- JavaScript has only one number type: Number. There are no separate integer and float types. Both whole numbers and decimal numbers are stored as Number values.
+- Primitive variables store the actual value. Object variables store a reference to an object in memory.
+- var and let can exist without a value (undefined). `const` cannot exist without a value.
 - An expression is anything that produces a value.
 - JavaScript generally ignores extra spaces, tabs, and line breaks.
 - JavaScript often works even if you forget a semicolon because of Automatic Semicolon Insertion (ASI). However, missing semicolons can sometimes cause unexpected bugs. Many other programming languages require semicolons and will produce errors if they are missing. Using semicolons consistently can make code clearer and help avoid certain issues.
@@ -124,6 +141,22 @@ var a = 7 + "2";
 - `=` is the assignment operator
 - `7 + "2"` is an expression
 - `var a = 7 + "2";` is a variable declaration statement
+
+
+**Variables**
+- Example 1:
+```js
+let x;      // declaration
+x = 5;      // assignment
+x = 10;     // reassignment
+```
+- Example 2:
+```js
+let x = 5;  // declaration + initialization
+x = 10;     // reassignment
+```
+- In both Example 1 and 2 `let` can be declare like that
+- `const` must be initialized when declared. `const` cannot be reassigned.
 
 
 **Function**
@@ -280,6 +313,41 @@ if (true) {
 - ``` while ```
 - ``` function ```
 - …it means a code block, NOT an object.
+
+
+**Hoisting**
+- Example with var:
+```js
+console.log(x);
+
+var x = 10; // Output is undefined
+``` 
+- JavaScript behaves roughly like:
+```js
+var x;
+
+console.log(x);
+
+x = 10; // Output is undefined
+```
+- Example with functions
+```js
+sayHello();
+
+function sayHello() {
+  console.log("Hello");
+} // Output is Hello
+```
+- JavaScript treats it roughly like:
+```js
+function sayHello() {
+  console.log("Hello");
+}
+
+sayHello(); // Output is Hello
+```
+- Hoisting is JavaScript moving declarations to be processed before code execution, which can make some variables and functions accessible before their declaration appears in the code.
+- Hoisting is a JavaScript behavior, but relying on it is generally considered bad practice. It's better to declare variables and functions before using them.
 
 
 **``` { } ``` in arrow function**
