@@ -44,6 +44,13 @@
 - An expression is anything that produces a value.
 - JavaScript generally ignores extra spaces, tabs, and line breaks.
 - JavaScript often works even if you forget a semicolon because of Automatic Semicolon Insertion (ASI). However, missing semicolons can sometimes cause unexpected bugs. Many other programming languages require semicolons and will produce errors if they are missing. Using semicolons consistently can make code clearer and help avoid certain issues.
+- `fruits [0] = "aa"` replaces the value stored at index `0` of the array. It does not reassign the `fruits` variable itself, so it is allowed with `const`.
+- Arrays are mutable even with `const`.
+- You can declare an empty array with `const` and add values later because you're modifying the array, not reassigning it.
+- Object properties must have a value, but that value can be an `empty string` `null` `undefined` an empty array or an empty object.
+- For boolean variables (true, false), it is better to use names like is, can and should. Example: `const canVote = true;` `const isLoading = false` `shouldRetry = false`
+- In JavaScript `1` is truthy while `0` is falsy.
+- `NaN` stands for "Not a Number". It appears when a numeric operation cannot produce a valid number. `NaN` is falsy. 
 - JavaScript supports both Imperative and Declarative programming styles.
 - Imperative focuses on how to do something step by step while Declarative focuses on the desired result and lets JavaScript handle the implementation details.
 - React and modern frontend development mainly use the Declarative style through methods like `map()` `filter()` and React components, although Imperative code is still used when necessary.
@@ -157,6 +164,45 @@ x = 10;     // reassignment
 ```
 - In both Example 1 and 2 `let` can be declare like that
 - `const` must be initialized when declared. `const` cannot be reassigned.
+
+
+**Part of Object**
+```js
+const user = {
+    name: "John"
+    hobbies: ["coding", "reading", "gym"]
+};
+```
+- `user` is a variable
+- `{}` is an object 
+- `name and hobbies` are keys
+- `"John"` and `["coding", "reading", "gym"]` are values
+- `name: "John"` the entire thing is call Property
+- `name: "John"` is a property of the object stored in the `user` variable
+
+
+**Accessing an Array Inside an Object**
+```js
+const user = {
+    name: "John"
+    hobbies: ["coding", "reading", "gym"]
+};
+```
+- `console.log(user.hobbies[0]);` Dot notation calling. `user.hobbies` get the array and `[0]` get the first item of that array
+- `console.log(user["hobbies"][0]);` Bracket notation calling. `user["hobbies"] get the array and `[0]` get the first item of that array
+
+
+**Compound assignment operator**
+```js
+let pocketMoney = 100;
+const orangePrice = 20;
+
+pocketMoney -= orangePrice;
+// pocketMoney = pocketMoney - orangePrice;
+console.log(pocketMoney); // Output - 80
+```
+- Compound assignment operators are shorthand for updating a variable
+- `pocketMoney -= orangePrice;` is the same as `pocketMoney = pocketMoney - orangePrice;`
 
 
 **Function**
@@ -288,6 +334,42 @@ for (x in markObj){
 - `in` means "take keys from".
 - On each loop, the next value from `markObj` is assigned to `x`.
 - It is useful for iterating through an object's properties.
+
+
+**Sparse arrays**
+```js
+const arr = [];
+
+arr[2] = "hello";
+
+console.log(arr[0]); // undefined
+console.log(arr[1]); // undefined
+console.log(arr[2]); // "hello"
+```
+- JavaScript arrays can be sparse
+- You can assign a value to an index that does not yet exist
+- Missing indexes become `empty slots` (holes)
+- The array length becomes the highest index + 1
+
+
+**Object Property Shorthand**
+```js
+const age = 24;
+
+const user = {
+    age    
+}
+```
+- Same as:
+```js
+const age = 24;
+
+const user = {
+    age: age    
+}
+```
+- Because the `key` and the `variable name` are the same (age), JavaScript lets you shorten it
+- You can access the property normally: `console.log(user.age)`
 
 
 **Object literal**
