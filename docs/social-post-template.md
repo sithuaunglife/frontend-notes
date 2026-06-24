@@ -1,7 +1,7 @@
-# 🚀 Frontend Developer Journey – X
+# 💻 Frontend Developer Journey – Day X
+# 🚀 Learning & Building in Public - Day X
 
 ## 📝 Context (Optional: use this when something special happened Example: Returning after a break, Project milestone, New project started, Major challenge, etc...)
-
 - Today I learned...
 - The past two days I have been busy with life so I wasn't able to post updates...
 - I focused on building the ...
