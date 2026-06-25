@@ -1,7 +1,7 @@
 # React
 
 ## Facts
-- React is a JavaScript library.
+- React is a JavaScript library for building user interfaces.
 - React uses a combination of JavaScript, HTML-like syntax (JSX), and CSS.
 - React DOM provides different APIs for rendering: Client API, Server API, Static API.
 - React has Legacy API

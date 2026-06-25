@@ -2,6 +2,7 @@
 
 ## Facts
 - JavaScript was originally created for browsers, but today it runs in many places. (Example: Computer/Mobile Apps, Desktop Apps, Cloud Servers)
+- HTML provides the structure of a webpage. CSS and Tailwind CSS handle the presentation (UI/styling). JavaScript handles the behavior and interactivity of a webpage.
 - JavaScript can command computer since it is programming language.
 - `let` is declaring(creating) variable. For example: `let x=5`. `=` is the assignment operator. It assigns the value on the right (5) to the variable on the left (x).
 - `var` is a JavaScript keyword used to declare a variable.
@@ -50,7 +51,16 @@
 - Object properties must have a value, but that value can be an `empty string` `null` `undefined` an empty array or an empty object.
 - For boolean variables (true, false), it is better to use names like is, can and should. Example: `const canVote = true;` `const isLoading = false` `shouldRetry = false`
 - In JavaScript `1` is truthy while `0` is falsy.
-- `NaN` stands for "Not a Number". It appears when a numeric operation cannot produce a valid number. `NaN` is falsy. 
+- `NaN` stands for "Not a Number". It appears when a numeric operation cannot produce a valid number. `NaN` is falsy.
+- `===` checks both value and data type.
+- `==` tries to convert types first (type coercion), while `===` does not.
+- Spread Syntax (...). Expands an array or object into individual elements/properties.
+- Rest Parameter (...). Collects multiple values into a single array parameter.
+- A parameter is a variable declared in a function definition.
+- Function parameters are scoped to the function where they are declared. A function can access its own parameters. A nested function can access parameters from its parent function. A parent function cannot access parameters declared inside a nested function.
+- Invoking a function means calling/executing the function.
+- A function expression is when a function is assigned to a variable.
+- Parameters have local (function) scope. They can be used inside the function where they are declared. Nested (inner) functions can access them. They cannot be accessed outside the function.
 - JavaScript supports both Imperative and Declarative programming styles.
 - Imperative focuses on how to do something step by step while Declarative focuses on the desired result and lets JavaScript handle the implementation details.
 - React and modern frontend development mainly use the Declarative style through methods like `map()` `filter()` and React components, although Imperative code is still used when necessary.
@@ -166,6 +176,50 @@ x = 10;     // reassignment
 - `const` must be initialized when declared. `const` cannot be reassigned.
 
 
+**Default parameters**
+```js
+function greet(name = "Guest") {
+  console.log(`Hello ${name}`);
+}
+
+greet("John"); // Hello John
+greet();       // Hello Guest
+```
+- `name` is a parameter.
+- `"Guest"` is the default value.
+- If no argument is passed, JavaScript uses the default value.
+
+
+**Spread Syntax (...)**
+```js
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+
+const combined = [...arr1, ...arr2];
+
+console.log(combined);
+// [1, 2, 3, 4]
+```
+- Expands elements from an array.
+
+
+**Rest Parameter (...)**
+```js
+function introduce(name, ...hobbies) {
+  console.log(name);
+  console.log(hobbies);
+}
+
+introduce("John", "Reading", "Gym", "Coding");
+
+// Output:
+// John
+// ["Reading", "Gym", "Coding"]
+```
+- `name` gets the first argument.
+- `...hobbies` collects the rest of arguments into an array.
+
+
 **Part of Object**
 ```js
 const user = {
@@ -253,6 +307,51 @@ console.log(greet("John"))
 - The action is displaying the name in the console
 - No value needs to be sent back to the caller
 - In TypeScript term this action type is called `void`
+
+
+**IIFE (Immediately Invoked Function Expression)**
+```js
+(function (name) {
+  console.log(`Hello ${name}`);
+})("John");
+
+// Output
+// Hello John 
+```
+- A function expression that is executed immediately after it is created.
+- Function expression wrapped in `()`.
+- The final `()` invokes the function immediately.
+- Can accept arguments.
+
+
+**Calling a Function Inside Another Function**
+```js
+function greet() {
+  console.log("Hello");
+}
+
+function start() {
+  greet();
+}
+
+start();
+```
+- A function can invoke another function.
+- Functions can call other functions.
+- A function can use the return value of another function.
+
+
+**Local Scope**
+```js
+function greet() {
+  const message = "Hello";
+}
+
+console.log(message); // Error
+```
+- Variables declared inside a function can only be accessed within that function.
+- Variables inside a function belong to the function's local scope.
+- They cannot be accessed outside the function.
 
 
 **Conditional Statements**
@@ -748,4 +847,4 @@ json-server --watch data.json --port 8000
 - This command watches data.json and runs JSON Server on port 8000.
 
 ## Tools
-- Notes
+- W3Schools is good for learning JavaScript basics. For a deeper understanding of JavaScript, use MDN.
