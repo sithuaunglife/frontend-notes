@@ -3,6 +3,9 @@
 ## Facts
 - Next.js is a React framework for building web applications.
 - Next.js is one of the most popular React frameworks in the world.
+- Next.js can be used for frontend-only applications.
+- Next.js can also be used for full-stack web applications.
+- Next.js supports Server-Side Rendering (SSR), Static Site Generation (SSG), and API routes.
 - ```layout.tsx``` applies persistent UI only to its folder and children (downward), and it unmounts completely when you leave that route segment.
 - Next.js relies on the app/ routes. features/ is just imported by routes. Anything outside app/ is invisible to Next.js routing.
 - Next.js routing automatically passes the output of ```page.tsx``` as children to its nearest ```layout.tsx```.

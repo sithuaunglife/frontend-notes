@@ -2,9 +2,20 @@
 
 ## Facts
 - JavaScript was originally created for browsers, but today it runs in many places. (Example: Computer/Mobile Apps, Desktop Apps, Cloud Servers)
+- JavaScript can be used for frontend web development.
+- JavaScript can be used for backend development with Node.js, Bun, or Deno.
+- JavaScript can be used for mobile app development with React Native.
+- JavaScript can be used for desktop app development with Electron.
+- JavaScript can be used for browser game development with Phaser, Three.js, and Babylon.js.
+- JavaScript can be used in AI and machine learning applications.
+- JavaScript can be be used in blockchain development.
+- JavaScript can be used for AR/VR web experiences.
+- JavaScript can be used for data visualization.
+- JavaScript can be used for cybersecurity tools and automation.
+- JavaScript can be used in embedded systems and Internet of Things (IoT) devices.
 - HTML provides the structure of a webpage. CSS and Tailwind CSS handle the presentation (UI/styling). JavaScript handles the behavior and interactivity of a webpage.
 - JavaScript can command computer since it is programming language.
-- `let` is declaring(creating) variable. For example: `let x=5`. `=` is the assignment operator. It assigns the value on the right (5) to the variable on the left (x).
+- `let` is a JavaScript keyword used to declare(create) a variable. For example: `let x=5`. `=` is the assignment operator. It assigns the value on the right (5) to the variable on the left (x).
 - `var` is a JavaScript keyword used to declare a variable.
 - `let lunchbox = ["rice", "curry"]` it is setting up array. lunchbox[0] it is indexing/accessing the first item ("rice") of array.
 - `let myself = {name: "John", age:22}` it is object. `name` is key while `John` is value. `myself["name"]` it is accessing the `name` value (John). You can also use `myself.name` to get value.
@@ -45,6 +56,7 @@
 - An expression is anything that produces a value.
 - JavaScript generally ignores extra spaces, tabs, and line breaks.
 - JavaScript often works even if you forget a semicolon because of Automatic Semicolon Insertion (ASI). However, missing semicolons can sometimes cause unexpected bugs. Many other programming languages require semicolons and will produce errors if they are missing. Using semicolons consistently can make code clearer and help avoid certain issues.
+- Each value stored in an array is called an element. Each element has an index, starting from `0`.
 - `fruits [0] = "aa"` replaces the value stored at index `0` of the array. It does not reassign the `fruits` variable itself, so it is allowed with `const`.
 - Arrays are mutable even with `const`.
 - You can declare an empty array with `const` and add values later because you're modifying the array, not reassigning it.
@@ -57,6 +69,7 @@
 - Spread Syntax (...). Expands an array or object into individual elements/properties.
 - Rest Parameter (...). Collects multiple values into a single array parameter.
 - A parameter is a variable declared in a function definition.
+- A function is just a set of instructions until it is called.
 - Function parameters are scoped to the function where they are declared. A function can access its own parameters. A nested function can access parameters from its parent function. A parent function cannot access parameters declared inside a nested function.
 - Invoking a function means calling/executing the function.
 - A function expression is when a function is assigned to a variable.
@@ -68,7 +81,8 @@
 - `const [first, second] = fruits;` this is array destructuring.
 - Curly braces ``` { } ``` is Object literal, Code block, Destructuring pattern.
 - If an arrow function needs more than one statement, use ``` { } ``` and an explicit ```return```. An implicit-return arrow function can return only one expression.
-- A return value belongs to the function caller, not the function itself.
+- A `return` value belongs to the function caller, not the function itself.
+- `return` sends a value to its function caller. It doesn't store values. Variables store values.
 - Expressions and Statements are not same they are different concepts.
 - The right side of = is usually an expression and expressions produce values.
 - Number, string, boolean, object, array, function, arrow function are all values.

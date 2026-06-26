@@ -40,7 +40,14 @@
 - We are valued for our ability to think and solve problems, not for memorizing syntax.
 - Write down the problem first in simple human language (// Problem). Then break it into small steps (// Steps) and translate those steps into code. If I forget syntax, I can look it up. Syntax fluency will come with repetition like muscle memory. It’s okay to forget syntax—I need to focus more on understanding the logic.
 - Documenting code means writing clear explanations about why the code exists, how it works, and the important decisions behind it by using comments or writing notes elsewhere, so future developers including yourself can understand and maintain it more easily.
-
+- You have to understand and remember JavaScript because it is the foundation of modern web development.
+- Frameworks change over time, but JavaScript fundamentals remain important.
+- Learn patterns, not just syntax.
+- Build projects to reinforce concepts.
+- Read documentation instead of relying only on tutorials.
+- Clean, readable code is better than clever code.
+- JavaScript requires regular practice because it involves programming logic and problem-solving.
+- Strong coding fundamentals are essential for building production-quality software.
 
 ## Syntax
 **Next.js folder structure**

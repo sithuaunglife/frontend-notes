@@ -1,4 +1,4 @@
-# Node.js
+# Package Management
 
 ## Facts
 - ```npm``` is scoped to the folder that contains ```package.json```. Each app (client/server) has its own ```package.json``` so npm commands must be run inside that folder by navigating (cd) into it first.
