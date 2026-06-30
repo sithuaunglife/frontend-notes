@@ -6,7 +6,6 @@
 - ```PATH``` decides which executable runs first when multiple versions exist; fixing the ```PATH``` order in System Properties resolves version conflicts.
 - In a monorepo, you can have many ```package.json``` files.
 - Node Version Manager (nvm) is used to install and switch between different Node.js versions.
-- Node.js is a JavaScript runtime environment.
 
 ## Syntax
 **pnpm-workspace-yaml**
@@ -31,6 +30,20 @@ source ~/.bashrc
 
 - ```nvm install 20``` This command downloads and installs Node.js version 20 on your system using Node Version Manager.
 - ```nvm use 20``` This command switches your current terminal to use Node.js version 20.
+
+
+### pnpm
+
+**Production server**
+```bash
+pnpm build
+pnpm start
+```
+- `pnpm build` creates the production build.
+- `pnpm start` runs the production server.
+- Uses the optimized production build.
+- Better performance than development mode.
+- No Hot Reload.
 
 ## Tools
 - Notes
