@@ -236,6 +236,23 @@ src={
 - If the backend already returns a full image URL (e.g. `https://minio.teapos.shop/web-pos-api/abc123.jpg`), use: `src={image}`
 - Always check the API response before deciding which approach to use
 
+
+**Next.js Image Configuration**
+```tsx
+images: {
+  remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "s3.teapos.store",
+      pathname: "/**",
+    },
+  ],
+}
+```
+- `next/image` only allows images from trusted domains.
+- If the backend changes the image storage domain (e.g. server migration or new S3/CDN), update `images.remotePatterns` in `next.config.ts`.
+- Restart the Next.js dev server after changing `next.config.ts`.
+
 ## Terminal Commands
 ### Terminal tool name 1
 

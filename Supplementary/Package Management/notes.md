@@ -45,6 +45,17 @@ pnpm start
 - Better performance than development mode.
 - No Hot Reload.
 
+
+### Windows terminal
+
+**Update applications**
+```bash
+winget upgrade --all
+```
+- Updates all applications managed by `winget`.
+- Does **not** update Windows itself.
+- Use `winget upgrade` first to see which applications have updates available.
+
 ## Tools
 - Notes
 

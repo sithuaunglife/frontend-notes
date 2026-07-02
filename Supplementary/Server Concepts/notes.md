@@ -35,6 +35,7 @@
 - To check which image formats Laravel accepts, look inside `app/Http/Requests` and find the image validation rule, e.g. `"image" => "required|file|mimes:jpg,png"`.
 - If an image URL works in one browser but fails in another with `ERR_QUIC_PROTOCOL_ERROR` or `QUIC_NETWORK_IDLE_TIMEOUT` the issue may be network-related (Wi-Fi, ISP, firewall, VPN, or HTTP/3/QUIC routing) rather than a problem with Next.js, MinIO, or the application code.
 - Production server is faster than the development server. Development mode prioritizes the developer experience, not performance. Production mode prioritizes speed, optimization, and user experience.
+- When backend infrastructure changes, check project configuration before changing application code: API base URL → `.env`, Image storage domain → `next.config.ts`, Authentication → Tokens/Cookies/Headers, API response changes → Update frontend types and logic. Many frontend issues are caused by configuration mismatches, not bugs in the application code.
 
 ## Syntax
 **Parts of the link**
