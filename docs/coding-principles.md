@@ -48,6 +48,7 @@
 - Clean, readable code is better than clever code.
 - JavaScript requires regular practice because it involves programming logic and problem-solving.
 - Strong coding fundamentals are essential for building production-quality software.
+- Understand the current line before tracing the data flow. Reading Order: Function, object, or value? → Defining or calling? → Arguments or properties? → What does this line do? → Mentally substitute variables with their current values (when possible) → Only then trace where the data comes from or where it is used. Reminder: Don't try to understand the entire application at once. First understand the local syntax, then investigate the broader data flow.
 
 ## Syntax
 **Next.js folder structure**
