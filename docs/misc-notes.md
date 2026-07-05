@@ -28,3 +28,7 @@
 - RAM (Random Access Memory) is temporary memory that stores data and programs while the computer is running.
 - HDD (Hard Disk Drive) and SSD (Solid State Drive) are permanent storage devices that keep data even after the computer is turned off.
 - The CPU (Central Processing Unit) executes instructions, performs calculations, and coordinates the computer's operations.
+- MDN (Mozilla Developer Network) is Mozilla's official developer documentation website. It provides high-quality documentation and learning resources for web technologies such as HTML, CSS, JavaScript, and Web APIs.
+- Mozilla created Firefox, and Mozilla also created MDN to provide documentation and learning resources for web developers.
+- Mozilla existed before Google Chrome. Firefox was released in 2004, while Google Chrome was first released in 2008.
+- Decimal (Base 10): Uses digits 0–9. Binary (Base 2): Uses digits 0 and 1 only. Octal (Base 8): Uses digits 0–7 only. Octal does not use the digits 8 and 9 because it is a base-8 number system. Hexadecimal (Base 16): Uses digits 0–9 and letters A–F (representing values 10–15). These are the four common number systems used in computing.

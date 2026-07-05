@@ -14,7 +14,14 @@
 - JavaScript can be used for cybersecurity tools and automation.
 - JavaScript can be used in embedded systems and Internet of Things (IoT) devices.
 - HTML provides the structure of a webpage. CSS and Tailwind CSS handle the presentation (UI/styling). JavaScript handles the behavior and interactivity of a webpage.
+- ECMAScript (ES) is the official specification (standard) that defines how JavaScript should work.
+- JavaScript implementations (browsers and Node.js) follow the ECMAScript standard.
+- Before ES6, major versions included ES1, ES2, ES3, and ES5.
+- ES6 was released in 2015 and is officially called ECMAScript 2015 (ES2015).
+- ES6 introduced many modern JavaScript features such as `let`, `const`, arrow functions, classes, template literals, destructuring, modules, and promises.
+- After ES6, ECMAScript adopted yearly version names (ES2016, ES2017, ES2018, etc.).
 - JavaScript can command computer since it is programming language.
+- JavaScript Error Mental Model (How the JavaScript Engine Reads Code) - Syntax Error: The JavaScript engine finds broken grammar in the code, so it can't start executing the program. Runtime Error: The JavaScript engine starts executing the code, but it encounters a problem while running and stops at that point. Handled Error (try...catch): The JavaScript engine encounters a runtime error, but the error is handled, so execution continues. Logic Error: The JavaScript engine executes the code successfully, but the program's logic is incorrect, producing the wrong result.
 - `let` is a JavaScript keyword used to declare(create) a variable. For example: `let x=5`. `=` is the assignment operator. It assigns the value on the right (5) to the variable on the left (x).
 - `var` is a JavaScript keyword used to declare a variable.
 - `let lunchbox = ["rice", "curry"]` it is setting up array. lunchbox[0] it is indexing/accessing the first item ("rice") of array.
@@ -37,6 +44,7 @@
 - `[]` creates an Array in JavaScript.
 - `{}` creates an Object in JavaScript.
 - `{}` creates a block. A block groups one or more statements together so JavaScript can treat them as a single unit. Think of `{}` as a box. Without the box, JavaScript usually takes only the next statement.
+- `var` was the primary way to declare variables before ES6 (ECMAScript 2015). ES6 introduced `let` and `const` as modern alternatives.
 - `var` is still valid JavaScript, but modern JavaScript primarily uses `let` and `const`.
 - `let` can be declared outside a block, but when declared inside `{}`, it is only accessible within that block. `var` is not block-scoped, so variables declared with `var` inside a block are still accessible outside the block.
 - `{}` creates a block. Variables declared with let and const inside that block have block scope.
@@ -110,6 +118,7 @@
 - In JavaScript PascalCase case is commonly used for classes and React components.
 - kebab-case is commonly used for file names and CSS properties.
 - snake_case is commonly used in databases, Python, and some APIs.
+- Most JavaScript identifiers use camelCase (starting with a lowercase letter), while classes and React components use PascalCase (starting with an uppercase letter).
 - Destructuring reads current props, not previous state.
 - JavaScript is single-threaded but asynchronous.
 - Synchronous (sync) run one task runs at a time. Each task must finish before the next one starts. Example: A → B → C
@@ -121,27 +130,7 @@
 - ```throw``` acts as a stop-sign for invalid states, helping developers catch bugs early and protecting the app from unsafe behavior; once the issue is properly fixed, the ```throw``` can be removed.
 - ```finally``` is for cancelling or resetting actions that were started earlier (like loading) and must stop, whether the operation succeeds or fails — basically cleanup. If you ever find yourself writing the same cleanup code in both try and catch, it belongs in ```finally```.
 - ```try...catch``` is most commonly used around API fetching and other operations that can fail unpredictably.
-- JSON is a string format
-- JSON is a universal data format used as a bridge between different programming applications.
-- ```JSON.parse()``` converts JSON (text/string) into a JavaScript value (object or array).
-- ```JSON.stringify()``` converts JavaScript value (object or array) into a JSON (text/string).
-- If I want to work with the data, I use ```JSON.parse()``` to convert the JSON string into a JavaScript object. If I want to send data to the backend, I use ```JSON.stringify()``` to convert the JavaScript object into a JSON string.
-- Fake Store API is a mock REST API made for frontend practice.
-- Every usable API has documentation.
-- Even API users (frontend) must follow REST standards.
-- In an API, the URL becomes an endpoint. Example 1: ("https://fakestoreapi.com
-") This is the base URL, not an endpoint. Example 2: ("https://fakestoreapi.com/products/1
-") This is an endpoint because it points to a specific resource.
-- Response 200 means the request was successful.
-- In JSON, all keys are strings.
-- JSON values can be string, number, boolean, array, object, or null.
-- If there is no value, do not include the key at all. Use null only when the value exists but is intentionally empty.
-- There is a tool called JSON Server.
-- JSON Server is not used in production; it is only for testing and development.
 - You do not need to run as admin to use ```curl``` on Windows in most cases.
-- In API there is response time.
-- In the terminal, endpoints are links.
-- You can use DOM manipulation with JSON data.
 - A function can only use: Variables inside itself, Variables from outer scope, Variables passed as parameters, Values returned from other functions.
 - Destructuring ```{ }``` appears on the left side of ```=``` as a pattern to extract values.
 - Destructuring replaces the variable name — it does not sit beside it.
@@ -836,29 +825,6 @@ Ctrl + C
 curl "https://fakestoreapi.com/products/1"
 ```
 - Using ```curl``` to test an API on Windows.
-
-
-### Json server
-
-**Install json server**
-```bash
-npm install -g json-server
-```
-- This command install json server.
-
-
-**Check json server version**
-```bash
-json-server --version
-```
-- This command check json server version.
-
-
-**Run json server**
-```bash
-json-server --watch data.json --port 8000
-```
-- This command watches data.json and runs JSON Server on port 8000.
 
 ## Tools
 - W3Schools is good for learning JavaScript basics. For a deeper understanding of JavaScript, use MDN.
