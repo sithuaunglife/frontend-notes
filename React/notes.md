@@ -66,6 +66,9 @@ JSX only allows expressions (things that produce values), not statements like if
 - `triggerClassName` → Optional Tailwind classes passed from the parent component.
 - `variant: variant ?? "secondary"` → Use the provided variant; otherwise use `"secondary"`.
 - `size: size ?? "xs"` → Use the provided size; otherwise use `"xs"`.
+- Common Immutable Operations in React: Add an item → Use array spread (`[...array, newItem]`) to create a new array. Update an item → Use `map()` to create a new array and replace the matching item with a new object. Remove an item → Use `filter()` to create a new array without the matching item. Find an item → Use `find()` to retrieve a single matching item. Copy an object → Use object spread (`{ ...object }`) to create a new object.
+- Common React Methods and What They Return: Array spread (`[...array]`) → Returns a new array. Object spread (`{...object}`) → Returns a new object. `map()` → Returns a new array. `filter()` → Returns a new array. `find()` → Returns one object/value (or undefined if not found). `reduce()` → Returns any value, depending on what you return (object, array, number, string, etc.). `sort()` → Returns the same array after sorting it (mutates the original array unless you copy it first). `forEach()` → Returns undefined (used for side effects, not creating new data).
+- React prefers immutable updates, so avoid modifying the original arrays and objects directly. Instead, create new arrays or objects when updating state.
 
 ## Syntax
 **JSX → Under the Hood**

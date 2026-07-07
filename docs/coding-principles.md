@@ -49,6 +49,7 @@
 - JavaScript requires regular practice because it involves programming logic and problem-solving.
 - Strong coding fundamentals are essential for building production-quality software.
 - Understand the current line before tracing the data flow. Reading Order: Function, object, or value? → Defining or calling? → Arguments or properties? → What does this line do? → Mentally substitute variables with their current values (when possible) → Only then trace where the data comes from or where it is used. Reminder: Don't try to understand the entire application at once. First understand the local syntax, then investigate the broader data flow.
+- Before writing code, describe the solution in plain English first → Explain what you're trying to do step by step without thinking about syntax → Once the logic is clear, decide what data structure you're working with (array or object), what function to use, and what methods or operators you need (e.g., `map()`, `filter()`, `find()`, spread `...`) → Logic comes first; syntax comes second → Think, "What do I want the program to do?" before asking, "How do I write it?" → Once you recognize the implementation pattern (recipe), writing the code becomes much faster.
 
 ## Syntax
 **Next.js folder structure**

@@ -75,8 +75,14 @@
 - `===` checks both value and data type.
 - `==` tries to convert types first (type coercion), while `===` does not.
 - Spread Syntax (...). Expands an array or object into individual elements/properties.
+- Object Spread (`{ ...obj }`) ≠ Array Spread (`[ ...arr ]`). They use the same `...` syntax but work on different data structures.
+- Array Spread copies elements from an array into another array.
+- Object Spread copies key-value pairs (properties) from an object into another object.
+- Use `[ ...array ]` when creating or updating an array.
+- Use `{ ...object }` when creating or updating an object.
 - Rest Parameter (...). Collects multiple values into a single array parameter.
 - A parameter is a variable declared in a function definition.
+- A parameter gets its value from the code that calls the function.
 - A function is just a set of instructions until it is called.
 - Function parameters are scoped to the function where they are declared. A function can access its own parameters. A nested function can access parameters from its parent function. A parent function cannot access parameters declared inside a nested function.
 - Invoking a function means calling/executing the function.
