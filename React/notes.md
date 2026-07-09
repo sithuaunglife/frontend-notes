@@ -9,6 +9,7 @@
 - Props customize a component by giving it data, options, or behavior from the outside.
 - React JSX uses expressions, not statements.
 - If user interaction or async data causes UI update → React lifecycle concept. If you changing source code it causes UI update → Dev tooling concept.
+- In React, anything that can change and affect what the user sees should usually be represented by state.
 - Render and re-render happen at runtime while the user is using the application, when reactive data changes (such as state, props, context, or async results), not when the developer edits source code during development.
 - Re-rendering and browser refresh are not the same. Re-render means:React runs your component function again to update UI. React updates the UI (component or parts of it) when state/props change. Only the necessary parts change. Page does not reload. Browser refresh is not involved.
 - State/props change → React re-renders → Then React updates DOM.
@@ -36,6 +37,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - ```formData``` is simply the collected and validated data from your form at the moment the user clicks submit. 
 - Inside JSX you can no longer declare variables.
 - React follows a simple rule: JSX treats lowercase tags as strings (HTML elements), while PascalCase identifiers are treated as custom React components.
+- `useState` creates the state with an initial value and gives me two things: the current `state` (read-only) and `setState`, which updates the state.
 - ```useEffect``` runs after React finishes rendering the UI.
 - ```useEffect``` is not for interactivity.
 - ```useEffect``` really means “After render is finished and DOM is updated… now you can safely do real world actions.”
@@ -52,6 +54,7 @@ JSX only allows expressions (things that produce values), not statements like if
 - useState → storing value AND telling React to update UI, useRef → storing value WITHOUT telling React anything.
 - When state/props change → that mounted component re-renders. If a component is already mounted in the DOM, and its state changes or its props change, React will re-run that whole component function.
 - React ```key``` helps React uniquely identify list elements during reconciliation to update DOM efficiently and correctly.
+- `map()` does not require a key. React requires a key when rendering a list of JSX elements so it can uniquely identify each element between renders.
 - React reuses DOM nodes when keys are missing, causing previous content to be overwritten instead of properly removed.
 - ```key``` is for React internal list identity. It helps during Reconciliation React uses it to know: which item stayed, which item moved, which item got removed.
 - ```<UserCard name={name} />``` Send name data from parent → child component. Child receives: props.name. This is component communication.
@@ -69,6 +72,10 @@ JSX only allows expressions (things that produce values), not statements like if
 - Common Immutable Operations in React: Add an item → Use array spread (`[...array, newItem]`) to create a new array. Update an item → Use `map()` to create a new array and replace the matching item with a new object. Remove an item → Use `filter()` to create a new array without the matching item. Find an item → Use `find()` to retrieve a single matching item. Copy an object → Use object spread (`{ ...object }`) to create a new object.
 - Common React Methods and What They Return: Array spread (`[...array]`) → Returns a new array. Object spread (`{...object}`) → Returns a new object. `map()` → Returns a new array. `filter()` → Returns a new array. `find()` → Returns one object/value (or undefined if not found). `reduce()` → Returns any value, depending on what you return (object, array, number, string, etc.). `sort()` → Returns the same array after sorting it (mutates the original array unless you copy it first). `forEach()` → Returns undefined (used for side effects, not creating new data).
 - React prefers immutable updates, so avoid modifying the original arrays and objects directly. Instead, create new arrays or objects when updating state.
+- Development rendering → Happens when you edit and save your code. Next.js/Vite performs Fast Refresh (development only).
+- React rendering → Happens when the data a component depends on changes (state, props, context, or subscribed store).
+- `setState()` → Schedules a re-render of the component that owns that state.
+- React re-runs the entire component function, not just the line where `setState()` was called.
 
 ## Syntax
 **JSX → Under the Hood**

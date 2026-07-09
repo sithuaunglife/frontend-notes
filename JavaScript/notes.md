@@ -156,6 +156,7 @@
 - ```Try...,catch``` need async function. If using promise style you need to use .catch().
 - In Higher-Order Functions (HOFs) like filter(), pass the callback function itself: `carts.filter(expensiveItem)`. Do not call the callback function directly: `carts.filter(expensiveItem())` `filter()` expects a function and will call it later for each item in the array. Using `()` executes the function immediately and passes its result instead of the function.
 - `filter()` passes each array item into the callback's first parameter. `item` represents the current element being processed, not the entire array. That's why you often see parameter names like: `items.filter((item) => ...)` `users.map((user) => ...)` `products.find((product) => ...)`. The parameter represents one element from the array at a time.
+- `filter()` → true = Keep ✅ | false = Remove ❌. Example: `category.id !== id` checks every category. As long as the expression is true, that category stays in the new array. When the expression becomes false (the IDs match), that category is excluded from the new array.
 
 ## Syntax
 **Part of Statement**
@@ -197,6 +198,24 @@ greet();       // Hello Guest
 - `name` is a parameter.
 - `"Guest"` is the default value.
 - If no argument is passed, JavaScript uses the default value.
+
+
+**Passing Functions as Parameters**
+```js
+function greet() {
+  console.log("Hello");
+}
+
+function execute(fn) {
+  fn(); // Calls the function that was passed in
+  // Output - Hello
+}
+
+execute(greet);
+```
+- You can pass a function as a parameter to another function.
+- The receiving function can call it using the parameter name.
+- This lets you decide what behavior to execute without changing the receiving function.
 
 
 **Spread Syntax (...)**
