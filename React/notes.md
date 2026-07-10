@@ -76,6 +76,11 @@ JSX only allows expressions (things that produce values), not statements like if
 - React rendering → Happens when the data a component depends on changes (state, props, context, or subscribed store).
 - `setState()` → Schedules a re-render of the component that owns that state.
 - React re-runs the entire component function, not just the line where `setState()` was called.
+- `State` is a variable that stores a value. If that value is an object or array, then it stores a reference to that object or array in memory.
+React and Zustand store the current state value. If that value is an object or array, they store a reference to it. When you update state, you should create a new object or array instead of mutating the existing one. React and Zustand detect the new reference to know that the state has changed.
+- When updating an object, you need to specify the key you want to update. Example: `{ ...item, qty: cart.qty + 1 }`.
+- When adding a new item, you don't need `map()`. You can simply spread the existing array and add the new item. Example: `[...items, newItem]`.
+- Mental model: If I want to update an existing item, I need to create a new object using the object spread. Example: `{ ...item, price: item.price + 1 }`. If the item doesn't exist and I want to add it, I need to create a new array using the array spread. Example: `[...items, newItem]`.
 
 ## Syntax
 **JSX → Under the Hood**

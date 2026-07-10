@@ -157,6 +157,14 @@
 - In Higher-Order Functions (HOFs) like filter(), pass the callback function itself: `carts.filter(expensiveItem)`. Do not call the callback function directly: `carts.filter(expensiveItem())` `filter()` expects a function and will call it later for each item in the array. Using `()` executes the function immediately and passes its result instead of the function.
 - `filter()` passes each array item into the callback's first parameter. `item` represents the current element being processed, not the entire array. That's why you often see parameter names like: `items.filter((item) => ...)` `users.map((user) => ...)` `products.find((product) => ...)`. The parameter represents one element from the array at a time.
 - `filter()` → true = Keep ✅ | false = Remove ❌. Example: `category.id !== id` checks every category. As long as the expression is true, that category stays in the new array. When the expression becomes false (the IDs match), that category is excluded from the new array.
+- `find()` does not return a new array. It returns the first element (object/value) that matches the condition.
+- `find()` return a single item (or `undefined`).
+- If nothing matches in `find()` it returns `undefined`.
+- `find()` returns the matching element. If the element is an object → you get the whole object. If the element is a string → you get the string. If the element is a number → you get the number. If nothing matches → you get undefined.
+- The function runs once for each element in the array. Each time it runs, the current element is passed as an argument to the callback function.The callback returns a value. `map()` collects each returned value into a new array. `filter()` includes an element in the new array only if the callback returns `true`.
+- A Higher-Order Function (HOF) takes a callback function as an argument or returns a function.
+- `map()`, `filter()`, `find()`, and `reduce()` are Higher-Order Functions because they receive a callback function as an argument.
+- `categories.map((category) => category.title);` `(category)` is the parameter. `(category) => category.title` is the callback function. `map()` is the Higher-Order Function (HOF). `map()` passes each array item as an argument into the callback parameter (`category`).
 
 ## Syntax
 **Part of Statement**
