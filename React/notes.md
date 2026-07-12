@@ -81,6 +81,7 @@ React and Zustand store the current state value. If that value is an object or a
 - When updating an object, you need to specify the key you want to update. Example: `{ ...item, qty: cart.qty + 1 }`.
 - When adding a new item, you don't need `map()`. You can simply spread the existing array and add the new item. Example: `[...items, newItem]`.
 - Mental model: If I want to update an existing item, I need to create a new object using the object spread. Example: `{ ...item, price: item.price + 1 }`. If the item doesn't exist and I want to add it, I need to create a new array using the array spread. Example: `[...items, newItem]`.
+- A custom hook is just a JavaScript function. Variables created inside the hook are in the local scope, so they cannot be accessed from outside unless they are returned.
 
 ## Syntax
 **JSX → Under the Hood**
