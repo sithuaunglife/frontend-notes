@@ -24,6 +24,7 @@
 - JavaScript Error Mental Model (How the JavaScript Engine Reads Code) - Syntax Error: The JavaScript engine finds broken grammar in the code, so it can't start executing the program. Runtime Error: The JavaScript engine starts executing the code, but it encounters a problem while running and stops at that point. Handled Error (try...catch): The JavaScript engine encounters a runtime error, but the error is handled, so execution continues. Logic Error: The JavaScript engine executes the code successfully, but the program's logic is incorrect, producing the wrong result.
 - `let` is a JavaScript keyword used to declare(create) a variable. For example: `let x=5`. `=` is the assignment operator. It assigns the value on the right (5) to the variable on the left (x).
 - `var` is a JavaScript keyword used to declare a variable.
+- If I see `const`, `let`, or `var`, I'm looking at a variable declaration statement.
 - `let lunchbox = ["rice", "curry"]` it is setting up array. lunchbox[0] it is indexing/accessing the first item ("rice") of array.
 - `let myself = {name: "John", age:22}` it is object. `name` is key while `John` is value. `myself["name"]` it is accessing the `name` value (John). You can also use `myself.name` to get value.
 - Typing only the variable can show its value in the browser console or Node.js REPL.
@@ -95,8 +96,9 @@
 - `const [first, second] = fruits;` this is array destructuring.
 - Curly braces ``` { } ``` is Object literal, Code block, Destructuring pattern.
 - If an arrow function needs more than one statement, use ``` { } ``` and an explicit ```return```. An implicit-return arrow function can return only one expression.
-- A `return` value belongs to the function caller, not the function itself.
+- `return` value belongs to the function caller, not the function itself.
 - `return` sends a value to its function caller. It doesn't store values. Variables store values.
+- `return` returns the value of an expression, not a statement.
 - Expressions and Statements are not same they are different concepts.
 - The right side of = is usually an expression and expressions produce values.
 - Number, string, boolean, object, array, function, arrow function are all values.
@@ -152,6 +154,8 @@
 - A function can use variables from the scope where it is defined.
 - Even if I destructure the function somewhere else, it can still use variables from its original scope
 - A function can break when you call it without a parameter if it depends on that parameter in a way that requires a real value.
+- If a function appears on the right side of `=` or is passed as an argument, it is a function expression.
+- Arrow functions are always function expressions. They create a function value, which is why you can pass them directly to HOFs like map, filter, and find.
 - You can directly destructure in function parameter using ```const x = ({ category, title }) => {console.log(category, title)}```. This is nested destructuring in parameter ```const x({category: {id, title}}) => {console.log(id, title)}```.
 - ```Try...,catch``` need async function. If using promise style you need to use .catch().
 - In Higher-Order Functions (HOFs) like filter(), pass the callback function itself: `carts.filter(expensiveItem)`. Do not call the callback function directly: `carts.filter(expensiveItem())` `filter()` expects a function and will call it later for each item in the array. Using `()` executes the function immediately and passes its result instead of the function.
@@ -164,7 +168,12 @@
 - The function runs once for each element in the array. Each time it runs, the current element is passed as an argument to the callback function.The callback returns a value. `map()` collects each returned value into a new array. `filter()` includes an element in the new array only if the callback returns `true`.
 - A Higher-Order Function (HOF) takes a callback function as an argument or returns a function.
 - `map()`, `filter()`, `find()`, and `reduce()` are Higher-Order Functions because they receive a callback function as an argument.
+- A higher-order function (HOF) calls the callback, waits for the callback to return a value, then uses that returned value to continue its own work internally.
+- A Higher-Order Function (HOF) does not do your logic. Its job is to: 1. Pass values to the callback. 2. Wait for the callback to finish. 3. Receive the callback's returned value. 4. Use that returned value to perform its own behavior.
+- After each callback finishes, the HOF can immediately use or store the returned value before moving to the next iteration.
+- Each callback receives the next element from the original collection, not the previous callback's returned value.
 - `categories.map((category) => category.title);` `(category)` is the parameter. `(category) => category.title` is the callback function. `map()` is the Higher-Order Function (HOF). `map()` passes each array item as an argument into the callback parameter (`category`).
+- You do not need to know how a higher-order function is implemented internally to use it effectively Instead, focus on these three questions: 1. What callback function should I pass? 2. What values does the HOF pass into my callback? 3. What should my callback return? Don't think about the library's source code.
 
 ## Syntax
 **Part of Statement**
@@ -811,6 +820,49 @@ const result = carts.filter(isCheap); // filter is a Higher-Order Function
 - A Callback Function is a function passed as an argument to another function
 - A Higher-Order Function (HOF) is a function that accepts another function as an argument or returns a function
 - Baby explanation: A callback function = the function you give. A higher-order function = the function that receives another function
+
+
+**Nested HOF Execution Flow**
+```text
+Outer HOF starts
+    │
+    ▼
+Calls its callback
+    │
+    ▼
+Callback may call another HOF
+    │
+    ▼
+Inner HOF starts
+    │
+    ▼
+Inner HOF calls its callback
+    │
+    ▼
+Innermost callback returns a value
+    │
+    ▼
+Inner HOF receives the returned value
+    │
+    ▼
+Inner HOF finishes and returns
+    │
+    ▼
+Outer callback receives the returned value
+    │
+    ▼
+Outer callback finishes and returns
+    │
+    ▼
+Outer HOF receives the returned value
+    │
+    ▼
+Outer HOF finishes
+```
+- Passes arguments → Callback
+- Waits for the callback to finish
+- Receives the callback's returned value
+- Continues its own internal work
 
 
 **Outer Function and Inner Function (Closure)**

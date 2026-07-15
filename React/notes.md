@@ -82,6 +82,8 @@ React and Zustand store the current state value. If that value is an object or a
 - When adding a new item, you don't need `map()`. You can simply spread the existing array and add the new item. Example: `[...items, newItem]`.
 - Mental model: If I want to update an existing item, I need to create a new object using the object spread. Example: `{ ...item, price: item.price + 1 }`. If the item doesn't exist and I want to add it, I need to create a new array using the array spread. Example: `[...items, newItem]`.
 - A custom hook is just a JavaScript function. Variables created inside the hook are in the local scope, so they cannot be accessed from outside unless they are returned.
+- React components `return` JSX for React to render.
+- For event props like `onClick` and `onSubmit`, you need to pass a function reference. That function can either be a helper function you define in the component, like `handleClick` or `handleSubmit`, or a function you get from somewhere else, such as a Zustand store, a custom hook, or a prop, and pass it directly.
 
 ## Syntax
 **JSX → Under the Hood**
