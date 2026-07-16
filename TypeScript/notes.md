@@ -32,6 +32,7 @@
 - I noticed that `<>` is mostly used to define the overall shape for generic libraries and hooks, while `:` is mostly used when typing parameters, especially during prop destructuring.
 - Don't confuse generic types `<>` with parameter types `:`. Generic types are usually used to provide the overall shape to a generic library, hook, or utility, while parameter types are used to define the shape of the data being passed into a function during development.
 - You can use `[]` to indicate to TypeScript that this type is an array of `CategoryDetailType` objects. Use it when the data contains multiple items. Example: `categories: CategoryDetailType[];` ` categories: [{ id: 0, title: "All" }, { id: 1, title: "Bread" }, { id: 2, title: "Cake" }],`.
+- React Props Typing: If data is defined inside a component, it does not need a props type. When that data is passed to a child component as props, the child must define a props type to describe the data it receives. The parent simply passes the data; the child is responsible for typing the received props.
 
 ## Syntax
 **Void**
