@@ -104,7 +104,12 @@
 - Number, string, boolean, object, array, function, arrow function are all values.
 - undefined → missing value. You didn’t set it, so JavaScript gives it automatically.
 - `?.` protects the thing before it, not after it. Example 1: (`user?.name`) user is protected.
+- JavaScript has three logical operators: `&&` (AND), `||` (OR), and `!` (NOT).
+- `&&` returns `true` only if both operands are truthy.
+- `||` returns `true` if at least one operand is truthy.
+- `!` reverses a boolean value (`true` → `false`, `false` → `true`).
 - `&&` → one-sided condition “maybe show”.
+- In a ternary operator, if the condition is `true`, the first expression is returned. Otherwise, the second expression is returned.
 - `? :` → two-sided condition “choose between two things”.
 - `[...items, newItem]` combines old items with the new one.
 - `{ items: newItem }` replaces the old items completely.
@@ -302,6 +307,56 @@ console.log(pocketMoney); // Output - 80
 ```
 - Compound assignment operators are shorthand for updating a variable
 - `pocketMoney -= orangePrice;` is the same as `pocketMoney = pocketMoney - orangePrice;`
+
+
+**Object Method Shorthand (ES6)**
+```js
+const obj = {
+  run2() {
+    return "this is run 2";
+  },
+};
+
+console.log(obj.run2()); // "this is run 2"
+```
+- `run2()` is a method of the object.
+- This is called method shorthand (introduced in ES6).
+
+
+**`this` in Object Methods**
+```js
+const user = {
+  name: "John",
+
+  getName() {
+    return this.name;
+  },
+};
+
+console.log(user.getName()); // "John"
+```
+- `this` refers to the object that called the method.
+- In this example, `this` is `user`.
+- Therefore, `this.name` is the same as `user.name`.
+- Use `this` to access other properties and methods of the same object.
+
+
+**Conditional Return in a Function**
+```js
+const run = function () {
+  if (false) {
+    return "this is true";
+  }
+
+  return "this is false";
+};
+
+console.log(run()); // "this is false"
+```
+- You can use an `if` statement to check a condition inside a function.
+- If the condition is `true`, the function returns immediately.
+- If the condition is `false`, the function continues executing the remaining code.
+- `return` ends the function immediately.
 
 
 **Function**
