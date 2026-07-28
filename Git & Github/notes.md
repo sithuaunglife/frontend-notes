@@ -25,13 +25,27 @@
 - Skip copying -> `node_modules` `.next` `dist` `build` because those are generated files and huge files and can fail the copying process.
 - `git pull` and `git fetch` are different. `git fetch` downloads updates from GitHub and updates your local Git's knowledge of remote branches without making changes to your current working branch. `git pull` downloads updates and applies them to your current branch by fetching and then merging (or rebasing) the changes.
 - If Git behaves strangely and normal troubleshooting does not work delete the local repository folder and clone the repository again.
+- When creating a GitHub repository: Without a `README.md`, `.gitignore`, or license, GitHub creates an empty repository. Your local Git repository can connect to it and push normally. With a `README.md`, `.gitignore`, or license, GitHub creates an initial commit. This means the GitHub repository already has its own Git history, while your local repository starts with a different history. They are considered unrelated histories, so you'll need to merge them (e.g., using `git pull --allow-unrelated-histories`) or recreate the GitHub repository as empty before pushing.
+- A `.gitignore` file placed at the root of the Git repository applies recursively to all subfolders.
 
 ## Syntax
-**Heading**
-```js 
- <!-- code here -->
+**Repository Root**
+- Local:
+```text
+Project/
+├── src/
+├── package.json
+└── README.md
 ```
-- Description
+- GitHub:
+```text
+repository-name/
+├── src/
+├── package.json
+└── README.md
+```
+- GitHub does not include your local parent folder name when you push a repository.
+- If you initialize Git inside a folder named `Project`, the contents of the `Project` folder become the root of the GitHub repository—not the `Project` folder itself.
 
 ## Terminal Commands
 ### Git Bash
@@ -67,6 +81,7 @@
 - `git push origin main --force` updates the remote branch to match your local history (rewrites history).
 - `git branch -r` shows remote-tracking branches from repositories like `origin` or teammate remotes.
 - `git fetch origin` fetches remote branches and commits from GitHub into your local Git repository without merging them into your current branch.
+- `git push -u origin main` — First push. Sets the upstream (tracking) branch so future pushes and pulls can use `git push` and `git pull` without specifying `origin main`.
 
 
 **Git Configuration**
@@ -93,6 +108,8 @@ git config --global user.email <Your email>
 - ```git fetch``` pulls (downloads) data from the remote source. Does not combine (merge) anything.
 - ```git merge``` combines branches together, Does not download data.
 - ```git pull``` downloads data and then combines it. It is same as git fetch + git merge.
+- ```Get-ChildItem -Recurse -Directory -Force -Filter ".git"``` Preview only (lists all .git folders that would be affected). Previews all `.git` directories under the current folder.
+- ```Get-ChildItem -Recurse -Directory -Force -Filter ".git" | Remove-Item -Recurse -Force``` Delete all .git folders (it does not preview; it immediately removes them). Removes all `.git` directories recursively from the current folder and its subfolders.
 
 ## Tools
 - Notes
