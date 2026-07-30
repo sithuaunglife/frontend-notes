@@ -27,6 +27,7 @@
 - If Git behaves strangely and normal troubleshooting does not work delete the local repository folder and clone the repository again.
 - When creating a GitHub repository: Without a `README.md`, `.gitignore`, or license, GitHub creates an empty repository. Your local Git repository can connect to it and push normally. With a `README.md`, `.gitignore`, or license, GitHub creates an initial commit. This means the GitHub repository already has its own Git history, while your local repository starts with a different history. They are considered unrelated histories, so you'll need to merge them (e.g., using `git pull --allow-unrelated-histories`) or recreate the GitHub repository as empty before pushing.
 - A `.gitignore` file placed at the root of the Git repository applies recursively to all subfolders.
+- Git `user.name` and GitHub username are completely separate. They can be different names.
 
 ## Syntax
 **Repository Root**
@@ -87,15 +88,15 @@ repository-name/
 **Git Configuration**
 1.
 ```
-git config ---global init.defaultbranch main
+git config --global init.defaultBranch main
 ```
 2.
 ```
-git config --global user.name <Your name>
+git config --global user.name "<Your name>"
 ```
 3.
 ```
-git config --global user.email <Your email>
+git config --global user.email "<Your email>"
 ```
 - Those are necessary for git to work in local machine and it is only set first time using git in machine.
 
