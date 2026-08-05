@@ -32,3 +32,12 @@
 - Mozilla created Firefox, and Mozilla also created MDN to provide documentation and learning resources for web developers.
 - Mozilla existed before Google Chrome. Firefox was released in 2004, while Google Chrome was first released in 2008.
 - Decimal (Base 10): Uses digits 0–9. Binary (Base 2): Uses digits 0 and 1 only. Octal (Base 8): Uses digits 0–7 only. Octal does not use the digits 8 and 9 because it is a base-8 number system. Hexadecimal (Base 16): Uses digits 0–9 and letters A–F (representing values 10–15). These are the four common number systems used in computing.
+
+## Terminal Commands
+### Windows PowerShell
+
+**Find a command or executable**
+```powershell
+Get-Command <CommandName>
+```
+- Displays information about a command, cmdlet, function, alias, or executable available in your system.
