@@ -5,6 +5,7 @@
 - Live Server runs on port 5500 by default.
 - In VS Code, hovering over code shows helpful information such as: TypeScript type inference, function parameters and return types, variable types, documentation comments, sometimes the source definition of the code. The text inside () (for example (function), (const), (method)) indicates what kind of thing the identifier is.
 - `clg` is a shortcut/snippet that expands into console.log().
+- `Ctrl + Shift + M` — Open the Llama VS Code extension settings.
 
 ## Syntax
 ### Arrow Function Snippets
