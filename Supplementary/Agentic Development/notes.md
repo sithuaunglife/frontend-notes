@@ -22,6 +22,29 @@
 - Agent Initialization: Agentic coding tools (e.g., OpenCode, Aider, and Pi) typically begin by scanning your project, reading important files, and building an understanding of the codebase before performing any tasks. This initialization process can consume a significant portion of the model's context window (e.g., around 8,000 tokens or more, depending on the project size and agent configuration). Once the initial context is loaded, the agent uses that information to perform coding tasks more effectively, and subsequent interactions generally focus on the relevant parts of the project rather than reloading everything from scratch.
 - Agent Session Memory: AI agents only remember information within the current session. As long as you remain in the same session, the agent retains the conversation history and previously gathered context. Starting a new session resets the conversation memory, so the agent no longer remembers previous discussions or decisions. However, it can re-scan or re-index your project to rebuild its understanding of the codebase, even though the previous conversation is not retained.
 - Configuring Local Models: To use a local LLM or a third-party API gateway with an AI coding agent, you must configure the agent's settings (e.g., OpenCode or Aider) to point to the appropriate API endpoint, specify the model name, and provide any required API key (if applicable). For local inference, this typically means pointing the agent to your local llama.cpp or Ollama server (e.g., `http://localhost:8080/v1` or another configured endpoint). Once configured, the agent sends requests to the specified endpoint instead of using a cloud-hosted model.
+- Before getting into Agentic Coding, learn and practice normal manual coding first.
+- When AI only generates code from your instructions, it's AI-assisted coding. Agentic Development gives the AI an environment where it can inspect the codebase, use tools, execute commands, modify files, test changes, and iterate toward a goal with a certain degree of autonomy.
+- Context Pollution: Context becomes filled with irrelevant information. Old prompts, failed attempts, logs, and unnecessary code can interfere with the current task. More context ≠ better context.
+- No Boundaries: The agent has too much freedom or unclear scope. Define what the agent can access, modify, execute, and change. Use clear instructions, project structure, permissions, and constraints.
+- Prompt Spiral: Repeatedly adding prompts to fix previous prompts or AI mistakes. Example: "Do this." → "Actually, don't do that." → "Fix what you changed." → "Revert that." → "Now fix the original issue.". The conversation becomes increasingly complicated instead of converging on the goal. Often indicates that the environment, instructions, or task boundaries need improvement.
+- When Agentic Development goes wrong, don't immediately blame the model. The problem may be the workflow, not the model.
+- Evolution of AI Agentic Coding: 1. Manual Coding -> 2. AI-Assisted Coding -> 3. AI Coding Assistants -> 4. Agentic Coding -> 5. Agentic Development.
+- Agentic Development is the practice of designing a development workflow and environment in which AI agents can reliably work toward software-development goals. It involves designing: Environment — where the agent operates · Context — what information the agent receives · Boundaries — what the agent is allowed to do · Tools — what actions the agent can perform · Instructions — how the agent should operate · Feedback Loops — how the agent observes results and iterates · Verification — how the developer validates the agent's work. Agentic Development = Designing the system around the AI agent, not simply prompting AI to write code.
+- In traditional coding, developers often review the implementation line by line. In Agentic Coding, the developer does not need to review every line of code. Instead, the developer focuses on the evidence that the agent's work is correct. Developer → Goal → Agent → Implementation → Evidence → Verification. Evidence can include: Tests passing, Build succeeding, Type checking passing, Linter passing, Screenshots or visual verification, Relevant command output, Diff / changed files, Expected behavior working correctly. Agentic Coding = Review the evidence, not every line. The developer's role shifts from inspecting every implementation detail to verifying that the agent achieved the intended outcome reliably.
+- Agentic Coding is similar to human productivity: The better the environment, the better the AI agent can perform.
+- Agentic Coding Lifestyle: SPEC → MAP → BUILD → PROVE → LEARN → REPEAT. SPEC — Define what needs to be built and the expected outcome. MAP — Understand the codebase, environment, constraints, tools, and approach. BUILD — Let the agent implement the solution within the defined boundaries. PROVE — Verify the result through evidence such as tests, builds, type checks, diffs, and actual behavior. LEARN — Analyze the result, improve the workflow, update the environment, and carry the lessons into the next task. Agentic Coding is not just AI writing code. It is a continuous development loop: SPEC → MAP → BUILD → PROVE → LEARN.
+- In Agentic Coding, treat tokens as a budget. Every piece of context consumes part of that budget, so the goal is not to give the agent as much context as possible, but to give it the right context.
+- Changing a specification is cheap. Changing 25 files after building in the wrong direction is expensive. Cheap changes happen early. Expensive changes happen after implementation.
+- Product brief structure for Agentic Development. It prevents the agent from jumping straight into implementation before understanding the product intent. WHO → WHY → WHAT → RULES → NON-GOALS → DONE. WHO — Who is this for? Who is the user? WHY — What problem are we solving? Why does it matter? WHAT — What are we actually building? RULES — What constraints, requirements, or principles must be followed? NON-GOALS — What are we explicitly not building? DONE — What evidence tells us the work is complete? The NON-GOALS part is especially valuable for agents because it establishes a boundary: "Don't expand the task beyond this scope.". And DONE naturally connects to your PROVE stage: DONE = observable acceptance criteria, not "the code looks finished".
+- Context boundary is a very important part of the workflow. It defines what information the agent should know for the current task—and what it should not carry in.
+- `AGENTS.md` is like persistent project memory/instructions for the agent. Instead of repeatedly putting the same rules into your prompt, you put them in the repository where the agent can discover and follow them.
+- Plan before implementation: Spending time planning a 5-line change can be far more cost-efficient than discovering a bad direction after a 25-file refactor.
+- Backend tends to be contract-driven; Frontend tends to be perception-driven. Backend proves correctness with contracts. Frontend proves correctness with contracts + browser evidence. Backend context: API contracts · Data models · Validation · Business rules · Error handling · Database behavior · Service boundaries. Frontend context: User flows · UI states · Visual hierarchy · Interaction behavior · Accessibility · Responsive behavior · Loading / error / empty states. So when an agent works on each side, the relevant context isn't identical.
+- Build passes ≠ UI correct. For frontend Agentic Coding, browser smoke tests and visual verification are important evidence alongside build and typecheck.
+- Harnessed self-correction — The workflow provides feedback mechanisms that allow the agent to detect and fix its own mistakes. Humans don't need to manually find every AI-generated bug. Instead, automated evidence such as tests, typechecks, builds, browser checks, and runtime feedback can trigger the agent's correction loop.
+- Harnessed self-correction is a major part of the PROVE stage, where the testing and verification harness provides feedback that allows the agent to detect, correct, and re-test its own mistakes.
+- Ask for evidence, not confidence. In Agentic Coding, the goal is not to make the agent sound confident. The goal is to make the workflow produce objective evidence that the work is correct.
+- Recover from Prompt Spiral: If the direction is wrong, don't fix the implementation — fix the context. Wrong direction → Stop → Fix the context/spec → Re-map → Build again. When an agent enters a prompt spiral, repeatedly correcting its output can make the workflow increasingly expensive and confusing.
 
 ## Syntax
 **AGENTS.md Hierarchy**
@@ -43,13 +66,22 @@ devboard/
 - `/frontend/AGENTS.md` — UI and frontend conventions.
 - `/backend/AGENTS.md` — API and service conventions.
 - `/tests/` — End-to-end and browser checks.
+- This creates an agent-friendly full-stack repository where both humans and agents can understand how the project should be developed.
 
 
-**Heading 2**
-```js 
- <!-- code here -->
+**Overall Agentic Coding Workflow**
+```txt 
+PRODUCT BRIEF
+WHO → WHY → WHAT → RULES → NON-GOALS → DONE
+↓  
+SPEC → MAP → BUILD → PROVE → LEARN
 ```
-- Description
+- Product Brief — Define the product goal, scope, constraints, boundaries, and definition of done.
+- SPEC — Turn the brief into clear implementation requirements.
+- MAP — Understand the codebase, architecture, files, dependencies, tools, and affected areas.
+- BUILD — Let the agent implement the solution within the defined boundaries.
+- PROVE — Verify the implementation using evidence such as tests, typecheck, builds, and browser smoke tests.
+- LEARN — Capture what worked, what failed, and what should improve in the next iteration.
 
 ## Terminal Commands
 ### OpenCode commands
