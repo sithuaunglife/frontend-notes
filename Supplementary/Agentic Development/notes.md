@@ -45,6 +45,19 @@
 - Harnessed self-correction is a major part of the PROVE stage, where the testing and verification harness provides feedback that allows the agent to detect, correct, and re-test its own mistakes.
 - Ask for evidence, not confidence. In Agentic Coding, the goal is not to make the agent sound confident. The goal is to make the workflow produce objective evidence that the work is correct.
 - Recover from Prompt Spiral: If the direction is wrong, don't fix the implementation — fix the context. Wrong direction → Stop → Fix the context/spec → Re-map → Build again. When an agent enters a prompt spiral, repeatedly correcting its output can make the workflow increasingly expensive and confusing.
+- AFK Workflow — Let the agent work autonomously through predefined steps while you’re away. It handles routine failures and verification automatically, stopping only when human judgment is required.
+- MCP = live tools + controlled actions for AI agents. It lets agents interact with external tools, services, and data through defined capabilities. Think of MCP as a plug connector between the agent and those external capabilities. Examples: GitHub, databases, filesystem, browser, APIs, Figma.
+- Agent Capability Levels:
+ - L1 — Prompt / Tell it once: Give instructions for a single task.
+ - L2 — AGENTS.md / Teach the project: Give it persistent project context and rules.
+ - L3 — Skills / Teach a workflow: Give it reusable, repeatable processes.
+ - L4 — MCP / Give it tools: Connect it to real-world tools and data through live, controlled actions.
+ - L5 — Subagents / Let it delegate: Allow it to delegate bounded tasks to specialized agents.
+ - Learn the levels progressively, but skip around freely when building real projects. Make one agent reliable before introducing multi-agent delegation.
+- You can give the agent a source `.txt` file and ask it to read, understand, and generate the appropriate project documentation from it.
+- Ask the coding agent to analyze the requirements and create an implementation plan without implementing the changes.
+- `AGENTS.md` — the agent's context and controller; it directs the agent on how to work and tells it which project files/docs to read for the context it needs.
+- `HANDOFF.md`: Context checkpoint for AI agents when switching models or running out of context/tokens. Records current progress, decisions, important context, and next steps so another agent can continue without starting over.
 
 ## Syntax
 **AGENTS.md Hierarchy**
@@ -82,6 +95,104 @@ SPEC → MAP → BUILD → PROVE → LEARN
 - BUILD — Let the agent implement the solution within the defined boundaries.
 - PROVE — Verify the implementation using evidence such as tests, typecheck, builds, and browser smoke tests.
 - LEARN — Capture what worked, what failed, and what should improve in the next iteration.
+
+
+**Simple Agent Harness**
+```txt 
+project/
+│
+├── README.md
+│   # Project understanding
+│   # What the project is and how to use it
+│
+├── AGENTS.md
+│   # Agent behavior
+│   # How the agent should work in this project
+│
+├── ARCHITECTURE.md
+│   # Where/how to build it
+│   # Project structure and architectural decisions
+│
+└── docs/
+    │
+    ├── PRODUCT.md
+    │   # What to build
+    │   # Product requirements and expected behavior
+    │
+    ├── DEVELOPMENT.md
+    │   # How to work on it
+    │   # Development setup, workflow, and conventions
+    │
+    └── TESTING.md
+        # How to prove it
+        # Testing strategy, commands, and verification
+```
+- A lightweight, simple, minimalist, single-project documentation structure for agent-assisted development.
+- Monolithic structure: frontend + backend live together in one project/repository.
+- Keeps project context, agent instructions, product requirements, architecture, development workflow, and testing organized without introducing unnecessary complexity.
+
+
+**Full-Blown Agent Harness**
+```txt 
+my-project/
+│
+├── README.md
+├── AGENTS.md                 # Agent entry point / project map
+├── ARCHITECTURE.md           # System boundaries + dependency rules
+├── CONTRIBUTING.md            # Human contribution rules
+├── CHANGELOG.md               # Project history
+│
+├── docs/
+│   ├── PRODUCT.md             # Why / who / product principles
+│   ├── DEVELOPMENT.md         # Local development workflow
+│   ├── TESTING.md             # Testing strategy
+│   ├── SECURITY.md            # Security rules / threat boundaries
+│   ├── API.md                 # API contracts / conventions
+│   │
+│   ├── decisions/             # Architecture Decision Records
+│   │   └── README.md
+│   │
+│   ├── plans/                 # Implementation plans
+│   │   ├── active/
+│   │   └── completed/         # Historical plans
+│   │
+│   └── specs/                 # Feature specifications
+│       └── issue-filtering.md
+│
+├── .agents/
+│   └── skills/                # Reusable agent workflows
+│       ├── implement-feature/
+│       └── investigate-bug/
+│
+├── scripts/
+│   ├── setup.sh               # Reproducible environment
+│   ├── dev.sh                 # Start development environment
+│   ├── test.sh                # Run tests
+│   ├── lint.sh                # Run static analysis
+│   └── verify.sh              # Prove the change
+│
+├── frontend/
+│   ├── AGENTS.md              # Frontend-specific instructions
+│   ├── src/
+│   └── tests/
+│
+├── backend/
+│   ├── AGENTS.md              # Backend-specific instructions
+│   ├── src/
+│   └── tests/
+│
+├── tests/
+│   ├── integration/
+│   └── e2e/                   # Full user-journey verification
+│
+└── .github/
+    └── workflows/
+        └── ci.yml             # External verification gate
+```
+- A comprehensive, full-blown agent harness for agent-assisted development in a single project.
+- Monolithic structure: frontend + backend live together in one project/repository.
+- Provides structured project context, agent instructions, product requirements, architecture, reusable skills, implementation plans, development workflows, security rules, and verification.
+- Designed to give the agent everything it needs to understand, plan, build, test, and verify the project reliably.
 
 ## Terminal Commands
 ### OpenCode commands
@@ -142,6 +253,9 @@ npm install -g --allow-scripts=opencode-ai opencode-ai
 - Kilo Code Auto/Free provides 200 requests per hour per IP. According to the current documentation, Kilo does not specify how the hourly quota refreshes (e.g., fixed hourly window or rolling 60-minute window), so the exact reset behavior is unknown.
 - OpenCode Zen's free tier tracks usage based on token consumption (and compute-equivalent value) rather than simple request counts: Context Volume: When using AI coding agents, sending large context files (entire source files, workspace trees, or lengthy system prompts) consumes thousands of tokens per request. Model Quotas: Each free model (e.g., big-pickle, qwen3.6-plus-free, minimax-m3-free) enforces its own usage ceiling tied to input/output token volume. You will hit the limit much faster on a 100k-token prompt than on a short 1k-token query. However, this is not officially confirmed by OpenCode and is based on community insights rather than official documentation.
 - OpenCode uses a rolling 5-hour window across its rate-limiting infrastructure: 5-Hour Rolling Window: In OpenCode's ecosystem (including OpenCode Go and shared model pools), limits are enforced dynamically over a rolling 5-hour period rather than resetting at midnight or on a fixed 24-hour clock. How It Behaves: Once you reach the quota for a specific model or usage bucket, your limit gradually restores over the next 5 hours as old requests fall outside the rolling window. Per-Model Reset: On free Zen models, hitting a limit on one model triggers a cooling period for that specific endpoint (or until its 5-hour window rolls over). You can switch to another free model immediately without waiting for the 5-hour timer on the first model to expire. However, this is not officially confirmed by OpenCode and is based on community insights rather than official documentation.
+- Caveman - Open-source token-saving tool for coding agents** that compresses agent communication to reduce unnecessary output tokens. Helps make long-running agentic workflows more token-efficient while preserving useful technical information.
+- Self-hosted Agent: Run your coding agent, harness, MCP servers, memory, and workflows on your own VPS while connecting to cloud-hosted LLMs through APIs. Useful for persistent/AFK workflows, since the agent can keep running even when your PC is offline. The VPS doesn't need a powerful GPU in this setup because the cloud provider does the model inference.
+- Figma MCP: Comes with official `SKILL.md` guidance that teaches the agent how to use Figma's MCP capabilities effectively. When setting up Figma MCP, its official skill files can be added to the agent's skills so it knows how to use those capabilities.
 
 ## My Confusion & Understanding
 
