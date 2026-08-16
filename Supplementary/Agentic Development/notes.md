@@ -59,6 +59,13 @@
 - Ask the coding agent to analyze the requirements and create an implementation plan without implementing the changes.
 - `AGENTS.md` — the agent's context and controller; it directs the agent on how to work and tells it which project files/docs to read for the context it needs.
 - `HANDOFF.md`: Context checkpoint for AI agents when switching models or running out of context/tokens. Records current progress, decisions, important context, and next steps so another agent can continue without starting over.
+- Functional Requirements: Define what the system should do — features, actions, and behaviors. Example: Users can create an account, place orders, and view order history.
+- Non-Functional Requirements: Define how the system should be — quality attributes, performance, security, constraints, etc. Example: The app should load quickly, be secure, responsive, and maintainable.
+- Functional = What it does, Non-Functional = How it should be.
+- SPEC: You can ask AI to construct the project environment for you: “Read product.txt. I want you to write an agent-friendly, maintainable project environment for that project using the structure below: README.md, AGENTS.md, ARCHITECTURE.md, docs/PRODUCT.md, docs/DEVELOPMENT.md, docs/TESTING.md.” This makes the AI read your product.txt as the product context and build the supporting project environment around it, rather than manually creating every documentation file yourself.
+- MAP: “Make an implementation plan for the project without making any real implementation. Make feature prioritization, development and testing plan in a reasonable order. Don't do anything yet.” This is the mapping phase, where the AI maps out the project and creates a reasonable implementation plan before any actual development begins.
+- BUILD: “Create IMPLEMENTATION_PLAN.md, put it in the docs folder and build the project.” This creates the implementation plan as a persistent Markdown file and then uses that plan to build the project.
+- Implementation status doesn't require a separate `IMPLEMENTATION_STATUS.md`. It can already be included inside `IMPLEMENTATION_PLAN.md` through status fields and progress tracking. If the workflow requires a separate implementation status file and it hasn't been created, ask the agent to create `IMPLEMENTATION_STATUS.md`.
 
 ## Syntax
 **AGENTS.md Hierarchy**
@@ -194,6 +201,13 @@ my-project/
 - Monolithic structure: frontend + backend live together in one project/repository.
 - Provides structured project context, agent instructions, product requirements, architecture, reusable skills, implementation plans, development workflows, security rules, and verification.
 - Designed to give the agent everything it needs to understand, plan, build, test, and verify the project reliably.
+- `AGENTS.md` → Instructions for the agent — what rules to follow, what to avoid, and how to make changes. Example: “Use TypeScript, don't rewrite existing components unnecessarily, run tests before finishing.”
+- `ARCHITECTURE.md` → How the project is structured — technologies, code organization, and component structure. Example: “Frontend uses React + Tailwind; components live in src/components/; API logic lives in src/services/.”
+- `README.md` → Project entry point — what the project is, how to run it, and what developers/agents should know first. Example: “This is a task management app. Run pnpm dev to start development.”
+- `docs/` = detailed project knowledge
+- `docs/PRODUCT.md` → What are we building and why? — product goals, users, features, functional and non-functional requirements. Example: “Users can create tasks; the app must be responsive.”
+- `docs/DEVELOPMENT.md` → How should we develop it? — development workflow, conventions, and practices. Example: “Create a feature branch, use React components, run pnpm lint before committing.”
+- `docs/TESTING.md` → How do we verify it works? — testing strategy, test cases, and verification procedures. Example: “Test that clicking the button opens the modal and verify the UI at mobile and desktop widths.”
 
 ## Terminal Commands
 ### OpenCode commands
