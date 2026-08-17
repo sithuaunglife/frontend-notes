@@ -52,6 +52,7 @@
 - Before writing code, describe the solution in plain English first → Explain what you're trying to do step by step without thinking about syntax → Once the logic is clear, decide what data structure you're working with (array or object), what function to use, and what methods or operators you need (e.g., `map()`, `filter()`, `find()`, spread `...`) → Logic comes first; syntax comes second → Think, "What do I want the program to do?" before asking, "How do I write it?" → Once you recognize the implementation pattern (recipe), writing the code becomes much faster.
 - At the component level, the code is mostly written to match the current state so the function can run and do something.
 - At the state management level (e.g. Zustand), the code is mostly written to update or return a new state.
+- When an image isn't loading, compare it with another working image feature. If other MinIO/S3 images are working, first compare the image URLs and storage paths. Use the same working endpoint/path when appropriate, because the backend team may change image storage locations without the frontend team knowing.
 
 ## Syntax
 **Next.js folder structure**

@@ -43,6 +43,7 @@
 - Fake Store API is a mock REST API made for frontend practice.
 - In API there is response time.
 - In the terminal, endpoints are links.
+- Backend APIs may return boolean values as `0` and `1` instead of `false` and `true`. Zod's `z.boolean()` expects an actual boolean, so convert the value before passing it to the form or schema.
 
 ## Syntax
 **Parts of the link**
