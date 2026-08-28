@@ -17,13 +17,22 @@
 - The axes depend on flex-direction.
 - For `row`: `justify-content` → X-axis / horizontal, `align-items` → Y-axis / vertical.
 - For `column`: `justify-content` → Y-axis / vertical, `align-items` → X-axis / horizontal.
+- `min-width` → "Don't go below me.". `768px` → `768px` and above.
+- `max-width` → "Don't go beyond me.". `768px` → `768px` and below.
 
 ## Syntax
-**Heading**
-```js 
- <!-- code here -->
+**Media Queries**
+```css 
+@media (max-width: 400px) {
+  .heading {
+    font-size: 20px;
+    color: blue;
+  }
+}
 ```
-- Description
+- `@media` → responsive / viewport-based styling.
+- `max-width: 400px` → applies when viewport is 400px or less.
+- `min-width: 400px` → applies when viewport is 400px or more.
 
 ## Terminal Commands
 ### 
