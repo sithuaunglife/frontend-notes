@@ -5,8 +5,8 @@
 - `padding` is the space inside the card that pushes its content away from the card's border.
 - `text-align` → aligns text/content.
 - `align-items` → aligns children inside Flex/Grid.
-- `block` → takes the available width and starts on a new line.
-- `inline-block` → stays in the same line as other inline/inline-block elements while behaving like a box.
+- `block` → takes the available width by default and starts on a new line. It can have `width` and `height`.
+- `inline-block` → stays on the same line as other inline/inline-block elements while behaving like a box. It can sit beside other boxes and can have `width` and `height`.
 - You don't need to give `display: flex` to a child to make it controllable by a flex parent. A flex parent's direct children automatically become flex items.
 - Flexbox can be nested: a parent can control its direct children, while a child can also become a flex container and control its own children.
 - `flex: 1` on children makes them share the available space equally from the parent flex container.
@@ -19,6 +19,9 @@
 - For `column`: `justify-content` → Y-axis / vertical, `align-items` → X-axis / horizontal.
 - `min-width` → "Don't go below me.". `768px` → `768px` and above.
 - `max-width` → "Don't go beyond me.". `768px` → `768px` and below.
+- `position: relative` is usually used on the parent to establish a positioning reference for an absolutely positioned child.
+- `position: absoulte` is used on the child when you want to position it independently using `top`, `right`, `bottom`, or `left`.
+- `align-self` is used when you want to control the alignment of a specific flex child independently from the other flex items.
 
 ## Syntax
 **Media Queries**
