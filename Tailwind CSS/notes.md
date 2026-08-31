@@ -18,6 +18,8 @@
 - Use temporary borders (`border-red-500`, `border-blue-500`, `border-green-500`), background colors (`bg-red-500/20`, `bg-blue-500/20`, `bg-green-500/20`), or outlines (`outline outline-2 outline-red-500`) to visualize element boundaries and inspect actual container sizes when debugging unexpected spacing, absolute positioning issues, Flexbox/Grid alignment problems, overflow issues, or parent containers that are larger than expected; if an absolutely positioned element appears far away, add a border to the relative parent first and verify the parent's size before modifying the child element's position.
 - `!` in Tailwind adds `!important` to a utility class, e.g. `!w-fit` → `width: fit-content !important`, useful for overriding conflicting styles.
 - `data-checked:bg-red-500` it changes the checkmark color of checkbox.
+- `col-span` → takes up multiple columns.
+- `row-span` → takes up multiple rows. Less commonly used.
 
 ## Syntax
 **Tailwind v4 Setup (globals.css)** 
