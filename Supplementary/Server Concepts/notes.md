@@ -44,6 +44,7 @@
 - In API there is response time.
 - In the terminal, endpoints are links.
 - Backend APIs may return boolean values as `0` and `1` instead of `false` and `true`. Zod's `z.boolean()` expects an actual boolean, so convert the value before passing it to the form or schema.
+- 301 Redirect Debugging. If a 301 Moved Permanently redirect occurs, open DevTools → Network first, then enter the URL and load the page. → If you enter the URL first and then open DevTools or reload the page, the redirect may not appear clearly because the browser can serve the response from its cache. → Look for 301 Moved Permanently (from disk cache) to identify a cached redirect. → Use Disable cache in the Network tab and reload to test the request again.
 
 ## Syntax
 **Parts of the link**
