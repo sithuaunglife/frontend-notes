@@ -42,6 +42,19 @@
 - For `%` JavaScript asks: How much is left over after dividing 10 by 3? (10 ÷ 3 = 3 remainder 1) So: (10 % 3 // 1)
 - Semicolon `;` is used to end a statement. JavaScript can often insert semicolons automatically (ASI). Many developers use semicolons for consistency.
 - A statement is an instruction that JavaScript executes to perform an action, such as creating variables, calling functions, making decisions, or returning values.
+- Strings & APIs. `"..."` represents a string. An API can interpret a string according to its predefined rules and give it a specific meaning or behavior. The string itself doesn't perform the action, the system receiving it interprets it.`button.addEventListener("click", handleClick);` `"click"` is a string. `addEventListener()` interprets `"click"` as a predefined event type. `<div class="flex"></div>` `"flex"` is a string. The CSS engine interprets `flex` as a class name and applies the matching CSS rule.
+- JavaScript Objects & APIs
+ - Strings can be interpreted by an API according to its predefined rules. The string itself doesn't perform the action.
+ - JavaScript provides many built-in objects, functions, and APIs, while the browser provides additional objects such as DOM elements.
+ - We access an object's properties and methods using the `.` operator.
+ - A method is a function that belongs to an object and can be called with `()`.
+ - A property is a value associated with an object and can be accessed without `()`.
+ - Even when an object is stored in a const variable, you can still access its predefined properties and methods. const prevents reassigning the variable to a different value, it does not make the object itself immutable.
+ - `button.addEventListener("click", handleClick)`;. `button` → object, `addEventListener` → method, `"click"` → string interpreted as the event type, `handleClick` → function passed as a callback.
+- JavaScript Primitives & Objects
+ - Look at the value on the right side of `=` to understand what the variable is referring to, and therefore what operations/properties are available.
+ - `const a = 3;`. `3` is a number primitive. Primitives are not objects. Primitive values don't have their own prototype chain like objects do. However, JavaScript can temporarily box/wrap primitives when you access certain methods, which is why things like `(3).toString()` work.
+ - `const a = { age: 24 };`. `{ age: 24 }` is a JavaScript object. Objects participate in JavaScript's prototype-based inheritance system. A normal object inherits from `Object.prototype`. Therefore, it can access inherited properties/methods such as `toString()`. `age` is an own property because we defined it ourselves.
 - `[]` creates an Array in JavaScript.
 - `{}` creates an Object in JavaScript.
 - `{}` creates a block. A block groups one or more statements together so JavaScript can treat them as a single unit. Think of `{}` as a box. Without the box, JavaScript usually takes only the next statement.
