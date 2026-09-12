@@ -192,6 +192,11 @@
 - Each callback receives the next element from the original collection, not the previous callback's returned value.
 - `categories.map((category) => category.title);` `(category)` is the parameter. `(category) => category.title` is the callback function. `map()` is the Higher-Order Function (HOF). `map()` passes each array item as an argument into the callback parameter (`category`).
 - You do not need to know how a higher-order function is implemented internally to use it effectively Instead, focus on these three questions: 1. What callback function should I pass? 2. What values does the HOF pass into my callback? 3. What should my callback return? Don't think about the library's source code.
+- `document.getElementById(" ");` Selects an HTML element by its id.
+- `document.querySelector("# ");` Selects the first HTML element that matches a CSS selector. `#` is used for an id, while `.` is used for a class.
+- `.innerText` Comes from the DOM API. Used to get or change the visible text inside an element.
+- `document.createElement(" ");` Creates a new HTML element, such as `<p>` or `<div>`. The element is created in JavaScript but is not added to the page yet.
+- `document.body.append();` Appends an element to the `<body>` of the document.
 
 ## Syntax
 **Part of Statement**
