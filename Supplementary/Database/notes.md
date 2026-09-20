@@ -28,7 +28,16 @@
  - Database name
  - Username
  - Password
+- IP address = Which computer/server should I connect to?
+- Port = Which service/port on that computer/server should I connect to?
 - For safety, click the "Test Connection" button to verify the database connection before saving the connection details.
+- Basic Database Workflow:
+ - 1. Create Database
+ - 2. Create Table
+ - 3. Insert Data
+ - 4. Retrieve Data
+ - 5. Update Data
+ - 6. Delete Data
 - `DELETE FROM products WHERE` deletes rows/data from the `products` table.
 - `UPDATE products SET ... WHERE` updates existing rows/data in the `products` table.
 - Schema is the structure/blueprint of the data, telling what rows and columns the data will have and what rules they follow.
@@ -97,6 +106,44 @@ INSERT into products (name, category) values ('iphone18', 'smartphone'), ('', ''
 ## Terminal Commands
 ### Docker
 
+**Running PostgreSQL in Docker**
+```bash
+docker run --name my-postgres `
+  -e POSTGRES_USER=root `
+  -e POSTGRES_PASSWORD=asdffdsa `
+  -e POSTGRES_DB=my_store `
+  -p 5432:5432 `
+  -v "$(pwd)/data/postgres:/var/lib/postgresql/data" `
+  -d postgres:16
+```
+- `--name my-postgres` gives the container a friendly name so it can be referred to later.
+- `-e POSTGRES_PASSWORD=...` sets an environment variable inside the container for the postgres user's password.
+- `-e POSTGRES_DB=my_store` automatically creates the my_store database when the container starts for the first time.
+- `-p 5432:5432` maps port 5432 on the host machine to port 5432 inside the container.
+- `-v "$(pwd)/data/postgres:/var/lib/postgresql/data"` says: "store this container's data directory at Desktop/learn-databases/data/postgres on my actual machine — not somewhere hidden inside Docker." You can now literally open that folder in Finder/Explorer and see PostgreSQL's raw data files.
+- `-d` runs the container in detached mode, meaning it runs in the background.
+- `postgres:16` specifies the PostgreSQL Docker image and version 16 to run.
+- Without a volume, all your data vanishes the moment the container is removed. A volume stores data outside the container, on your actual machine, so it survives even if the container is deleted and recreated. Docker gives you two flavors: Named volume — Docker manages the storage location for you, somewhere inside Docker's own internal storage (e.g., `my_postgres_data:/var/lib/...`). Bind mount — you choose the exact folder on your machine, and Docker writes directly into it. This is what you want if you'd rather see and back up the data yourself.
+
+
+**Running MongoDB in Docker**
+```bash
+docker run --name my-mongo `
+  -e MONGO_INITDB_ROOT_USERNAME=root `
+  -e MONGO_INITDB_ROOT_PASSWORD=asdffdsa `
+  -p 27017:27017 `
+  -v "$(pwd)/data/mongo:/data/db" `
+  -d mongo:7
+```
+- `--name my-mongo` gives the container a friendly name to refer to later.
+- `-e MONGO_INITDB_ROOT_USERNAME=root` sets the MongoDB root user's username.
+- `-e MONGO_INITDB_ROOT_PASSWORD=asdffdsa` sets the MongoDB root user's password.
+- `-p 27017:27017 maps port 27017` on the host machine to port 27017 inside the container.
+- `-v "$(pwd)/data/mongo:/data/db"` mounts the local data/mongo directory to MongoDB's data directory inside the container, allowing the data to persist.
+- `-d` runs the container in detached mode, meaning it runs in the background.
+- `mongo:7` specifies the MongoDB Docker image and version 7 to run.
+
+
 **Connect to PostgreSQL inside Docker**
 ```bash
 docker exec -it my-postgres psql -U root -d shop
@@ -112,13 +159,6 @@ docker exec -it my-postgres psql -U root -d shop
 - `-\l` show a list of databases.
 - `-\dt` show a list of tables.
 - `-\c` connect to a database.
-
-
-**Heading 2**
-```bash
- <!-- code here -->
-```
-- Description
 
 
 ### Terminal tool name 2
@@ -146,4 +186,3 @@ docker exec -it my-postgres psql -U root -d shop
 - MongoDB Compass — MongoDB's official graphical user interface for working with MongoDB databases. It allows you to explore collections, documents, indexes, and other database information visually.
 - TablePlus only allow two table in free version.
 - You need to refresh the TablePlus to make the changed data appear.
-- 
