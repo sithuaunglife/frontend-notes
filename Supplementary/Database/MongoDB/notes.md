@@ -7,6 +7,7 @@
 - MongoDB has operators that start with `$` and are used to perform different operations on data.
 - MongoDB Compass provides a GUI where you can write and run MongoDB queries without using the MongoDB shell.
 - For `updateOne()`, all update operators go inside the same `{}`.
+- In MongoDB, an aggregation is basically a set of instructions/stages that process data step by step.
 
 ## Syntax
 **Heading 1**
@@ -116,6 +117,21 @@ db.products.updateMany(
 - `updated_at: "$$NOW"` updates the `updated_at` field to the current date and time.
 - Since I am applying multiple update stages, I use an array `[...]` to contain them.
 
+
+- `$nin` means "not in" — it excludes the specified values from the results.
+- `db.products.find({$or: [{category: "laptop"}, {category: "smartphone"}]})` `$or` means "at least one condition must be true." In this example, it finds products where the `category` is either `"laptop"` or `"smartphone"`.
+- `db.products.find({category: {$not: {$in: ["smartphone", "laptop"]}}})` `$not` means "not" — it excludes values that match the condition.
+- `$eq` means equal.
+- `.sort(1)` — `1` means ascending, while `-1` means descending.
+- `db.products.find().sort({name: 1})` — `1` means ascending, while `-1` means descending.
+- `db.products.find().sort({category: 1, price: -1})` — sorts the category in ascending order, and within each category, sorts the price from expensive to cheap.
+- `.limit(3)` means limiting the results and showing only 3 items.
+- `db.products.find().limit(3)` — limits the results and shows only 3 items.
+- `.skip(3)` - skips the first 3 results. For example, if the results are 1, 2, 3, 4, 5, it skips 1, 2, 3 and starts from 4.
+- `db.products.find().limit(3).skip(3)` — skips the first 3 results, then shows the next 3 results.
+- `db.products.aggregate([{$group: {_id: null, count: {$sum: 1}}}])` groups all products together and counts them by adding `1` for each document.
+- A string field in `$group` means you can group products by that field and get each unique value. For example: `{ $group: { _id: "$stock" } }` Groups products by the stock field and gives you each unique stock value.
+- `$sum: 1` = count things.
 
 ### Terminal tool name 2
 
