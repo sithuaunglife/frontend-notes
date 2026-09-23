@@ -87,6 +87,27 @@
 - `DROP TABLE IF EXISTS` delete the table if it exists.
 - You can access a database with CLI.
 - You can give permission to other users from the PostgreSQL `root` user.
+- Normalization = organizing data to reduce duplication and keep data consistent.
+- Denormalization = intentionally adding some duplication to make reading/querying faster or simpler.
+- Denormalization can be necessary for historical records so past data stays accurate even when the original data changes. Example: store the product name and price in the order record so an old order still shows what the customer actually bought and paid at that time.
+- `PK` = Primary Key → uniquely identifies a row.
+- `FK` = Foreign Key → references a key in another table.
+- One-to-Many → one category can contain many menu items.
+- Many-to-Many → many students can take many courses.
+- You can read the business requirements to determine whether a relationship is One-to-Many or Many-to-Many.
+- To identify One-to-Many vs Many-to-Many, focus on one record and check how many records it can connect to. Then reverse the perspective.
+ - One → Many + Many → One = One-to-Many.
+ - One → Many + Many → Many = Many-to-Many.
+ - Example: One category can contain many menu items, such as Coffee → Latte and Espresso. From the Latte perspective, Latte connects to one category: Coffee. Therefore, Category → Menu Item is One-to-Many.
+- Pivot table = a middle table used to connect a Many-to-Many relationship.
+- `JOIN` = combining related data from multiple tables.
+- `LEFT JOIN` = keep all rows from the left table, even if there is no match.
+- `RIGHT JOIN` = keep all rows from the right table, even if there is no match.
+- `RESTRICT` = don't allow the parent action if related records would be affected.
+- `CASCADE` = the related records follow the parent's action. Example: deleting a category can delete its related menu items.
+- Transaction = a group of database operations that either all succeed or roll back if something fails.
+- Indexing = improves search/query performance, but indexes take storage and can make `INSERT`, `UPDATE`, and `DELETE` somewhat slower.
+- View = a saved query that behaves like a virtual table. It is not exactly caching.
 
 ## Syntax
 **INSERT — Add Data**

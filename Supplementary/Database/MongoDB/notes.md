@@ -2,12 +2,17 @@
 
 ## Facts
 - MongoDB is a NoSQL database that stores data as documents.
+- NoSQL databases don't require a fixed schema.
+- MongoDB is a widely used NoSQL database.
+- BSON = Binary JSON, the format MongoDB uses to store documents.
+- MongoDB has a shell for interacting with databases from the command line.
 - MongoDB Compass can display MongoDB documents in a table-like view, similar to a relational database.
 - Unlike SQL, MongoDB doesn't require you to create a table before inserting data. You can insert a document directly, and MongoDB can create the collection automatically if it doesn't exist.
 - MongoDB has operators that start with `$` and are used to perform different operations on data.
 - MongoDB Compass provides a GUI where you can write and run MongoDB queries without using the MongoDB shell.
 - For `updateOne()`, all update operators go inside the same `{}`.
 - In MongoDB, an aggregation is basically a set of instructions/stages that process data step by step.
+- You can write multiple conditions in one field to filter results, such as `$gte` and `$lte`. Example: `{ age: { $gte: 18, $lte: 30 } }` This means age must be between 18 and 30.
 
 ## Syntax
 **Heading 1**
@@ -132,6 +137,8 @@ db.products.updateMany(
 - `db.products.aggregate([{$group: {_id: null, count: {$sum: 1}}}])` groups all products together and counts them by adding `1` for each document.
 - A string field in `$group` means you can group products by that field and get each unique value. For example: `{ $group: { _id: "$stock" } }` Groups products by the stock field and gives you each unique stock value.
 - `$sum: 1` = count things.
+- `$regex` = matches text patterns in data. It is similar to searching for text.
+- `as` can be used to give MongoDB results a temporary field name, similar to a variable.
 
 ### Terminal tool name 2
 
