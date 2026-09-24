@@ -12,7 +12,13 @@
 - MongoDB Compass provides a GUI where you can write and run MongoDB queries without using the MongoDB shell.
 - For `updateOne()`, all update operators go inside the same `{}`.
 - In MongoDB, an aggregation is basically a set of instructions/stages that process data step by step.
+- Aggregation is important for processing and analyzing data from multiple documents.
 - You can write multiple conditions in one field to filter results, such as `$gte` and `$lte`. Example: `{ age: { $gte: 18, $lte: 30 } }` This means age must be between 18 and 30.
+- Embedding = storing related data inside the same MongoDB document. Good when the related data belongs closely to the parent.
+- MongoDB supports relationships between data, even though it is NoSQL.
+- Referencing = storing a reference such as an _id to another document, then fetching that related document separately. It's similar in purpose to SQL relationships/joins, but referencing itself is not the same thing as a SQL JOIN.
+- MongoDB supports indexing. Indexes make queries faster by creating a data structure MongoDB can use to find documents efficiently.
+- Validation = checking whether incoming/stored data follows defined rules. It's not exactly security. Validation helps maintain correct data and can prevent malformed/unexpected input.
 
 ## Syntax
 **Heading 1**
@@ -134,19 +140,41 @@ db.products.updateMany(
 - `db.products.find().limit(3)` — limits the results and shows only 3 items.
 - `.skip(3)` - skips the first 3 results. For example, if the results are 1, 2, 3, 4, 5, it skips 1, 2, 3 and starts from 4.
 - `db.products.find().limit(3).skip(3)` — skips the first 3 results, then shows the next 3 results.
+- `db.products.aggregate([])` returns all documents, similar to `find()`. `aggregate()` expects the pipeline as an array: `[]`. The array contains the stages you want MongoDB to execute.
 - `db.products.aggregate([{$group: {_id: null, count: {$sum: 1}}}])` groups all products together and counts them by adding `1` for each document.
 - A string field in `$group` means you can group products by that field and get each unique value. For example: `{ $group: { _id: "$stock" } }` Groups products by the stock field and gives you each unique stock value.
 - `$sum: 1` = count things.
 - `$regex` = matches text patterns in data. It is similar to searching for text.
 - `as` can be used to give MongoDB results a temporary field name, similar to a variable.
+- `$project: { _id: 1 }` → shows `_id`. Other fields are hidden automatically.
+ - `1` = include the field.
+ - `0` = exclude the field.
+ - You generally don't need to write `0` for every other field when you're using inclusion.
+- `$group: {}` → groups documents based on a specified `_id` expression and can calculate things like `$sum`, `$avg`, `$count`, etc.
+- `$match: {}` → filters documents that match the specified conditions.
+- `$lookup` → combines documents from another collection based on matching fields. It's roughly similar to a SQL `JOIN`.
+- `$unwind: {}` → deconstructs an array field so that each array element becomes a separate document. It's not specifically for one-to-one relationships. It's commonly useful when you use `$lookup` and want to turn the resulting array into individual documents.
+- `$multiply: ["$stock", "$price"]` → multiplies the values of `stock` and `price`. The `$` before a field name means "use the value from this document's field."
 
-### Terminal tool name 2
 
-**Heading 1**
+### Docker
+
+**Running MongoDB in Docker**
 ```bash
- <!-- code here -->
+docker run --name my-mongo `
+  -e MONGO_INITDB_ROOT_USERNAME=root `
+  -e MONGO_INITDB_ROOT_PASSWORD=asdffdsa `
+  -p 27017:27017 `
+  -v "$(pwd)/data/mongo:/data/db" `
+  -d mongo:7
 ```
-- Description
+- `--name my-mongo` gives the container a friendly name to refer to later.
+- `-e MONGO_INITDB_ROOT_USERNAME=root` sets the MongoDB root user's username.
+- `-e MONGO_INITDB_ROOT_PASSWORD=asdffdsa` sets the MongoDB root user's password.
+- `-p 27017:27017 maps port 27017` on the host machine to port 27017 inside the container.
+- `-v "$(pwd)/data/mongo:/data/db"` mounts the local data/mongo directory to MongoDB's data directory inside the container, allowing the data to persist.
+- `-d` runs the container in detached mode, meaning it runs in the background.
+- `mongo:7` specifies the MongoDB Docker image and version 7 to run.
 
 
 **Heading 2**
@@ -156,7 +184,8 @@ db.products.updateMany(
 - Description
 
 ## Tools
-- Notes
+- MongoDB — A document-oriented NoSQL database. It has both free and paid offerings.
+- MongoDB Compass — MongoDB's official graphical user interface for working with MongoDB databases. It allows you to explore collections, documents, indexes, and other database information visually.
 
 ## My Confusion & Understanding
 
