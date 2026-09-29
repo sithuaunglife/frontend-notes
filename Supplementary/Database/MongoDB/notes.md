@@ -153,9 +153,10 @@ db.products.updateMany(
 - `$group: {}` → groups documents based on a specified `_id` expression and can calculate things like `$sum`, `$avg`, `$count`, etc.
 - `$match: {}` → filters documents that match the specified conditions.
 - `$lookup` → combines documents from another collection based on matching fields. It's roughly similar to a SQL `JOIN`.
-- `$unwind: {}` → deconstructs an array field so that each array element becomes a separate document. It's not specifically for one-to-one relationships. It's commonly useful when you use `$lookup` and want to turn the resulting array into individual documents.
+- `$unwind: {}` → deconstructs an array field so that each array element becomes a separate document. It's not specifically for one-to-one relationships, but it's commonly used with `$lookup` when you want to represent a one-to-one relationship by turning the resulting single-element array into an object.
 - `$multiply: ["$stock", "$price"]` → multiplies the values of `stock` and `price`. The `$` before a field name means "use the value from this document's field."
-
+- `localField` = the field in the collection you are currently in.
+- `foreignField` = the field in the collection you are looking up.
 
 ### Docker
 
