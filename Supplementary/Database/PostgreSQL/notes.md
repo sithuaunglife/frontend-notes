@@ -16,6 +16,7 @@
 - `ILIKE` is used for pattern matching/searching. Unlike `LIKE`, which is case-sensitive in PostgreSQL, `ILIKE` is case-insensitive.
 - `SERIAL` is auto increasing one by one like 1,2,3.
 - `TIMESTAMPTZ` is date plus time with timezone handling.
+- In `DECIMAL(10, 2)`, `10` represents the precision (total number of digits), while `2` represents the scale (digits after the decimal). Therefore, the maximum value is `99999999.99`. You can think of the scale as reserving 2 of the 10 digits for the decimal part, leaving 8 digits before the decimal.
 - `TRUNCATE TABLE products RESTART IDENTITY;` it delete all products and also restart the ID from the beginning.
 - `DELETE FROM products WHERE` deletes rows/data from the `products` table.
 - `UPDATE products SET ... WHERE` updates existing rows/data in the `products` table.
@@ -55,6 +56,29 @@
 - `CASCADE` = the related records follow the parent's action. Example: deleting a category can delete its related menu items.
 
 ## Syntax
+**Create Table**
+```SQL
+CREATE TABLE products (
+	product_id SERIAL PRIMARY KEY,
+	name TEXT NOT NULL,
+	category TEXT NOT NULL,
+	price DECIMAL(7, 2) NOT NULL,
+	stock INTEGER NOT NULL,
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)
+```
+- `CREATE TABLE` creates a new table.
+- `SERIAL` automatically generates an increasing integer for `product_id`.
+- `PRIMARY KEY` uniquely identifies each row.
+- `TEXT` stores text data.
+- `INTEGER` stores whole numbers.
+- `DECIMAL(7, 2)` allows 7 total digits, with 2 digits after the decimal → maximum 99999.99.
+- `NOT NULL` means the column cannot contain `NULL`.
+- `TIMESTAMP` stores date and time.
+- `DEFAULT CURRENT_TIMESTAMP` automatically uses the current date/time when a row is created.
+
+
 **INSERT — Add Data**
 ```SQL
 INSERT into products (name, category) values ('iphone18', 'smartphone'), ('', '')
@@ -63,11 +87,65 @@ INSERT into products (name, category) values ('iphone18', 'smartphone'), ('', ''
 - Can insert multiple rows by adding , `('', '')`.
 
 
-**Heading 2**
-```js 
- <!-- code here -->
+**INSERT - Many Data**
+```SQL
+INSERT INTO products (name, category, price, stock) VALUES
+    ('MacBook Air',           'laptop',      1099.00, 300),
+    ('MacBook Pro',           'laptop',      1999.00, 200),
+    ('iPad Air',              'tablet',       599.00, 400),
+    ('iPad Pro',              'tablet',       999.00, 350),
+    ('AirPods Pro',           'audio',        249.00, 1000),
+    ('AirPods Max',           'audio',        549.00, 250),
+    ('Apple Watch Series 11', 'wearable',     399.00, 700),
+    ('Apple TV 4K',           'accessory',    129.00, 800),
+    ('Mac Mini',              'desktop',      599.00, 450),
+    ('iPhone 17',             'smartphone',   999.00, 600);
 ```
-- Description
+- SQL can insert multiple rows of data at once using a single `INSERT INTO ... VALUES` statement.
+- Each set of `(...)` represents one row.
+- Rows are separated by commas `,`.
+- The statement ends with `;`.
+
+
+**Retrieve Data**
+```SQL
+-- Every product
+SELECT * FROM products;
+
+-- Just the laptops (now returns 2 rows: MacBook Air, MacBook Pro)
+SELECT name, price FROM products WHERE category = 'laptop';
+
+-- Anything under $300 (returns AirPods Pro and Apple TV 4K)
+SELECT name, price FROM products WHERE price < 300;
+
+-- Cheapest to most expensive
+SELECT name, price FROM products ORDER BY price ASC;
+```
+- `SELECT` retrieves data from a table.
+- `WHERE` filters the rows based on a condition.
+- `ORDER BY` sorts the results.
+- `ASC` means ascending — smallest → largest.
+- `DESC` means descending — largest → smallest.
+
+
+**Delete Data**
+```SQL
+DELETE FROM products WHERE product_id = 6;
+```
+- `DELETE` deletes data from a table.
+- `WHERE` specifies which row(s) to delete.
+- Without `WHERE`, `DELETE` can remove every row in the table.
+
+
+**Update Data**
+```SQL
+UPDATE products
+SET price = 1249.00, updated_at = CURRENT_TIMESTAMP
+WHERE product_id = 1;
+```
+- `UPDATE` modifies existing data in a table.
+- `SET` specifies the column(s) and new value(s).
+- `CURRENT_TIMESTAMP` sets the column to the current date and time.
 
 ## Terminal Commands
 ### Docker
