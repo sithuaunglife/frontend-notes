@@ -56,6 +56,7 @@
 - Transaction = a group of database operations that either all succeed or roll back if something fails.
 - Indexing = improves search/query performance, but indexes take storage and can make `INSERT`, `UPDATE`, and `DELETE` somewhat slower.
 - View = a saved query that behaves like a virtual table. It is not exactly caching.
+- SQL already has built-in functions, so no need to write the functions yourself.
 
 ## Syntax
 **Heading 1**

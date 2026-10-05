@@ -48,6 +48,7 @@
 - `AS` means giving a temporary name (alias) to something. It is similar to a variable name.
 - `AVG()` is average the values.
 - `MAX()` is the maximum value. It doesn't have to be price or one product.
+- `UPPER()` makes the text uppercase.
 - `GROUP BY` is grouping those data by a column.
 - `HAVING AVG` is filtering groups based on their average.
 - `IF NOT EXISTS` means create something only if it does not already exist.
