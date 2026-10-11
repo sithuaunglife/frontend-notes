@@ -53,6 +53,10 @@
 - `HAVING AVG` is filtering groups based on their average.
 - `IF NOT EXISTS` means create something only if it does not already exist.
 - `DROP TABLE IF EXISTS` delete the table if it exists.
+- `REFERENCES` is used to create a foreign key that connects data between tables and maintains a relationship between them.
+- `PRIMARY KEY (warehouse_id, product_id)` uses two columns together as a composite primary key. In this example, both columns are foreign keys, and together they uniquely identify each row in the newly created table, making them the primary key of that table.
+- `ALTER TABLE` is used to modify the structure of an existing table, such as adding, renaming, or removing columns and changing constraints.
+- You can rename a table even if another table references it using a foreign key. PostgreSQL automatically maintains the foreign key relationship after the rename, but SQL queries that use the old table name will fail until you update them to use the new name.
 - `JOIN` = combining related data from multiple tables.
 - `LEFT JOIN` = keep all rows from the left table, even if there is no match.
 - `RIGHT JOIN` = keep all rows from the right table, even if there is no match.
@@ -152,6 +156,31 @@ WHERE product_id = 1;
 - `CURRENT_TIMESTAMP` sets the column to the current date and time.
 - `updated_at` does not automatically update when a row is modified. You need to manually set it to `CURRENT_TIMESTAMP` in the `UPDATE` query.
 
+
+**Editing Existing Table Structure**
+```SQL
+-- Add a column (existing rows get the DEFAULT, or NULL if you don't give one)
+ALTER TABLE tasks ADD COLUMN assigned_to TEXT;
+
+-- Rename a column
+ALTER TABLE tasks RENAME COLUMN assigned_to TO owner;
+
+-- Change a column's type
+ALTER TABLE tasks ALTER COLUMN owner TYPE VARCHAR(100);
+
+-- Drop a column entirely — the data in it is gone, permanently
+ALTER TABLE tasks DROP COLUMN owner;
+
+-- Rename the whole table
+ALTER TABLE tasks RENAME TO todo_items;
+```
+- `ALTER TABLE` is used to modify the structure of an existing table.
+- `ADD COLUMN` adds a new column.
+- `RENAME COLUMN` changes a column's name.
+- `ALTER COLUMN ... TYPE` changes a column's data type.
+- `DROP COLUMN` removes a column and its data.
+- `RENAME TO` changes the table's name.
+
 ## Terminal Commands
 ### Docker
 
@@ -190,6 +219,22 @@ docker exec -it my-postgres psql -U root -d shop
 - `-\l` show a list of databases.
 - `-\dt` show a list of tables.
 - `-\c` connect to a database.
+- `-\dp` displays access privileges (permissions) for tables, views, and sequences in the current database.
+- `-\du` displays PostgreSQL users and roles, along with their attributes and permissions.
+
+
+**Create Role**
+```bash
+CREATE ROLE junior WITH LOGIN PASSWORD 'asdffdsa';
+```
+- Creates a PostgreSQL role named `junior`, allows it to log in, and sets its password.
+- `CREATE ROLE junior` → Creates a role named junior.
+- `WITH LOGIN` → Allows the role to log in to PostgreSQL.
+- `PASSWORD 'asdffdsa'` → Sets the role's password.
+
+
+- `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO app_user;` grants all available table privileges on existing tables in the `public` schema to `app_user`.
+- `GRANT SELECT, INSERT, UPDATE ON products TO junior;` grants the `junior` role permission to read, insert, and update data in the `products` table. The command must be executed by a role with sufficient privileges.
 
 
 ### Terminal tool name 2
