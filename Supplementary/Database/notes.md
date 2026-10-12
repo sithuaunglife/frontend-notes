@@ -57,6 +57,52 @@
 - Indexing = improves search/query performance, but indexes take storage and can make `INSERT`, `UPDATE`, and `DELETE` somewhat slower.
 - View = a saved query that behaves like a virtual table. It is not exactly caching.
 - SQL already has built-in functions, so no need to write the functions yourself.
+- `Normalization` is the process of organizing data in relational database tables to reduce data redundancy and prevent data anomalies.
+- First Normal Form (1NF):
+ - Each cell must contain a single value rather than multiple values.
+ - Each row must be uniquely identifiable, typically using a primary key.
+ - Each column must contain values of a consistent type.
+ - Baby explanation: One cell should contain only one item, not multiple items.
+ - Incorrect example (multiple values in one cell):
+ - | order_id | products                   |
+ - | -------- | -------------------------- |
+ - | 1        | iPhone 17 Pro, AirPods Max |
+ - The `products` cell contains multiple values.
+ - Correct example (one product per row):
+ - | order_id | product       |
+ - | -------- | ------------- |
+ - | 1        | iPhone 17 Pro |
+ - | 1        | AirPods Max   |
+ - Each cell contains a single product value.
+- 2NF (Second Normal Form):
+ - A table must satisfy 1NF first.
+ - Every non-key attribute must depend on the whole candidate key, not just part of a composite key.
+ - It eliminates partial dependencies.
+ - Baby explanation: If we already have the item's ID, we don't need to repeat its name in a table where that name depends only on the ID.
+ - Not in 2NF:
+ - | student_id | course_id | student_name | course_name |
+ - | ---------- | --------- | ------------ | ----------- |
+ - | 1          | C01       | Alex         | SQL         |
+ - | 2          | C02       | Bob          | Java        |
+ - | 1          | C02       | Alex         | Java        |
+ - Fix: Separate the tables:
+ - Students:
+ - | student_id (PK) | student_name |
+ - | --------------- | ------------ |
+ - | 1               | Alex         |
+ - | 2               | Bob          |
+ - Courses:
+ - | course_id (PK) | course_name |
+ - | -------------- | ----------- |
+ - | C01            | SQL         |
+ - | C02            | Java        |
+ - Enrollments:
+ - | student_id (PK, FK) | course_id (PK, FK) |
+ - | ------------------- | ------------------ |
+ - | 1                   | C01                |
+ - | 2                   | C02                |
+ - | 1                   | C02                |
+- `Denormalization`: Intentionally duplicates data to make reading data faster or queries simpler. Baby explanation: Sometimes, we duplicate data to make it easier or faster to retrieve. Example: Storing historical prices and monthly sales totals so past sales records and monthly sales reports display the correct data.
 
 ## Syntax
 **Heading 1**
