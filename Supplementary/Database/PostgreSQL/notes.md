@@ -58,8 +58,12 @@
 - `ALTER TABLE` is used to modify the structure of an existing table, such as adding, renaming, or removing columns and changing constraints.
 - You can rename a table even if another table references it using a foreign key. PostgreSQL automatically maintains the foreign key relationship after the rename, but SQL queries that use the old table name will fail until you update them to use the new name.
 - `JOIN` = combining related data from multiple tables.
+- `ON` = Specify which columns to compare to match rows.
+- `orders JOIN customers` `orders` is the left table because it appears before `JOIN`, while `customers` is the right table because it appears after `JOIN`.
+- `orders RIGHT JOIN customers` `orders` → Left table. `customers` → Right table. `RIGHT JOIN` → Returns all rows from the right table (`customers`), including customers who have no matching order.
 - `LEFT JOIN` = keep all rows from the left table, even if there is no match.
 - `RIGHT JOIN` = keep all rows from the right table, even if there is no match.
+- `FULL OUTER JOIN` returns all rows from both tables, whether they match or not. When a row has no match in the other table, the missing columns contain `NULL`.
 - `RESTRICT` = don't allow the parent action if related records would be affected.
 - `CASCADE` = the related records follow the parent's action. Example: deleting a category can delete its related menu items.
 
@@ -180,6 +184,34 @@ ALTER TABLE tasks RENAME TO todo_items;
 - `ALTER COLUMN ... TYPE` changes a column's data type.
 - `DROP COLUMN` removes a column and its data.
 - `RENAME TO` changes the table's name.
+
+
+**Joining Tables**
+```sql
+SELECT
+	orders.order_id AS id,
+	customers.name AS name,
+	orders.order_date
+FROM
+	orders
+	JOIN customers ON orders.customer_id = customers.customer_id;
+```
+- `JOIN`: Combines rows from two tables.
+- `ON`: Specifies the condition for matching rows between tables.
+- Primary Key (PK) and Foreign Key (FK): Joining a primary key with its corresponding foreign key is a common practice when joining related tables.
+
+
+**Notation**
+```sql
+SELECT *
+FROM orders o
+FULL OUTER JOIN customers c
+ON o.customer_id = c.customer_id;
+```
+- `orders o` → `o` is an alias for the `orders` table.
+- `customers c` → `c` is an alias for the `customers` table.
+- `o.customer_id` → Refers to `customer_id` in `orders`.
+- `c.customer_id` → Refers to `customer_id` in `customers`.
 
 ## Terminal Commands
 ### Docker
