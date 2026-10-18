@@ -103,6 +103,12 @@
  - | 2                   | C02                |
  - | 1                   | C02                |
 - `Denormalization`: Intentionally duplicates data to make reading data faster or queries simpler. Baby explanation: Sometimes, we duplicate data to make it easier or faster to retrieve. Example: Storing historical prices and monthly sales totals so past sales records and monthly sales reports display the correct data.
+- Deleting records: If a parent record is referenced by records in a child table, you generally need to delete the related child records first, then delete the parent record. This prevents foreign key constraint violations.
+- Transaction rollback = Undoes changes made by a transaction, returning the database to its state before the transaction began (or to a savepoint if one is used).
+- Indexing = Improves data retrieval speed by allowing the database to find records more efficiently, especially in large tables containing millions of rows.
+- Indexes make data retrieval faster, but they can slow down `INSERT`, `UPDATE`, and `DELETE` operations because the database must maintain the indexes.
+- `VIEW`: Similar to caching because it simplifies data access, but it doesn't store query results.
+
 
 ## Syntax
 **Heading 1**

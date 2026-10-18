@@ -64,8 +64,9 @@
 - `LEFT JOIN` = keep all rows from the left table, even if there is no match.
 - `RIGHT JOIN` = keep all rows from the right table, even if there is no match.
 - `FULL OUTER JOIN` returns all rows from both tables, whether they match or not. When a row has no match in the other table, the missing columns contain `NULL`.
-- `RESTRICT` = don't allow the parent action if related records would be affected.
+- `RESTRICT` = Prevents a parent record from being deleted if related child records reference it.
 - `CASCADE` = the related records follow the parent's action. Example: deleting a category can delete its related menu items.
+- `ON DELETE CASCADE` = automatically deletes related child records when the referenced parent record is deleted.
 
 ## Syntax
 **Create Table**
@@ -212,6 +213,40 @@ ON o.customer_id = c.customer_id;
 - `customers c` → `c` is an alias for the `customers` table.
 - `o.customer_id` → Refers to `customer_id` in `orders`.
 - `c.customer_id` → Refers to `customer_id` in `customers`.
+
+
+**Transaction Rollback**
+```sql
+BEGIN;
+
+UPDATE accounts
+SET balance = balance - 100
+WHERE account_id = 1;
+
+UPDATE accounts
+SET balance = balance + 100
+WHERE account_id = 2;
+
+ROLLBACK;
+```
+- Transaction rollback = Undoes changes made by a transaction, returning the database to its state before the transaction began (or to a savepoint if one is used).
+
+
+**Creating an Index**
+```sql
+CREATE INDEX idx_product_name ON products(name);
+```
+- `CREATE INDEX` = Creates an index on a specified table column to help retrieve data more efficiently, especially when searching large tables.
+
+
+**Creating VIEW**
+```sql
+CREATE VIEW all_products AS SELECT * FROM products;
+SELECT * FROM all_products;
+```
+- Creates a virtual table named `all_products` that displays all columns and rows from `products`.
+- `SELECT * FROM all_products;` retrieves data through the view.
+- Similar to caching because it simplifies data access, but a regular `VIEW` does not cache query results.
 
 ## Terminal Commands
 ### Docker
