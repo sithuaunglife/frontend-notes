@@ -52,12 +52,3 @@
 ## Tools
 - Notes
 
-## My Confusion & Understanding
-
--Confusion:Example note
-
-Understanding:Example note
-
--Confusion:Example note
-
-Understanding:Example note
