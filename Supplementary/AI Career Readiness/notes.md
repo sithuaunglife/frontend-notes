@@ -45,7 +45,7 @@
 - Resume Scanners: Resume scanner websites can help evaluate your CV.
 - Self-Learning Projects: If you lack professional experience, include self-learning projects and small experiences from work you have done.
 - AAR Framework — Action, Achievement, Result: A framework used to structure CV content.
-- PAR Framework — Present, Achievement, Reason: A framework used to structure CV content and cover letters.
+- PAR Framework — Present, Achievement, Reason: A framework used to structure cover letters.
 - Cover letters are becoming increasingly important in recruitment.
 - AI as a Thinking Partner: AI is a thinking partner, not the final decision-maker.
 - Company Research: Check Indeed and Glassdoor for company reviews, read employee comments, and review the recruiter's LinkedIn presence before applying.
@@ -58,6 +58,45 @@
 - STAR Framework — Situation, Task, Action, Result: A framework used in interviews to structure answers about past experiences.
 - AI Interview Practice: Use an AI prompt to practice answering interview questions using the STAR framework.
 - Voice Practice: When practicing interviews with AI, speak using the microphone instead of typing. This helps simulate a real interview, where you need to communicate your answers verbally.
+- Company Research With AI:
+ - Before applying, take a few minutes to assess whether the company is a good fit for you. Job platforms such as Indeed provide useful information through employee reviews and salary insights, which can help you make a more informed decision.
+ - 1. Gather information. Review the company's ratings, employee feedback, and salary ranges for similar roles. Save and screenshot the
+most relevant details.
+ - 2. Ask AI to assess fit. Share the information with your AI assistant and ask: "Based on my background and career goals, what are the
+strengths, risks, and key questions I should explore during the interview process?"
+ - 3. Decide strategically. Use the insights to determine whether the opportunity aligns with your priorities and to prepare for more informed conversations with recruiters and hiring managers.
+- The networking mindset:
+ - 1. You are not networking to extract something. You are networking to exist in someone's world before the vacancy exists.
+ - 2. Plant seeds now. Do not try to harvest the same day.
+ - 3. Lead with value. Offer an insight, a relevant idea, or genuine interest before you ask for anything.
+- A cold message lands in the inbox of a stranger with no prior contact. A warm message lands on someone who already recognises your name. Warming a connection first dramatically raises your reply rate.
+ - Cold: Connecting and immediately asking "Do you have any openings?" low response, easy to ignore.
+ - Warm: Follow the person, engage with their posts for a couple of weeks, then reach out with something specific, far higher response.
+- Value-first engagement: comment before you connect:
+ - Follow HR managers and recruiters at your target companies first; many post openings directly in their feed, not just on the jobs page. When they post, leave a specific comment, not filler. Do this for two to four weeks before sending a connection request, and your name will already be familiar.
+ - Weak: "Great post! Very inspiring. Thank you for sharing."
+ - Strong: "Your point about tailoring a CV to each role rather than sending the same one is something I have been getting wrong. Applying this from today."
+ - Use the prompt from Linkedin Prompt Generator in the Prompt Library to draft strong comments fast, then personalise them.
+- Alumni outreach strategy:
+ - When you apply somewhere, search for alumni from your university who already work there. A shared campus, professors, and experiences create an instant bridge that a stranger does not have, and the response rate from alumni is far higher than cold messages.
+ - Search LinkedIn for the company or role, filter to People, and add your school in the School filter.
+ - Send a connection request with a note; never send a blank one.
+ - Keep it warm and ask for nothing in the first message; you are opening a door, not requesting a favour.
+- Reaching the hiring manager:
+ - Most people only connect with HR, but the hiring manager, or your future boss, often has more influence over who gets hired. Reaching out is
+powerful when done with care, and damaging when done carelessly. Keep to clear boundaries.
+ - DO:
+ - Offer a genuine insight relevant to their work or company.
+ - Demonstrate relevance. Connect your 1–2 strongest credentials.
+ - Reference something real & shared (a post, a project, a interest).
+ - Keep any offer of help small and specific: "I noticed your team is doing X, I can help with a quick Y."
+DON'T:
+ - Ask for a referral or a job in the first message.
+ - Send generic, mass, copy-paste messages.
+ - Oversell yourself or exaggerate.
+ - Offer to "work for free" broadly. Open-ended free work reads as desperation, not confidence.
+- HR recruiters often spend only 6 seconds scanning a CV because they have many applications to review. Therefore, your CV needs to communicate your skills, experience, and value quickly and clearly.
+- Many companies use Applicant Tracking Systems (ATS) to help manage and filter CVs. These systems may use keywords to identify candidates whose skills and experience match the job description. Therefore, tailor your CV by including relevant keywords from the job posting that accurately reflect your qualifications.
 
 ## Syntax
 **Career Assistance Setup Prompt**
@@ -98,12 +137,43 @@ there any red flags, and should I apply? [paste the full job description here]
 - Analyze a job posting against CV to evaluate suitability for the role.
 
 
-**Heading 2**
-```js 
- <!-- code here -->
+**LinkedIn comment generator**
+```txt
+[COPY > PASTE > EDIT]
+You are my LinkedIn commenting assistant with access to my CV. When I
+paste a
+post, write the best comment I could leave on it. The comment must:
+╶ Sound like a thoughtful professional, never generic or overly flattering
+╶ Reflect my background and perspective from my CV
+╶ Add value (an insight, a relevant experience, or a good question)
+╶ Be 2-4 sentences, never start with "Great post!"
+╶ Match the post's tone and language
+Give me the comment plus a one-line reason it works for my profile.
+This is the post: [paste here]
 ```
-- Description
+- Use to leave thoughtful comments that get you noticed by HR and recruiters before you connect.
 
+
+**Outreach messages (one prompt, four uses)**
+```txt
+[COPY > PASTE > EDIT]
+Write me a LinkedIn connection note to [name], who is [job title] at
+[company].
+Based on my CV, pick the 1-2 most relevant credentials for this role. Open
+with a specific insight or value I can offer related to their work. Keep it
+under 200 characters, genuine and peer-to-peer, never desperate or
+asking for a favour.
+Variations:
+Recruiter: add "...I am exploring [role] positions and would value staying in
+touch."
+Alumni: add "...we both studied at [university]; I am applying for [role]
+there."
+Email (you have their address): say "Write a short professional outreach
+email" and remove the 200-character limit.
+Follow-up: "Write a brief, warm follow-up referencing my earlier message,
+adding one new useful point, not chasing for a reply."
+```
+- The same logic works for connection notes, recruiters, hiring managers, and follow-ups. Change one line depending on the channel.
 
 ## Tools
 - Profile Structure Analysis: Careerflow.
