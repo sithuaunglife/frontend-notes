@@ -45,6 +45,14 @@
 - Resume Scanners: Resume scanner websites can help evaluate your CV.
 - Self-Learning Projects: If you lack professional experience, include self-learning projects and small experiences from work you have done.
 - AAR Framework — Action, Achievement, Result: A framework used to structure CV content.
+- Action–Scope–Result (ASR) Formula: Write CV bullet points that demonstrate what you did and why it mattered.
+ - Formula: Action + Scope + Result
+ - Action: What did you do?
+ - Scope: What did you work on, and at what scale?
+ - Result: What was achieved or improved?
+ - Example:
+ - Before (Generic Sentence): Helped with the debate club's social media.
+ - After (Using the Formula): Managed Facebook and Instagram for the school debate club, growing the page following from 100 to 500 followers within 6 months.
 - PAR Framework — Present, Achievement, Reason: A framework used to structure cover letters.
 - Cover letters are becoming increasingly important in recruitment.
 - AI as a Thinking Partner: AI is a thinking partner, not the final decision-maker.
@@ -97,6 +105,8 @@ DON'T:
  - Offer to "work for free" broadly. Open-ended free work reads as desperation, not confidence.
 - HR recruiters often spend only 6 seconds scanning a CV because they have many applications to review. Therefore, your CV needs to communicate your skills, experience, and value quickly and clearly.
 - Many companies use Applicant Tracking Systems (ATS) to help manage and filter CVs. These systems may use keywords to identify candidates whose skills and experience match the job description. Therefore, tailor your CV by including relevant keywords from the job posting that accurately reflect your qualifications.
+- HR does not look for job titles, but for transferable skills.
+- The title may be the same, but the keywords, priorities, and who they look for are different. If you send the same CV to both, you are essentially giving the same answer to two different questions. Tailoring your CVs to different jobs is not about exaggeration, but it is about framing your experience and becoming the ideal candidate they are looking for.
 
 ## Syntax
 **Career Assistance Setup Prompt**
@@ -174,6 +184,47 @@ Follow-up: "Write a brief, warm follow-up referencing my earlier message,
 adding one new useful point, not chasing for a reply."
 ```
 - The same logic works for connection notes, recruiters, hiring managers, and follow-ups. Change one line depending on the channel.
+
+
+**Your Experience Inventory**
+```txt
+[COPY > PASTE > EDIT]
+“I want to build a CV for a [role]. Ask me 5 questions about my experience, skills, and achievements.”
+```
+```txt
+[COPY > PASTE > EDIT]
+“Using my answer, for each experience, divide into activity, who I helped, and what skills I used.
+Example:
+Activity: Manage school social media, Facebook and IG.
+Who I helped: The debate club.
+Skills: content planning, caption writing, graphic design.”
+```
+- After your answer, you can ask AI to output your experiences into the experience inventory.
+- You can use AI with this prompt to ask questions that help you figure out your experiences. Your answers can be messy, without proper grammar or
+spelling.
+
+
+**Getting your match score**
+```txt
+“Here is my experience inventory [paste] and the job description I want to apply for [paste]. How well do I match this role? Give me a percentage and explain why.”
+```
+- Evaluate how well my experience matches a job description.
+
+
+**Finding your strong experience**
+```txt
+“From my inventory, what are the top 5 experiences that make my application strongest for this role? List them in order of relevance”
+```
+- Identify the most relevant experiences for a specific role.
+- Combined Output: Using both the `Getting your match score` and `Finding your strong experience` prompts produces a ranked list of the five most relevant experiences for the target role. These experiences become the backbone of your tailored CV.
+
+
+**The Match Check**
+```txt
+[COPY > PASTE > EDIT]
+“Here is my CV [paste] and the job description I am applying for [paste]. What are my top 2–3 strengths for this role, and is there any gap I should be aware of?”
+```
+- Evaluate how well your CV matches a job description and identify your strongest qualifications and potential skill gaps.
 
 ## Tools
 - Profile Structure Analysis: Careerflow.
