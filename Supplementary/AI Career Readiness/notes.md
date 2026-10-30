@@ -63,9 +63,6 @@
  - 3. Are employees leaving bad reviews?
  - 4. Is the salary appropriate for your location?
  - 5. Does this role actually match your long-term career goals?
-- STAR Framework — Situation, Task, Action, Result: A framework used in interviews to structure answers about past experiences.
-- AI Interview Practice: Use an AI prompt to practice answering interview questions using the STAR framework.
-- Voice Practice: When practicing interviews with AI, speak using the microphone instead of typing. This helps simulate a real interview, where you need to communicate your answers verbally.
 - Company Research With AI:
  - Before applying, take a few minutes to assess whether the company is a good fit for you. Job platforms such as Indeed provide useful information through employee reviews and salary insights, which can help you make a more informed decision.
  - 1. Gather information. Review the company's ratings, employee feedback, and salary ranges for similar roles. Save and screenshot the
@@ -107,6 +104,145 @@ DON'T:
 - Many companies use Applicant Tracking Systems (ATS) to help manage and filter CVs. These systems may use keywords to identify candidates whose skills and experience match the job description. Therefore, tailor your CV by including relevant keywords from the job posting that accurately reflect your qualifications.
 - HR does not look for job titles, but for transferable skills.
 - The title may be the same, but the keywords, priorities, and who they look for are different. If you send the same CV to both, you are essentially giving the same answer to two different questions. Tailoring your CVs to different jobs is not about exaggeration, but it is about framing your experience and becoming the ideal candidate they are looking for.
+- Not every job posting requires a cover letter. When it is listed as optional, most applicants skip it. Submitting a well-written one anyway is one of the simplest ways to stand out, because so few people bother.
+- The Anatomy of a Cover Letter:
+ - Before writing anything, understand the structure and purpose of each section of a cover letter.
+ - 1. Address:
+ - Include your name and contact information, followed by the company's name, address, and recruiter's name (if available).
+ - Example:
+ - Mr. Sok Somnang
+ - soksomnang@gmail.com
+ - To: MHF
+ - Street 1, Road 5, District, City, Country
+ - Dear Ms. Dina Te,
+ - 2. Opening:
+ - Introduce yourself and explain why you are interested in the role.
+ - Example:
+ - As someone passionate about using social media to drive social change, I am excited to see the HFM Marketing Coordinator opening.
+ - 3. Body:
+ - Use 2–3 sentences to connect your actual experience, skills, and achievements to the requirements of the role.
+ - Example:
+ - In my role with the debate club, I planned content calendars and wrote captions that consistently outperformed prior engagement — skills I understand are central to this position.
+ - 4. Addressing a Gap (Optional):
+ - Briefly acknowledge a missing skill or experience, then shift the focus to your existing strengths and willingness to learn.
+ - Example:
+ - While I have not yet worked with paid social campaigns, I have a strong foundation in organic growth and am quick to pick up new tools.
+ - 5. Closing:
+ - End with a clear, warm, and confident call to action. Express appreciation for the recruiter's time and consideration.
+ - Example:
+ - I would welcome the chance to discuss how I can contribute to your team. Thank you for your time and consideration.
+- Can't find a name to address your letter to? Check the company's LinkedIn page, the "About" or "Team" section of their website, or the recruiter's profile on the job posting itself. If you truly can't find one, "Dear [Company] Hiring Team" is perfectly acceptable. It is still far better than "To Whom It May Concern."
+- There are no fixed rules on length in Cover Letter but a useful guideline: 250–300 words, 3–4 short paragraphs. Long enough to make your case, short enough to be read in full.
+- AI can make your writing sound polished, but polish is not the goal — accuracy is. Do not let AI add achievements, numbers, or claims you did not give it. Everything in your cover letter should be something you can speak to confidently if asked about it in an interview.
+- A CV tells a recruiter what you did. A cover letter tells them why it matters. A portfolio shows them with photos, not just your words. A portfolio is most useful when your work is visual or project-based: design, photography, content creation, events, architecture, or anything where seeing the result tells a stronger story than reading about it.
+- A strong portfolio can make you stand out. But if a job posting explicitly asks for only a CV and cover letter, do not send a portfolio anyway. Following instructions is itself part of what recruiters are evaluating. Sending more than asked for can come across as not reading the posting carefully.
+- What a Portfolio Actually Is: A portfolio is not a copy-paste of your CV bullet points with photos attached. Your CV gives one line per achievement; a portfolio gives you room to show the fuller story. What the project was, what you specifically did, what it looked like, and what came out of it. Think of it as the "behind the scenes" that your CV doesn't have space for.
+- Portfolio example:
+ - 1. Opening
+ - Introduce yourself and provide your professional contact details.
+ - Name: Your full name.
+ - Professional Identity: Your role and area of focus.
+ - Introduction: A brief professional summary.
+ - Contact Details: LinkedIn, GitHub, email, and portfolio links.
+ - Example:
+ - Sithu Aung — Frontend Developer focused on building responsive and interactive web experiences.
+ - 2. Projects
+ - For each project, include the following:
+ - Scope of Work (SoW): What does the project accomplish? What features do you build?
+ - Role (Ro): What is your responsibility and contribution to the project?
+ - Results (Re): What outcomes, improvements, or deliverables do you achieve?
+ - Photos / Visuals: Screenshots, UI previews, architecture diagrams, or live demos.
+ - Example: Mala POS
+ - SoW: Contribute to developing a Point of Sale system with interactive sales interfaces, category selection, and form validation.
+ - Ro: Frontend Web Developer Intern.
+ - Re: Deliver functional frontend features and improve component organization through separation of concerns.
+ - Photos: Screenshots of the sales screen, product selection interface, and other completed features.
+ - Optional, include only if relevant:
+ - Impact metrics combined from all projects (followers gained, funds raised, people reached).
+ - Logos of organisations you've worked or volunteered with.
+ - Other achievements (awards, recognitions, features).
+- A portfolio doesn't need to be long. Two to four strong projects, clearly explained, outperform ten projects with no detail.
+- When you enter an interview, whether online or in person, with a systematic preparation strategy rather than relying on luck, you realize that the game has changed. Strong interview skills aren't something you're born with; they're developed through consistent practice.
+- STAR Framework — Situation, Task, Action, Result: A framework used in interviews to structure answers about past experiences.
+- Rambling Answer vs. Structured STAR Answer:
+ - A recruiter looks at your CV and asks: "You have mentioned here that you managed a small team project during your final year. Could you tell me how you handled a project with a tight deadline?"
+ - 1. Non-Structured Answer (The Rambling Answer):
+ - Well, that project was for our final Business Operation class. We had very little time to submit that final report. At the same time, one of our teammates suddenly had serious health issues and could not continue handling her part of our project, and another team member had internet connectivity issues, so he could not work much on the financial side. OMG, we were scrambling. I then had to stay up late for 4 nights to handle their parts, trying to compile all slides and revise them. Fortunately, we submitted on time and got an A grade, but trust me, it was really crazy.
+ - Problems:
+ - Focuses too much on emotional stress rather than a clear story.
+ - Includes unnecessary background details.
+ - Lacks a clear structure and logical flow.
+ - Makes achievements and individual contributions difficult to identify.
+ - 2. Structured Answer (The STAR Method):
+ - Situation: In my final semester, our 4-member team had just a week to submit the final report for our Business Operation class after a member unexpectedly left.
+ - Task: As a project lead, my goal was to restructure our remaining workflow without affecting our analysis.
+ - Action: I immediately reallocated the slides for the market research section to myself and set up a shared Google Doc to keep the team updated and connected despite a poor internet connection on one team member's end. I checked again and helped revise the financial data before submitting.
+ - Result: We submitted the report one hour ahead of the deadline, received an A grade, and earned praise from our professor for our data accuracy under pressure.
+ - 3. Key Differences:
+ - | Rambling Answer               | Structured STAR Answer                        |
+   | ----------------------------- | --------------------------------------------- |
+   | Focuses on emotional stress.  | Focuses on responsibilities and achievements. |
+   | Contains unnecessary details. | Delivers relevant information concisely.      |
+   | Lacks a clear storyline.      | Follows a logical sequence.                   |
+   | Uses vague outcomes.          | Highlights concrete results.                  |
+ - 4. Key Takeaway:
+ - Rambling answers: Focus on emotional stress rather than delivering a clear story.
+ - STAR answers: Provide a clear structure to communicate high-impact facts.
+ - Purpose: Demonstrate leadership, problem-solving, adaptability, and other relevant competencies through real experiences.  
+- AI Interview Practice: Use an AI prompt to practice answering interview questions using the STAR framework.
+- Voice Practice: When practicing interviews with AI, speak using the microphone instead of typing. This helps simulate a real interview, where you need to communicate your answers verbally.
+- Top 5 Most Common ASEAN Interview Question Types
+ - 1. The Introduction
+ - Question: "Tell me about yourself."
+ - Purpose: This is an icebreaker question designed to assess your communication style and understand your professional identity.
+ - 2. The Challenge Overcome
+ - Question: "Tell me about a time you faced a difficult problem at work or school. How did you overcome it?"
+ - Purpose: Measures your leadership, critical thinking, resilience, and adaptability.
+ - 3. The Teamwork
+ - Question: "Could you share a time when you had to work with a difficult teammate or handle a disagreement among your team?"
+ - Purpose: Evaluates your emotional intelligence, collaborative skills, and cultural fit.
+ - 4. The Performance Under Pressure
+ - Question: "Can you give an example of how you prioritised your tasks when facing a tight deadline?"
+ - Purpose: Measures your time management, execution capability, and organisational habits.
+ - 5. The Self-Awareness Check
+ - Question: "What is your greatest weakness, and how are you working to improve it?"
+ - Purpose: Assesses whether you are self-aware, honest, and actively seeking self-improvement.
+- STAR Word Budget Breakdown:
+ - Think of the STAR framework as a word budget to avoid rambling when answering recruiters' interview questions.
+ - 1. Situation (1–2 sentences)
+ - Set the context clearly.
+ - Include the who, what, where, when, and how.
+ - Keep the background information relevant.
+ - 2. Task (1 sentence)
+ - Explain the goal or problem.
+ - Clarify what you were personally responsible for in the project.
+ - 3. Action (2–3 sentences)
+ - The most important part of your answer.
+ - Explain the specific steps YOU took.
+ - Mention the tools or methods YOU used.
+ - Focus on YOUR individual contributions, not just your group's work.
+ - 4. Result (1–2 sentences)
+ - Explain what happened and the final outcome.
+ - Use numbers, percentages, or concrete feedback to demonstrate your impact.
+ - Avoid vague outcomes and excessive emotional details.
+ - Key Takeaway:
+ - Keep your answers concise, structured, and focused on your contributions and achievements.
+ - The goal isn't to tell the entire story. It's to communicate your value within a limited amount of time.
+- In interviews, focus on explaining your individual contributions by using "I" rather than "we". Highlight what YOU personally did, the decisions YOU made, and the actions YOU took. You can acknowledge teamwork, but make sure recruiters understand your individual value and contributions.
+- Recruiting Tips: 
+ - HR cares more about:
+ - What YOU did (Your action).
+ - What RESULT you achieved (Not your team’s).
+ - How confidently did you communicate your answers.
+- Confident Techniques:
+ - Sit upright and comfortably with eye contact with the recruiter
+ - Pause before answering
+ - Speak slowly and clearly
+ - Focus on the story you deliver (not your perfect English)
+ - Use “I” instead of “we”
+- Stop and Reflect:
+ - What specific feedback did the AI provide for your answers?
+ - Are you clear and more confident with your answers?
 
 ## Syntax
 **Career Assistance Setup Prompt**
@@ -219,12 +355,71 @@ spelling.
 - Combined Output: Using both the `Getting your match score` and `Finding your strong experience` prompts produces a ranked list of the five most relevant experiences for the target role. These experiences become the backbone of your tailored CV.
 
 
-**The Match Check**
+**Writing CV Bullets with the ASR Framework**
+```txt
+[COPY > PASTE > EDIT] “Rewrite each of these experiences as a CV bullet point using the Action + Scope + Result format. Keep each to one line. Only use information I have given; ask questions if unsure, but do not add details that are not there.”
+```
+- Use the ASR (Action + Scope + Result) framework to transform my experiences into concise, impact-focused CV bullet points.
+- Apply the `Writing CV Bullet with ASR Framework` prompt to rewrite each experience into a one-line bullet point while ensuring the content remained accurate and based only on the information I provided.
+
+
+**Reviewing CV with an AI Assistant**
+```txt
+[COPY > PASTE > EDIT] “Here is my CV draft [paste]. Review it against the job description [paste]. What is weak, missing, or could be rewritten to be stronger? Suggest specific improvements. Then, using your own suggestion, draft me a new CV.”
+```
+- Use the CV draft `Writing CV Bullets with the ASR Framework` generated with the ASR framework as the starting point for an AI-assisted CV review.
+- Provide my CV draft and the target job description to the AI assistant to identify weaknesses, missing information, and opportunities to strengthen my CV.
+- Apply the AI's suggestions to refine my CV and create an improved version tailored to the target role.
+
+
+**The Cover letter Match Check**
 ```txt
 [COPY > PASTE > EDIT]
 “Here is my CV [paste] and the job description I am applying for [paste]. What are my top 2–3 strengths for this role, and is there any gap I should be aware of?”
 ```
-- Evaluate how well your CV matches a job description and identify your strongest qualifications and potential skill gaps.
+- Provide my CV and the target job description to the AI assistant to identify the qualifications and experiences that best align with the role.
+- Identify my top 2–3 strengths to emphasize in my cover letter.
+- Highlight potential skill gaps or missing qualifications so I can address them honestly and strategically in my cover letter.
+
+
+**Writing a Cover Letter: Raw Version**
+```txt
+[COPY > PASTE > EDIT]
+“I am applying for [role] at [company]. Ask me 5 questions that will help me write a personal, confident cover letter for this role.”
+```
+- Use the AI assistant to ask five questions that help me develop a personal and confident cover letter tailored to the target role.
+- Answer the questions in my own words, allowing messy, informal, and unfinished sentences to capture my genuine experiences, motivations, and ideas.
+- Focus on getting my authentic thoughts onto the page rather than worrying about perfect wording.
+
+
+**Drafting a Cover Letter: Refined Version**
+```txt
+[COPY > PASTE > EDIT]
+“Using my answers, CV, and job description given, draft a cover letter for this role. Keep it warm, confident, and under 300 words. Only use the information I have given you.”
+```
+- Use my answers from the Writing a Cover Letter: Raw Version, along with my CV and the target job description, as input for the AI assistant.
+- Ask the AI assistant to transform my raw answers into a polished, personalized cover letter tailored to the role.
+
+
+**Evaluating and Improving My Cover Letter**
+```txt
+[COPY > PASTE > EDIT]
+“Given my revised cover letter with CV and job description, analyse how likely HR would interview me in percentages. List down the strengths in my cover letter, and what are 5 things that I can do to improve my cover letter to increase the percentage of an interview to 90%.”
+```
+- Submit my revised cover letter, CV, and target job description to the AI assistant for evaluation.
+- Ask the AI assistant to assess my cover letter's strengths and estimate its potential to attract an interview invitation.
+- Identify five specific areas for improvement and actionable suggestions to strengthen my cover letter and improve my chances of getting an interview.
+
+
+**Interview Assistant Setup Prompt**
+```txt
+Act as an encouraging, professional HR professional for a [Insert your target job title, e.g., Junior Account Manager] at a growing company (or specific company if you have one) in [Insert your city, e.g., Manila]. Your goal is to help me practice my interview skills and build my confidence.
+
+Please ask me one interview question at a time, starting with "Tell me about yourself." Wait for my response before asking the next question. After each response I give, provide constructive feedback based on the STAR framework (Situation, Task, Action, Result).
+
+Tell me what I did well and give me a specific suggestion for how to make my answer more concise or impactful. Keep the tone supportive, direct, and friendly.
+```
+- Create an AI-powered interview practice assistant to improve interview skills, communication, and confidence.
 
 ## Tools
 - Profile Structure Analysis: Careerflow.
@@ -234,6 +429,7 @@ spelling.
 - Jobscan: The Jobscan website provides a resume builder.
 - In Singapore, JobStreet and Indeed are strong platforms for finding jobs.
 - In Myanmar, JobNet Myanmar is a strong platform for finding jobs.
+- AI-powered tools that you can use to practise job interviews in advance. Many offer free plans. AMA Interview — AI-powered interview practice.SmallTalk2Me – Job Interview Practice — Practise answering interview questions with AI feedback.
 
 
 
