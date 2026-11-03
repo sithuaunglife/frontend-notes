@@ -133,6 +133,12 @@ DON'T:
  - I would welcome the chance to discuss how I can contribute to your team. Thank you for your time and consideration.
 - Can't find a name to address your letter to? Check the company's LinkedIn page, the "About" or "Team" section of their website, or the recruiter's profile on the job posting itself. If you truly can't find one, "Dear [Company] Hiring Team" is perfectly acceptable. It is still far better than "To Whom It May Concern."
 - There are no fixed rules on length in Cover Letter but a useful guideline: 250–300 words, 3–4 short paragraphs. Long enough to make your case, short enough to be read in full.
+- Refine cover letter with AI: A first draft from AI often sounds correct but flat or not in your tone. It is about making the cover letter sound like you, not like a template. Read through the generated cover letter line by line. If a sentence does not sound like something you would actually say, rewrite it. If a phrase feels overused or too generic, you can paraphrase in your own tone or replace it with information specific to you.
+ - Example:
+ - Generic Phrases:
+ - I am a hardworking team player because we worked together to accomplish XYZ.
+ - Personal-tone Phrases:
+ - Through XYZ, I learnt I work well with people by shifting my communication style for each person in the team.
 - AI can make your writing sound polished, but polish is not the goal — accuracy is. Do not let AI add achievements, numbers, or claims you did not give it. Everything in your cover letter should be something you can speak to confidently if asked about it in an interview.
 - A CV tells a recruiter what you did. A cover letter tells them why it matters. A portfolio shows them with photos, not just your words. A portfolio is most useful when your work is visual or project-based: design, photography, content creation, events, architecture, or anything where seeing the result tells a stronger story than reading about it.
 - A strong portfolio can make you stand out. But if a job posting explicitly asks for only a CV and cover letter, do not send a portfolio anyway. Following instructions is itself part of what recruiters are evaluating. Sending more than asked for can come across as not reading the posting carefully.
