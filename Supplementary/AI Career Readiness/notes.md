@@ -246,9 +246,37 @@ DON'T:
  - Speak slowly and clearly
  - Focus on the story you deliver (not your perfect English)
  - Use “I” instead of “we”
-- Stop and Reflect:
- - What specific feedback did the AI provide for your answers?
- - Are you clear and more confident with your answers?
+- Together with the STAR Method to show your capacity, and this flow of hooking your first common question during your interview, “Tell me about yourself” will help you start the interview naturally and effectively: following these three steps:
+ - 1.	Current Status: "I am a recent digital marketing graduate from Strategy First University, Yangon City, specialising in data-driven content strategy."
+ - 2.	Relevant Background: "During my final year project, I did an internship in which I managed a social media campaign for a local sustainable clothing brand that increased their organic reach by 35% over a three-month period."
+ - 3.	Why I'm Here: "I would love to apply for this position because your company is one of the leading innovative e-commerce solutions across Southeast Asia, and I want to bring my analytics and content skills to your growth team."
+ - Use the three-step framework (Current Status → Relevant Background → Why I'm Here) for your introduction.
+ - Use the STAR framework (Situation → Task → Action → Result) for the remaining behavioral interview questions.
+- Practice: The 60-Second Self-Recording Guide (Optional):
+ - If you want to take your confidence to an elite level, use your smartphone to record a 60-second video of yourself answering the question: "Tell me about yourself.” Follow the 3-step formula. When you play the video back, look closely at these three specific markers:
+ - Eye Contact: Are you looking directly into the camera lens as if it were a real recruiter?
+ - Pacing: Are you breathing calmly between sentences, or are you rushing through your points?
+ - Feeling Comfortable: Do you naturally deliver your answers with body language in a conversation? Are you using too many filler words like "um," "ah," or "like"?
+- Step-by-Step Prep Sheet Building Guide:
+ - 1.	Give one column to put the context of your story.
+ - 2.	Build the other 5 columns for the STAR method with sentence budgets.
+ - 3.	Build 5 rows for each question (follow 5-question types in Chapter 1).
+ - 4.	Select your stories wisely: Pick five different experiences. Avoid using the same project or internship experience for every single row. You need to show variety in your experiences.
+ - 5.	Use action verbs: Fill in the columns using your sentence budgets. Keep your sentences short and focused on action verbs (e.g., Managed, Designed, Solved, Coordinated…).
+ - 6.	Quantify your impacts: Recruiters value evidence and measurable results. If you do not have exact percentages, use scale or volume. (e.g., "Coordinated logistics for a 50-person seminar" or "Managed a budget of a 500 USD project.").
+ - Visual Prep Sheet example:
+ - | Question Focus | Context | Situation (1–2 sentences) | Task (1 sentence) | Actions Taken (2–3 sentences) | Concrete Results (1–2 sentences) |
+   | -------------- | ------- | ------------------------- | ----------------- | ----------------------------- | -------------------------------- |
+   |                |         |                           |                   |                               |                                  |
+   |                |         |                           |                   |                               |                                  |
+   |                |         |                           |                   |                               |                                  |
+   |                |         |                           |                   |                               |                                  |
+   |                |         |                           |                   |                               |                                  |
+- How to Export Your Prep Sheet:
+ - Once you finish drafting your content in a digital document, follow these steps to turn it into a portable study tool:
+ - Google Docs: Click File > Download > PDF Document (.pdf).
+ - Microsoft Word: Click File > Save As > Choose PDF format.
+ - Save this document to your smartphone or print it to review 15-30 minutes before your next interview round. It serves as your ultimate confidence booster.
 
 ## Syntax
 **Career Assistance Setup Prompt**
