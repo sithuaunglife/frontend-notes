@@ -54,6 +54,8 @@
 - At the state management level (e.g. Zustand), the code is mostly written to update or return a new state.
 - When an image isn't loading, compare it with another working image feature. If other MinIO/S3 images are working, first compare the image URLs and storage paths. Use the same working endpoint/path when appropriate, because the backend team may change image storage locations without the frontend team knowing.
 - When a link or website is broken, check the Network tab in DevTools first → 2. Test the same link in another browser → 3. If one browser works and another doesn't, investigate cache, DNS, cookies, extensions, and browser-specific settings → 4. Don't assume the deployment is broken just because the website doesn't work in one browser → 5. Follow the evidence and test hypotheses until you find the actual cause.
+- It is better to use lightweight tools like Vite for prototypes and hackathons rather than production-grade frameworks like Next.js.
+- Choose the right tools for the situation instead of overengineering with unnecessarily complex technologies.
 
 ## Syntax
 **Next.js folder structure**

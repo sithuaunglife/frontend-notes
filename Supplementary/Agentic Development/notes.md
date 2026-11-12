@@ -66,6 +66,10 @@
 - MAP: “Make an implementation plan for the project without making any real implementation. Make feature prioritization, development and testing plan in a reasonable order. Don't do anything yet.” This is the mapping phase, where the AI maps out the project and creates a reasonable implementation plan before any actual development begins.
 - BUILD: “Create IMPLEMENTATION_PLAN.md, put it in the docs folder and build the project.” This creates the implementation plan as a persistent Markdown file and then uses that plan to build the project.
 - Implementation status doesn't require a separate `IMPLEMENTATION_STATUS.md`. It can already be included inside `IMPLEMENTATION_PLAN.md` through status fields and progress tracking. If the workflow requires a separate implementation status file and it hasn't been created, ask the agent to create `IMPLEMENTATION_STATUS.md`.
+- `preview` — Prompt that instructs the AI agent to preview the generated output and visually inspect it to verify that it matches the expected design and functionality.
+- You can let an AI coding agent inspect other people's public GitHub repositories and prompt it to clone the repository to your local machine.
+- You can prompt an AI coding agent to create a new Git branch.
+- Avoid switching branches while an AI coding agent is actively working on the repository.
 
 ## Syntax
 **AGENTS.md Hierarchy**
@@ -270,13 +274,5 @@ npm install -g --allow-scripts=opencode-ai opencode-ai
 - OpenCode uses a rolling 5-hour window across its rate-limiting infrastructure: 5-Hour Rolling Window: In OpenCode's ecosystem (including OpenCode Go and shared model pools), limits are enforced dynamically over a rolling 5-hour period rather than resetting at midnight or on a fixed 24-hour clock. How It Behaves: Once you reach the quota for a specific model or usage bucket, your limit gradually restores over the next 5 hours as old requests fall outside the rolling window. Per-Model Reset: On free Zen models, hitting a limit on one model triggers a cooling period for that specific endpoint (or until its 5-hour window rolls over). You can switch to another free model immediately without waiting for the 5-hour timer on the first model to expire. However, this is not officially confirmed by OpenCode and is based on community insights rather than official documentation.
 - Caveman - Open-source token-saving tool for coding agents** that compresses agent communication to reduce unnecessary output tokens. Helps make long-running agentic workflows more token-efficient while preserving useful technical information.
 - Figma MCP: Comes with official `SKILL.md` guidance that teaches the agent how to use Figma's MCP capabilities effectively. When setting up Figma MCP, its official skill files can be added to the agent's skills so it knows how to use those capabilities.
-
-## My Confusion & Understanding
-
--Confusion:Example note
-
-Understanding:Example note
-
--Confusion:Example note
-
-Understanding:Example note
+- Figma MCP: It struggles with accurately interpreting screenshots in Figma.
+- Repository Selection — Codex Desktop doesn't provide a Vercel-style GitHub repository dashboard for browsing and importing remote repositories directly. To work on a GitHub project, clone the repository to your local machine first, then open its local folder in Codex Desktop.
