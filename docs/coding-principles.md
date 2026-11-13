@@ -185,6 +185,82 @@ src/
 - MV = Model + View (data layer and UI layer), while VM = ViewModel, which acts as the logic layer connecting data to the UI (often implemented as hooks in React).
 
 
+**Vite SPA folder structure**
+```css 
+src/
+├── components/                            # DESIGN SYSTEM (shadcn)
+│   ├── ui/                                 # shadcn/ui components
+│   │   ├── button.tsx
+│   │   ├── input.tsx
+│   │   ├── label.tsx
+│   │   ├── dropdown-menu.tsx
+│   │   ├── scroll-area.tsx
+│   │   └── sidebar.tsx
+│   │
+│   └── TablePagination.tsx                # Custom Centralized Component
+│
+├── features/                               # Domain-specific logic
+│   ├── home/
+│   │   ├── components/
+│   │   │   ├── HomePage.tsx                # Main home UI
+│   │   │   ├── HeroSection.tsx
+│   │   │   └── FeatureList.tsx
+│   │   │
+│   │   └── hooks/
+│   │       └── useHome.ts
+│   │
+│   └── customer/ or customers/                # Customer CRUD (Optional: Use only when frontend CRUD is required)
+│       ├── components/                         
+│       │   ├── create/
+│       │   │   └── CustomerCreateForm.tsx
+│       │   │
+│       │   ├── delete/
+│       │   │   └── CustomerDeleteBtn.tsx
+│       │   │
+│       │   ├── detail/
+│       │   │   ├── CustomerDetailCard.tsx
+│       │   │   └── CustomerDetailCardLoader.tsx  # Skeleton Loader
+│       │   │
+│       │   ├── edit/
+│       │   │   └── CustomerEditForm.tsx
+│       │   │
+│       │   └── list/
+│       │       ├── CustomerListSection.tsx
+│       │       └── CustomerTable.tsx
+│       │
+│       └── hooks/
+│           └── useCustomer.ts
+│
+├── styles/
+│   └── globals.css
+│
+├── lib/                                    # Shared utilities
+│   ├── utils.ts                            # cn(), helpers
+│   ├── api.ts                              # When API is needed               
+│   ├── constants.ts
+│   └── env.ts
+│
+├── stores/                                 # Global Zustand stores
+│   └── example.store.ts
+│
+├── services/                         # GLOBAL SERVICES (Use only when API integration is required)
+│   ├── authService.ts
+│   └── uploadService.ts
+│
+├── hooks/                                  # SHARED HOOKS
+│   └── useDebounce.ts
+│
+├── types/                                  # GLOBAL TYPES
+│   └── index.ts
+│
+├── App.tsx                                 # Root component
+└── main.tsx                                # Entry point
+```
+- This is a lightweight Vite starter kit designed for rapid prototyping, experimentation, and hackathons.
+- Services: Only introduce the services/ folder when external API or backend integration is required.
+- CRUD Features: Customer, product, or other CRUD feature structures are optional. Add them only when the application requires data management through a backend.
+
+
 **Problem Solving template**
 ```md
 // Problem
